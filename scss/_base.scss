@@ -1,0 +1,34 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    @include typography("text");
+    @include colors("lightModeColors", "bg-color", "main-text");
+}
+
+a {
+  @include typography("text");
+  @include link-style("lightModeColors", "link", "link-hover");
+  text-decoration: none;
+  
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+    @include typography("title")
+}
+
+

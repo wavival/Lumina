@@ -1,0 +1,46 @@
+@import 'variables';
+
+$opacity: 0.4;
+
+.home-body {
+    @include element(100%, 100vh);
+    overflow: hidden;
+}
+
+.home {
+    @include position(relative);
+    height: 100%;
+    padding-top: 57vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)),
+    url(map-get(map-get($images, "photos"), "profile")) center;
+    background-size: cover;
+    color: map-get(map-get($colors, "darkModeColors"), "main-text");
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    &__name {
+        font-size: 5rem;
+        font-weight: 400;
+        padding-bottom: 2rem;
+        margin-top: 1rem;
+        line-height: 5rem;
+        border-bottom: 0.2rem solid map-get(map-get($colors, "darkModeColors"), "main-text");
+        text-shadow: 0.1rem 0.1rem 0.1rem map-get(map-get($colors, "lightModeColors"), "details");
+
+        &--last {
+            color: map-get(map-get($colors, "lightModeColors"), "link");
+            font-weight: 700;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 0.7rem;
+        }
+    }
+
+    &__job {
+        margin-block-start: 1rem;
+    }
+}

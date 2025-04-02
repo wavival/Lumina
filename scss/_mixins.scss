@@ -1,0 +1,151 @@
+@mixin typography($type) {
+    $data: map-get($typography, $type);
+
+    @if $data {
+        $font: map-get($data, "font");
+        $size: map-get($data, "size");
+        $weight: map-get($data, "weight");
+        $transform: map-get($data, "transform");
+
+        @if $font {
+            font-family: $font;
+        }
+        @if $size {
+            font-size: $size;
+        }
+        @if $weight {
+            font-weight: $weight;
+        }
+        @if $transform {
+            text-transform: $transform;
+        }
+    } @else {
+        @warn "El tipo `#{$type}` no está definido en el mapa de tipografía.";
+    }
+}
+
+@mixin colors($mode, $bg-color-key, $text-color-key, $border: null, $border-color-key: transparent, $hover-bg-key: null, $hover-text-key: null, $hover-border-key: null) {
+
+    $colors-style: map-get($colors, $mode);
+
+    $bg-color: map-get($colors-style, $bg-color-key);
+    $text-color: map-get($colors-style, $text-color-key);
+    $border-color: map-get($colors-style, $border-color-key);
+    $hover-bg: map-get($colors-style, $hover-bg-key);
+    $hover-text: map-get($colors-style, $hover-text-key);
+    $hover-border: map-get($colors-style, $hover-border-key);
+  
+    background-color: $bg-color;
+    color: $text-color;
+    border: $border;
+    border-color: $border-color;
+  
+    @if $hover-bg {
+      &:hover {
+        background-color: $hover-bg;
+        color: $hover-text !important;
+        border-color: $hover-border;
+      }
+    }
+  
+    @if $hover-bg {
+      &:active {
+        background-color: darken($hover-bg, 10%);
+        color: darken($hover-text, 10%);
+        border-color: darken($hover-border, 10%);
+        }
+    }
+}  
+
+@mixin link-style($mode, $color-key, $hover-key, $icon-size: 2rem, $gap: 1rem) {
+    $colors-style: map-get($colors, $mode);
+
+    $color: map-get($colors-style, $color-key);
+    $hover-color: map-get($colors-style, $hover-key);
+  
+    @if $color and $hover-color {
+      display: inline-flex; 
+      align-items: center;
+      gap: $gap;
+      text-decoration: none;
+      color: $color;
+      font-weight: 600;
+      transition: color 0.3s ease-in-out, transform 0.2s ease;
+  
+      &:hover {
+        color: $hover-color;
+        transform: scale(1.05);
+      }
+  
+      svg, i {
+        font-size: $icon-size;
+        transition: color 0.3s ease-in-out, transform 0.2s ease;
+      }
+  
+      &:hover svg, &:hover i {
+        transform: rotate(5deg);
+      }
+    } @else {
+      @warn "No se encontraron los colores correspondientes para las claves `#{$color-key}` y `#{$hover-key}` en el mapa de colores.";
+    }
+}
+
+@mixin element($width: auto, $height: auto, $padding: null, $margin: null) {
+
+    width: $width;
+    height: $height;
+
+    @if $padding != null {
+      padding: $padding;
+    }
+  
+    @if $margin != null {
+      margin: $margin;
+    }
+}
+
+@mixin position($type: relative, $top: null, $right: null, $bottom: null, $left: null, $z-index: null) {
+    position: $type;
+  
+    @if $top != null {
+      top: $top;
+    }
+  
+    @if $right != null {
+      right: $right;
+    }
+  
+    @if $bottom != null {
+      bottom: $bottom;
+    }
+  
+    @if $left != null {
+      left: $left;
+    }
+
+    @if $z-index != null {
+      z-index: $z-index;
+    }
+}
+
+@mixin flex($direction, $justify, $align, $wrap: nowrap, $gap: 1.6rem) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+  
+@mixin grid($columns, $width, $rows: auto, $gap: 2rem, $justify: center, $align: center) {
+  display: grid;
+  grid-template-columns: repeat($columns, $width);
+  grid-auto-rows: $rows;
+  gap: $gap;
+  justify-items: $justify;
+  align-items: $align;
+}
+
+@mixin transition($property: all, $duration: 0.5s, $timing: ease-in-out, $delay: 0s) {
+  transition: $property $duration $timing $delay;
+}

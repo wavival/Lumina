@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+    outline: 0.2rem solid #407bff;
+    outline-offset: 0.2rem;
+  }
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, dl, dd, ol, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a, button,
+input,
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+  }
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+

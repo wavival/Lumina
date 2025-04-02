@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+
+    <div id="menu-container"></div>
+
+    <div id="nav-bar"></div>
+
+  <main>
+        <section id="about" class="about">
+            <div class="about__container">
+                <h1>Hi! My name's <span>Valentina</span><span class="pip">|</span></h1>
+                <p>I create innovative, secure, and scalable digital experiences.</p>
+                <p>I'm a passionate <strong>Fullstack Developer</strong> with a love for technology and creativity. My focus is on designing and building solutions that not only work well but also provide an exceptional visual and user experience.</p>
+                <p>In addition, I'm specializing in <strong>Cybersecurity</strong>, ensuring that each project is not only efficient but also secure and reliable.</p>
+                <a href="#services" class="primary-btn">My Services</a>
+            </div>
+            <div class="about__container--img"></div>
+        </section>
+        
+        <section id="future" class="future">
+            <div class="future__container">
+                <p><i class="fas fa-bullseye"></i><span> My mission >> </span> is to empower businesses and individuals by providing cutting-edge, secure, and scalable digital solutions. I aim to create web experiences that are not only functional but also intuitive, accessible, and visually appealing, ensuring optimal performance and security.</p>
+            </div>
+            <div class="future__container">
+                <p><i class="fas fa-eye"></i><span> My vision >> </span> is to become a leading force in the tech industry, known for innovation, security, and design excellence. I strive to create a future where technology seamlessly enhances the way we live, work, and connect, while maintaining a strong commitment to cybersecurity and digital safety.</p>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="services__btns">
+                <button class="services__btn" data-modal="dev">
+                    <i class="fas fa-code"></i>
+                    <h3>Web Development</h3>
+                </button>
+                <button class="services__btn" data-modal="design">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Web Design</h3>
+                </button>
+                <button class="services__btn" data-modal="cyber">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cybersecurity</h3>
+                </button>     
+                <h3>My Services</h3>
+            </div>
+
+            <section class="modal hidden">
+                <div class="modal__container">
+                    <i class="fas fa-times modal__close-x"></i>
+                    <div class="modal__content"></div>
+                </div>
+            </section>
+        </section>
+
+        <section id="tech_stack" class="tech">
+            <div class="tech__container">
+                <h2>My Tools</h2>
+                <p>Every great developer has a toolkit, and these are mine. From crafting responsive layouts with <span>HTML</span>, <span>CSS</span>, and <span>TailwindCSS</span> to building dynamic web applications with <span>JavaScript</span> and <span>React</span>, each tool plays a vital role in my workflow.</p>
+                <p>On the backend, I leverage <span>Node.js</span> and <span>Express</span> to create scalable and efficient APIs. Version control? <span>Git & GitHub</span> keep my projects organized and collaborative. And when it comes to refining UI/UX, <span>Figma</span> helps bring ideas to life.</p>
+                <p>These technologies aren’t just tools—they’re the foundation of my development process. </p>
+                <span>Swipe through the carousel to explore them!</span>
+            </div>
+            <div class="tech__slider">
+                <input type="radio" name="my-tools" id="html" checked>
+                <input type="radio" name="my-tools" id="css">
+                <input type="radio" name="my-tools" id="tailwindcss">
+                <input type="radio" name="my-tools" id="sass">
+                <input type="radio" name="my-tools" id="javascript">
+                <input type="radio" name="my-tools" id="react">
+                <input type="radio" name="my-tools" id="nodejs">
+                <input type="radio" name="my-tools" id="express">
+                <input type="radio" name="my-tools" id="git-github">
+                <input type="radio" name="my-tools" id="terminal">
+                <input type="radio" name="my-tools" id="regex">
+                <input type="radio" name="my-tools" id="figma">
+
+                <div class="tech__cards">
+                    <label id="html" class="card" for="html">
+                        <i class="fab fa-html5" style="color: #e34c26;"></i> 
+                        <span> HTML5</span>
+                    </label>
+                    <label id="css" class="card" for="css">
+                        <i class="fab fa-css3-alt" style="color: #264de4;"></i> 
+                        <span> CSS3</span>
+                    </label>
+                    <label id="tailwindcss" class="card" for="tailwindcss">
+                        <i class="fab fa-css3-alt" style="color: #38b2ac;"></i>
+                        <span> TailwindCSS</span>
+                    </label>
+                    <label id="sass" class="card" for="sass">
+                        <i class="fab fa-sass" style="color: #d86b7a;"></i>
+                        <span> SASS</span>
+                    </label>
+                    <label id="javascript" class="card" for="javascript">
+                        <i class="fab fa-js" style="color: #f0db4f;"></i> 
+                        <span> JavaScript</span>
+                    </label>
+                    <label id="react" class="card" for="react">
+                        <i class="fab fa-react" style="color: #61dafb;"></i>
+                        <span> React</span>
+                    </label>
+                    <label id="nodejs" class="card" for="nodejs">
+                        <i class="fab fa-node-js" style="color: #339933"></i><span> Node.js</span>
+                    </label>
+                    <label id="express" class="card" for="express">
+                        <i class="fas fa-server" style="color: #000000"></i> 
+                        <span> Express</span>
+                    </label>
+                    <label id="git-github" class="card" for="git-github">
+                        <i class="fab fa-git" style="color: #f1502f; "></i> 
+                        <span> Git & Git-Hub</span>
+                    </label>
+                    <label id="terminal" class="card" for="terminal">
+                        <i class="fab fa-terminal" style="color: #0149bd;"></i> 
+                        <span> Terminal</span>
+                    </label>
+                    <label id="regex" class="card" for="regex">
+                        <i class="fas fa-code" style="color: #007acc;"></i> 
+                        <span> Regular Expresion</span>
+                    </label>
+                    <label id="figma" class="card" for="figma">
+                        <i class="fas fa-palette" style="color: #f24e1e; "></i>
+                        <span> Figma</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects" class="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects__grid">
+                <div class="project">
+                    <div class="project__img"></div>
+                    <div class="project__contain">
+                        <h3>E-commerce: Lunaria Shop</h3>
+                        <p>Complete online store solution with secure payment integration, inventory management, and user-friendly interface id="card" for both customers and administrators.</p>
+                    </div>
+                    <div class="project__btns">
+                        <a href="./projects.html" class="btn" target="_blank" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+                        <a href="https://github.com/wavival/Lunaria-Shop" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project__img"></div>
+                    <div class="project__contain">
+                        <h3>Blog Platform: CodeCanvas</h3>
+                        <p>Personal portfolio to showcase design and development projects. Built with responsive design principles, ensuring compatibility across devices.</p>
+                    </div>
+                    <div class="project__btns">
+                        <a href="./projects.html" class="btn" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+                        <a href="https://github.com/wavival/CodeCanvas" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <div class="project__img"></div>
+                    <div class="project__contain">
+                        <h3>Website: Ubuntu</h3>
+                        <p>Platform for managing and sharing blog posts, with user authentication and content moderation tools. Perfect for creators who want to share their ideas.</p>
+                    </div>
+                    <div class="project__btns">
+                        <a href="./projects.html" class="btn" target="_blank"><i class="fas fa-eye"></i> Preview</a>
+                        <a href="https://github.com/wavival/Ubuntu" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                    </div>
+                </div>
+            </div>
+            <h3><a href="/projects.html">See all projects</a></h3>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

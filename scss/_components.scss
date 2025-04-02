@@ -1,0 +1,149 @@
+@import 'functions';
+
+header {
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    padding: 1rem;
+
+    .menu-btn {
+        @include position(absolute, 1.6rem, 1.6rem, null, null, 1);
+        @include element(2.8rem, 2rem);
+        @include transition;
+        cursor: pointer;
+
+        &__burger {
+            @include position(absolute, 0.5rem, 0, null, null);
+            @include element(2.8rem, 0.3rem);
+            @include transition;
+            background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+
+            &::before {
+                @include position(absolute, -0.8rem, 0, null, null);
+                @include element(2.8rem, 0.3rem);
+                @include transition;
+                content: "";
+                background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+            }
+
+            &::after {
+                @include position(absolute, 0.8rem, null, 0, null);
+                @include element(2rem, 0.3rem);
+                @include transition;
+                content: "";
+                background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+            }
+        }   
+    }
+
+    a {
+        color: map-get(map-get($colors, "darkModeColors"), "main-text");
+        outline: none;
+
+        &:focus {
+            outline: none
+        }
+    }
+}
+
+.nav-bar {
+    @include element(22rem, 4.8rem, 0 1.8rem 0 0, 0);
+    @include position(fixed, 0, null, null, -26rem, null);
+    @include flex(row, end, center);
+    @include transition;
+    background-color: map-get(map-get($colors, "darkModeColors"), "bg-color"); opacity: 0.88;
+    overflow: hidden;
+    border-bottom-right-radius:  4rem;
+    border-top-right-radius:  4rem;
+    z-index: 1;
+
+    &.open .nav-bar__toggle {
+        transform: rotate(180deg);
+    }
+
+    &.open {
+        left: 0;
+
+        .nav-bar__list {
+            opacity: 1;
+        }
+    }
+
+    &__toggle {
+        @include element(1.2rem, 4.8rem, 0, 0);
+        @include transition;
+        @include position(fixed, 0.1rem, 0, 0, 0.3rem, null);
+        font-size: 2.4rem;
+        color: map-get(map-get($colors, "lightModeColors"), "details");
+        outline: none;
+    }
+
+    &__list {
+        @include element(100%, 100%);
+        @include flex(row, space-evenly, center);
+        @include transition;
+        opacity: 0;
+    }
+
+    &__link {
+        @include transition;
+        color: map-get(map-get($colors, "darkModeColors"), "main-text");
+        outline: none;
+
+        &.active {
+            font-weight: bold;
+            color: map-get(map-get($colors, "lightModeColors"), "details");   
+        }
+    }
+}
+
+main {
+    @include element(100%, 100%);
+}
+
+footer {
+    @include position(fixed, null, 1rem, 0.4rem, null);
+    text-align: right;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: map-get(map-get($colors, "darkModeColors"), "main-text");
+
+    .social-icons {
+        @include position(fixed, null, null, 1.6rem, 1rem, null);
+        @include flex(column, center, center);
+
+        a {
+            color: map-get(map-get($colors, "darkModeColors"), "main-text");
+
+            i {
+                &:hover {
+                  color: map-get(map-get($colors, "darkModeColors"), "link-hover");
+                }
+            }
+        }
+    }
+}
+
+
+
+.primary-btn {
+    @include transition;
+    background-color: map-get(map-get($colors, "lightModeColors"), "bg-color"); 
+    color: map-get(map-get($colors, "lightModeColors"), "details"); 
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0.2rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    align-self: center;
+  
+    &:hover {
+      background-color: darken(map-get(map-get($colors, "lightModeColors"), "link"), 5%);
+      color: map-get(map-get($colors, "lightModeColors"), "bg-color");
+    }
+  
+    &:active {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
