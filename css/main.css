@@ -98,22 +98,23 @@ header {
   width: 100%;
   position: fixed;
   z-index: 2;
-  padding: 1rem;
 }
 header .menu-btn {
   position: absolute;
   top: 1.6rem;
   right: 1.6rem;
   z-index: 1;
-  width: 2.8rem;
-  height: 2rem;
+  width: 3.4rem;
+  height: 3.2rem;
   transition: all 0.5s ease-in-out 0s;
   cursor: pointer;
+  background-color: #1b1f28;
+  border-radius: 0.5rem;
 }
 header .menu-btn__burger {
   position: absolute;
-  top: 0.5rem;
-  right: 0;
+  top: 1.4rem;
+  right: 0.3rem;
   width: 2.8rem;
   height: 0.3rem;
   transition: all 0.5s ease-in-out 0s;
@@ -228,6 +229,9 @@ footer {
   padding: 1rem;
   font-size: 1.2rem;
   color: #e4e6eb;
+  background-color: #1b1f28;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 footer .social-icons {
   position: fixed;
@@ -239,9 +243,13 @@ footer .social-icons {
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.6rem;
+  background-color: #1b1f28;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 footer .social-icons a {
   color: #e4e6eb;
+  outline: none;
 }
 footer .social-icons a i:hover {
   color: #2275d7;
@@ -620,7 +628,7 @@ footer .social-icons a i:hover {
 
 .future {
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   padding: 6rem 1rem 1rem;
   margin: 2rem auto;
   display: flex;
@@ -650,6 +658,28 @@ footer .social-icons a i:hover {
   font-size: 2rem;
   font-weight: bold;
   color: #407bff;
+}
+.future .values {
+  background: #407bff;
+  box-shadow: 0.1rem 0.1rem 0.2rem #1b1f28;
+  width: 95%;
+  padding-left: 2.5rem;
+  color: #dfeaff;
+  justify-items: center;
+}
+.future .values p {
+  text-align: justify;
+  margin-block-end: 1rem;
+}
+.future .values p i, .future .values p span {
+  color: white;
+}
+.future .values table {
+  border-collapse: separate;
+}
+.future .values table td {
+  text-align: justify;
+  padding-inline-end: 1rem;
 }
 
 .services {
@@ -681,7 +711,7 @@ footer .social-icons a i:hover {
   flex-wrap: nowrap;
   gap: 1.6rem;
 }
-.services__btns h3:nth-child(4) {
+.services__btns h3:nth-child(3) {
   font-size: 2.4rem;
   font-weight: 700;
   align-self: center;
@@ -820,6 +850,22 @@ footer .social-icons a i:hover {
   gap: 0;
   justify-items: center;
   overflow: hidden;
+  /*#nodejs:checked ~ .tech__cards #express {
+    transform: translateX(40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+
+  #nodejs:checked ~ .tech__cards #react {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }*/
+  /*#express:checked ~ .tech__cards #nodejs {
+    transform: translateX(-40%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }*/
 }
 .tech__container {
   display: flex;
@@ -844,8 +890,8 @@ footer .social-icons a i:hover {
   text-align: center;
 }
 .tech__slider {
-  width: 24rem;
-  height: 28rem;
+  width: 20rem;
+  height: 24rem;
   transform-style: preserve-3d;
 }
 .tech__slider input {
@@ -857,8 +903,6 @@ footer .social-icons a i:hover {
 .tech__slider #sass:checked ~ .tech__cards #sass,
 .tech__slider #javascript:checked ~ .tech__cards #javascript,
 .tech__slider #react:checked ~ .tech__cards #react,
-.tech__slider #nodejs:checked ~ .tech__cards #nodejs,
-.tech__slider #express:checked ~ .tech__cards #express,
 .tech__slider #git-github:checked ~ .tech__cards #git-github,
 .tech__slider #terminal:checked ~ .tech__cards #terminal,
 .tech__slider #regex:checked ~ .tech__cards #regex,
@@ -917,7 +961,7 @@ footer .social-icons a i:hover {
   opacity: 0.5;
   z-index: 0;
 }
-.tech #react:checked ~ .tech__cards #nodejs {
+.tech #react:checked ~ .tech__cards #git-github {
   transform: translateX(40%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
@@ -927,23 +971,8 @@ footer .social-icons a i:hover {
   opacity: 0.5;
   z-index: 0;
 }
-.tech #nodejs:checked ~ .tech__cards #express {
+.tech #react:checked ~ .tech__cards #git-github {
   transform: translateX(40%) scale(0.8);
-  opacity: 0.5;
-  z-index: 0;
-}
-.tech #nodejs:checked ~ .tech__cards #react {
-  transform: translateX(-40%) scale(0.8);
-  opacity: 0.5;
-  z-index: 0;
-}
-.tech #express:checked ~ .tech__cards #git-github {
-  transform: translateX(40%) scale(0.8);
-  opacity: 0.5;
-  z-index: 0;
-}
-.tech #express:checked ~ .tech__cards #nodejs {
-  transform: translateX(-40%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
@@ -952,7 +981,7 @@ footer .social-icons a i:hover {
   opacity: 0.5;
   z-index: 0;
 }
-.tech #git-github:checked ~ .tech__cards #express {
+.tech #git-github:checked ~ .tech__cards #react {
   transform: translateX(-40%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
@@ -991,7 +1020,7 @@ footer .social-icons a i:hover {
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 2rem auto;
+  margin: auto;
   position: relative;
 }
 .tech__cards .card {
@@ -1010,9 +1039,9 @@ footer .social-icons a i:hover {
   grid-template-rows: 75% 25%;
   margin: 0 auto;
   border-radius: 1rem;
-  background: linear-gradient(to top, #dfeaff, #1e90ff);
   box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  background: linear-gradient(to top, #dfeaff, #1e90ff);
 }
 .tech__cards .card i {
   font-size: 8.8rem;
@@ -1091,7 +1120,11 @@ footer .social-icons a i:hover {
   transition-delay: 0.4s;
 }
 .projects__grid .project:hover .project__btns {
+  transition: all 0.5s ease-in-out 0s;
+  width: 100%;
   top: 90%;
+  right: 50%;
+  transform: translate(50%);
   opacity: 1;
   transition-delay: 0.4s;
   z-index: 4;
@@ -1238,4 +1271,206 @@ footer .social-icons a i:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.projectss {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+.projectss__discover {
+  width: 60%;
+  align-self: flex-end;
+  text-align: end;
+  font-weight: bold;
+  color: #e4e6eb;
+}
+.projectss__discover:hover {
+  transform: translate(-0.5rem);
+  color: #e4e6eb;
+}
+.projectss__info {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  color: #e4e6eb;
+  background-color: #0077ea;
+}
+.projectss__info h2 {
+  margin-block-start: 2rem;
+  margin-inline-end: 6rem;
+  color: #2e2e2e;
+}
+.projectss__info ul {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  padding: 0;
+  margin: 0;
+}
+.projectss__info ul li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  transition: all 0.5s ease-in-out 0s;
+  color: #2e2e2e;
+  text-align: justify;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #dfeaff;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.projectss__info ul li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.projectss__info ul li:hover a {
+  transition: all 0.5s ease-in-out 0s;
+}
+.projectss__info ul li:hover a:hover {
+  transform: translate(1rem);
+}
+.projectss__items {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+}
+.projectss__items .project {
+  width: 100%;
+  height: max-content;
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  text-align: justify;
+}
+.projectss__items .project h2 {
+  text-align: center;
+  margin-block-end: 1rem;
+}
+.projectss__items .project__img {
+  width: 28rem;
+  height: 28rem;
+  padding: 0;
+  margin: 2rem 0;
+  background: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.projectss__items .project__tech-stack {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0 0 5rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  list-style: none;
+}
+.projectss__items .project__tech-stack li i {
+  font-size: 4rem;
+}
+.projectss__items .project__links {
+  width: 100%;
+  height: auto;
+  padding: 1rem 0 0.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  position: absolute;
+  right: 0;
+  bottom: 0.5rem;
+  border-block-start: 0.2rem solid #ddd;
+}
+.projectss__items .project__links a {
+  color: #2e2e2e;
+}
+.projectss__items .project__links a:hover {
+  color: #0077ea;
+}
+.projectss__work-xp {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  background: linear-gradient(3.5deg, #1e90ff, #252a34);
+  color: #e4e6eb;
+}
+.projectss__work-xp li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1.6rem;
+  transition: all 0.5s ease-in-out 0s;
+  color: #2e2e2e;
+  text-align: justify;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #dfeaff;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.projectss__work-xp li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.projectss__work-xp li:hover a {
+  transition: all 0.5s ease-in-out 0s;
+}
+.projectss__work-xp li:hover a:hover {
+  transform: translate(1rem);
 }/*# sourceMappingURL=main.css.map */

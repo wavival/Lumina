@@ -4,16 +4,17 @@ header {
     width: 100%;
     position: fixed;
     z-index: 2;
-    padding: 1rem;
 
     .menu-btn {
         @include position(absolute, 1.6rem, 1.6rem, null, null, 1);
-        @include element(2.8rem, 2rem);
+        @include element(3.4rem, 3.2rem);
         @include transition;
         cursor: pointer;
+        background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+        border-radius: 0.5rem;
 
         &__burger {
-            @include position(absolute, 0.5rem, 0, null, null);
+            @include position(absolute, 1.4rem, 0.3rem, null, null);
             @include element(2.8rem, 0.3rem);
             @include transition;
             background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
@@ -107,13 +108,20 @@ footer {
     padding: 1rem;
     font-size: 1.2rem;
     color: map-get(map-get($colors, "darkModeColors"), "main-text");
+    background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 
     .social-icons {
         @include position(fixed, null, null, 1.6rem, 1rem, null);
         @include flex(column, center, center);
+        background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+        padding: 0.5rem;
+        border-radius: 0.5rem;
 
         a {
             color: map-get(map-get($colors, "darkModeColors"), "main-text");
+            outline: none;
 
             i {
                 &:hover {
@@ -123,8 +131,6 @@ footer {
         }
     }
 }
-
-
 
 .primary-btn {
     @include transition;

@@ -1,0 +1,153 @@
+@import 'variables';
+
+.projectss {
+    @include element(100%, 100vh, 0, 0);
+
+    &__discover {
+        width: 60%;
+        align-self: flex-end;
+        text-align: end;
+        font-weight: bold;
+        color: map-get(map-get($colors, "darkModeColors"), "main-text");
+
+        &:hover {
+            transform: translate(-0.5rem);
+            color: map-get(map-get($colors, "darkModeColors"), "main-text");
+        }
+    }
+
+    &__info {
+        @include element(100%, 100vh, 2rem 1rem, 0);
+        @include flex(column, space-evenly, center);
+        color: map-get(map-get($colors, "darkModeColors"), "main-text");
+        background-color: map-get(map-get($colors, "lightModeColors"), "link-hover");
+
+        h2 {
+            margin-block-start: 2rem;
+            margin-inline-end: 6rem;
+            color: map-get(map-get($colors, "lightModeColors"), "main-text");
+        }
+
+        ul {
+            @include element(100%, auto, 0);
+            @include flex(column, space-evenly, center);
+            padding: 0;
+            margin: 0;
+
+            li {
+                @include element(100%, 100%);
+                @include flex(row, space-between, center);
+                @include transition;
+                color: map-get(map-get($colors, "lightModeColors"), "main-text");
+                text-align: justify;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                background-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
+                box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+                    cursor: pointer;
+
+                    a {
+                        @include transition; 
+                        
+                        &:hover {
+                            transform: translate(1rem);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__items {
+        @include element(100%, auto, 1rem, 0);
+        @include flex(column, space-evenly, center);
+
+        .project {
+            @include element(100%, max-content, 1rem, 1rem);
+            @include flex(column, space-evenly, center);
+            position: relative;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+            text-align: justify;
+
+            h2 {
+                text-align: center;
+                margin-block-end: 1rem;
+            }
+
+            &__img {
+                @include element(28rem, 28rem, 0, 2rem 0);
+                background: url(map-get(map-get($images, "projects"), "ubuntu"));
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 0.5rem;
+                box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+            }
+
+            &__tech-stack {
+                @include element(100%, auto, 0, 0 0 5rem 0);
+                @include flex(row, space-evenly, center);
+                list-style: none;
+
+                li {
+                    i {
+                        font-size: 4rem;
+                    }
+                }
+            }
+
+            &__links {
+                @include element(100%, auto, 1rem 0 0.5rem, 0);
+                @include flex(row, space-evenly, center);
+                @include position(absolute, null, 0, 0.5rem, null);
+                border-block-start: 0.2rem solid map-get(map-get($colors, "lightModeColors"), "border");
+
+                a {
+                    color: map-get(map-get($colors, "lightModeColors"), "main-text");
+
+                    &:hover {
+                        color: map-get(map-get($colors, "lightModeColors"), "link-hover");
+                    }
+                }
+            }
+        }
+    }
+
+    &__work-xp {
+        @include element(100%, auto, 2rem, 0);
+        @include flex(column, space-evenly, center);
+        background: linear-gradient(3.5deg, map-get(map-get($colors, "lightModeColors"), "link"), map-get(map-get($colors, "darkModeColors"), "cards"));
+        color: map-get(map-get($colors, "darkModeColors"), "main-text");
+
+        li {
+            @include element(100%, 100%);
+            @include flex(row, space-between, center);
+            @include transition;
+            color: map-get(map-get($colors, "lightModeColors"), "main-text");
+            text-align: justify;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
+            box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+
+            &:hover {
+                transform: scale(1.02);
+                box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+                cursor: pointer;
+
+                a {
+                    @include transition; 
+                    
+                    &:hover {
+                        transform: translate(1rem);
+                    }
+                }
+            }
+        }
+    }
+}
