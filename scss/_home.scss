@@ -14,13 +14,37 @@ $opacity: 0.4;
     overflow: hidden;
     align-items: center;
     text-align: center;
-    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)),
-    url(map-get(map-get($images, "photos"), "profile")) center;
+    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "profile")) center;
     background-size: cover;
     color: map-get(map-get($colors, "darkModeColors"), "main-text");
 
+    @media (min-width: 768px) {
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "profile3")) center;
+        background-size: cover;    
+    }
+
+    @media (min-width: 1024px) {
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "profile4")) center;
+        background-size: cover;    
+    }
+
+    @media (min-width: 1200px) {
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.4), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "profile5")) center;
+        background-size: cover;    
+    }
+
+    @media (min-width: 1300px) {
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "profile5")) center;
+        background-size: cover;    
+    }
+    
+
     h2 {
         font-size: 1.6rem;
+
+        @media (min-width: 768px) {
+            font-size: 1.8rem;
+        }
     }
 
     &__name {

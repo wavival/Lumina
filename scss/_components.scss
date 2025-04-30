@@ -22,6 +22,13 @@ header {
                 @include transition;
                 opacity: 1;
             }
+
+            &--link {
+
+                @media (min-width: 768px) {
+                    font-size: 1.6rem;
+                }
+            }
         }
     }
 
@@ -83,9 +90,11 @@ header {
     z-index: 1;
 
     @media (min-width: 768px) {
-        @include position(fixed, 6rem, null, null, 0, 1);
-        border-top-right-radius: 0;
+        @include position(fixed, 6rem, 0, null, null, 1);
+        border-radius: 0;
+        border-bottom-left-radius: 2rem;
         justify-content: center;
+        padding: 0;
     }
 
     &.open .nav-bar__toggle {
@@ -94,6 +103,11 @@ header {
 
     &.open {
         left: 0;
+
+        @media (min-width: 768px) {
+            right: 0;
+            left: auto;
+        }
 
         .nav-bar__list {
             opacity: 1;
@@ -143,8 +157,18 @@ footer {
     font-size: 1.2rem;
     color: map-get(map-get($colors, "darkModeColors"), "main-text");
     background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
-    padding: 0.5rem;
     border-radius: 0.5rem;
+
+    @media (min-width: 768px) {
+        @include element(40%, 8rem);
+        bottom: 0.4rem;
+        text-align: center;
+        align-content: center;
+        border-radius: 5rem;
+        left: 50%;
+        transform: translate(-50%);
+        opacity: 0.88;
+    }
 
     .social-icons {
         @include position(fixed, null, null, 1.6rem, 1rem, null);
@@ -152,6 +176,12 @@ footer {
         background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
         padding: 0.5rem;
         border-radius: 0.5rem;
+
+        @media (min-width: 768px) {
+            @include position(initial);
+            flex-direction: row;
+            margin-block-end: 1rem;
+        }
 
         a {
             color: map-get(map-get($colors, "darkModeColors"), "main-text");
