@@ -3,7 +3,7 @@
 .projectss {
     @include element(100%, 100vh, 0, 0);
 
-    &__discover {
+    &__discover, #hdilearn {
         width: 60%;
         align-self: flex-end;
         text-align: end;
@@ -16,8 +16,16 @@
         }
     }
 
+    #hdilearn {
+        display: block;
+
+        i {
+            vertical-align: bottom
+        }
+    }
+
     &__info {
-        @include element(100%, 100vh, 2rem 1rem, 0);
+        @include element(100%, 100vh, 0 1rem 2rem 1rem, 0);
         @include flex(column, space-evenly, center);
         color: map-get(map-get($colors, "darkModeColors"), "main-text");
         background-color: map-get(map-get($colors, "lightModeColors"), "link-hover");
@@ -25,7 +33,7 @@
         h2 {
             margin-block-start: 2rem;
             margin-inline-end: 6rem;
-            color: map-get(map-get($colors, "lightModeColors"), "main-text");
+            color: map-get(map-get($colors, "darkModeColors"), "main-text");
         }
 
         ul {
@@ -119,35 +127,51 @@
     }
 
     &__work-xp {
-        @include element(100%, auto, 2rem, 0);
+        @include element(100%, auto, 2rem 1rem, 0 0 2rem 0);
         @include flex(column, space-evenly, center);
         background: linear-gradient(3.5deg, map-get(map-get($colors, "lightModeColors"), "link"), map-get(map-get($colors, "darkModeColors"), "cards"));
         color: map-get(map-get($colors, "darkModeColors"), "main-text");
 
-        li {
-            @include element(100%, 100%);
-            @include flex(row, space-between, center);
+        a {
             @include transition;
-            color: map-get(map-get($colors, "lightModeColors"), "main-text");
-            text-align: justify;
             padding: 1rem;
-            border-radius: 0.5rem;
-            background-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
-            box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+            border-radius: 0.4rem;
+            color: map-get(map-get($colors, "darkModeColors"), "main-text");
+            font-size: 2rem;
 
             &:hover {
-                transform: scale(1.02);
-                box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
-                cursor: pointer;
-
-                a {
-                    @include transition; 
-                    
-                    &:hover {
-                        transform: translate(1rem);
-                    }
-                }
+                background: map-get(map-get($colors, "darkModeColors"), "bg-color");
+                transform: scale(1.01);
             }
+        }
+    }
+
+    &__diploma {
+        a {
+            padding: 0;
+        }
+    }
+
+    &__thanks {
+        text-align: justify;
+        position: relative;
+        padding: 1rem 1rem 14rem 1rem;
+
+        h2 {
+            text-align: center;
+        }
+    }
+
+    &__contact {
+        @include element(100vw, 12rem, 0.8rem, 0);
+        @include position(absolute, null, 0, 1rem, 0);
+        @include flex(row, center, center);
+        background: linear-gradient(to left, map-get(map-get($colors, "lightModeColors"), "link"), map-get(map-get($colors, "darkModeColors"), "cards"));
+        font-size: 3.2rem;
+
+        a {
+            font-size: 2.4rem;
+            color: map-get(map-get($colors, "darkModeColors"), "main-text")
         }
     }
 }

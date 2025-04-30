@@ -28,9 +28,24 @@ export function createNavBar(menuItems) {
     navBar.appendChild(toggleBtn); 
     navBar.appendChild(nav);
 
+    // Mostrar automáticamente desde 768px
+    function handleResize() {
+        if (window.innerWidth >= 768) {
+            navBar.classList.add("open");
+        } else {
+            navBar.classList.remove("open");
+        }
+    }
+
+    // Ejecutar al inicio y al cambiar tamaño
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    // Toggle para móviles
     toggleBtn.addEventListener("click", () => {
         navBar.classList.toggle("open");
     });
+
     return navBar;
 }
 

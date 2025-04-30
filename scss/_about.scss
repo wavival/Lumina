@@ -11,9 +11,18 @@
         @include flex(column, space-evenly, start);
         max-width: 50rem;
 
+        @media (min-width: 768px) {
+          justify-content: flex-end;
+          gap: 3.2rem;
+        }
+
         h1{
             width: 23.7rem;
             align-self: center;
+
+            @media (min-width: 768px) {
+              width: 41rem;
+            }
 
             span {
                 max-width: 16.2rem;
@@ -21,6 +30,7 @@
                 overflow: hidden;
                 white-space: nowrap;
                 animation: typing 3s steps(30) 2.2s;
+                vertical-align: bottom;
             }
 
             .pip {
@@ -64,6 +74,13 @@
     @include element(100%, 100vh, 6rem 1rem 1rem, 2rem auto);
     @include flex(column, space-evenly, center);
 
+    @media (min-width: 768px) {
+      @include grid(2, 1fr, 1fr);    
+      grid-template-areas: 
+      "mision space"
+      "vision space";
+  }
+
     &__container {
         @include element(100%, auto, 2rem, 0);
         border: 0.1rem solid black;
@@ -94,6 +111,10 @@
       padding-left: 2.5rem;
       color: map-get(map-get($colors, "lightModeColors"), "bg-color");
       justify-items: center;
+
+      @media (min-width: 768px) {
+        grid-area: space;
+      }
 
       p {
         text-align: justify;
@@ -258,6 +279,16 @@
     justify-items: center;
     overflow: hidden;
 
+    &__bg {
+      @include element(12rem, 20rem);
+      @include position(absolute, auto, null, 0, 50%);
+      transform: translateX(-50%);
+      background-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
+      z-index: 1;
+      box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+      border-radius: 0.5rem;
+    }
+
     &__container {
       @include flex(column, space-evenly, start);
       @include element(100%, 50%);
@@ -281,15 +312,157 @@
     }
 
     &__slider {
-      @include element(20rem, 24rem);
+      @include element(12rem, 22rem);
       transform-style: preserve-3d;
+
+      @media (min-width: 768px) {
+          #html:checked ~ .tech__cards #css {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #html:checked ~ .tech__cards #figma {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #css:checked ~ .tech__cards #tailwindcss {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #css:checked ~ .tech__cards #html {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+         
+            #tailwindcss:checked ~ .tech__cards #sass {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #tailwindcss:checked ~ .tech__cards #css {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #sass:checked ~ .tech__cards #javascript {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #sass:checked ~ .tech__cards #tailwindcss {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #javascript:checked ~ .tech__cards #react {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #javascript:checked ~ .tech__cards #sass {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #react:checked ~ .tech__cards #git-github {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #react:checked ~ .tech__cards #javascript {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            /*#nodejs:checked ~ .tech__cards #express {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #nodejs:checked ~ .tech__cards #react {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }*/
+        
+            #react:checked ~ .tech__cards #git-github {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            /*#express:checked ~ .tech__cards #nodejs {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }*/
+        
+            #git-github:checked ~ .tech__cards #terminal {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #git-github:checked ~ .tech__cards #react {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #terminal:checked ~ .tech__cards #regex {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #terminal:checked ~ .tech__cards #git-github {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #regex:checked ~ .tech__cards #figma {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #regex:checked ~ .tech__cards #terminal {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+        
+            #figma:checked ~ .tech__cards #html {
+              transform: translateX(110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+            
+            #figma:checked ~ .tech__cards #regex {
+              transform: translateX(-110%) scale(0.8);
+              opacity: 0.5;
+              z-index: 0;
+            }
+      }
 
       input {
         display: none;
-      }
-
-      label {
-
       }
 
       #html:checked ~  .tech__cards #html,
@@ -311,145 +484,145 @@
     }
 
     #html:checked ~ .tech__cards #css {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #html:checked ~ .tech__cards #figma {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #css:checked ~ .tech__cards #tailwindcss {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #css:checked ~ .tech__cards #html {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
  
     #tailwindcss:checked ~ .tech__cards #sass {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #tailwindcss:checked ~ .tech__cards #css {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #sass:checked ~ .tech__cards #javascript {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #sass:checked ~ .tech__cards #tailwindcss {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #javascript:checked ~ .tech__cards #react {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #javascript:checked ~ .tech__cards #sass {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #react:checked ~ .tech__cards #git-github {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #react:checked ~ .tech__cards #javascript {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     /*#nodejs:checked ~ .tech__cards #express {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #nodejs:checked ~ .tech__cards #react {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }*/
 
     #react:checked ~ .tech__cards #git-github {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     /*#express:checked ~ .tech__cards #nodejs {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }*/
 
     #git-github:checked ~ .tech__cards #terminal {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #git-github:checked ~ .tech__cards #react {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #terminal:checked ~ .tech__cards #regex {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #terminal:checked ~ .tech__cards #git-github {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #regex:checked ~ .tech__cards #figma {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #regex:checked ~ .tech__cards #terminal {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
 
     #figma:checked ~ .tech__cards #html {
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
     
     #figma:checked ~ .tech__cards #regex {
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-90%) scale(0.8);
       opacity: 0.5;
       z-index: 0;
     }
@@ -465,10 +638,7 @@
         @include transition;
         grid-template-rows: 75% 25%;
         margin: 0 auto;
-        border-radius: 1rem;
-        box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
         cursor: pointer;
-        background: linear-gradient(to top, map-get(map-get($colors, "lightModeColors"), "bg-color"), map-get(map-get($colors, "lightModeColors"), "link"));
 
         i {
           font-size: 8.8rem;
@@ -478,14 +648,15 @@
         span {
           font-size: 2rem;
           font-weight: bold;
-          color: map-get(map-get($colors, "darkModeColors"), "bg-color")
+          color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+          text-align: center;
         }
       }
     }
 }
 
 .projects {
-  @include element(100%, 100vh, 6rem 1rem 1rem, 0);
+  @include element(100%, auto, 6rem 1rem 4rem 1rem, 0);
   background: linear-gradient(to bottom, map-get(map-get($colors, "lightModeColors"),"bg-color"), map-get(map-get($colors, "lightModeColors"), "link"), map-get(map-get($colors, "darkModeColors"), "bg-color"));
   
   h2 {
@@ -526,11 +697,13 @@
 
       &:hover {
         &::after {
+          @include transition;
           top: 0;
           opacity: 0.9;
         }
 
         .project__contain {
+          @include transition;
           top: 0;
           opacity: 1;
           z-index: 3;
@@ -560,6 +733,7 @@
       &__btns {
         @include position(absolute, 100%, null, null, null, null);
         @include flex(row, space-around, center);
+        @include transition;
         margin-block-end: 0.2rem;
         opacity: 0;
 

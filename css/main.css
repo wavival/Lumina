@@ -99,6 +99,41 @@ header {
   position: fixed;
   z-index: 2;
 }
+@media (min-width: 768px) {
+  header {
+    position: fixed;
+    width: 100%;
+    height: 6rem;
+  }
+  header .header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.6rem;
+    width: 100%;
+    height: 6rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0.88;
+  }
+  header .header__nav--list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 1.6rem;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out 0s;
+    opacity: 1;
+  }
+}
 header .menu-btn {
   position: absolute;
   top: 1.6rem;
@@ -140,6 +175,11 @@ header .menu-btn__burger::after {
   content: "";
   background-color: #e4e6eb;
 }
+@media (min-width: 768px) {
+  header .menu-btn {
+    display: none;
+  }
+}
 header a {
   color: #e4e6eb;
   outline: none;
@@ -170,6 +210,16 @@ header a:focus {
   border-top-right-radius: 4rem;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  .nav-bar {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    z-index: 1;
+    border-top-right-radius: 0;
+    justify-content: center;
+  }
+}
 .nav-bar.open .nav-bar__toggle {
   transform: rotate(180deg);
 }
@@ -193,6 +243,11 @@ header a:focus {
   font-size: 2.4rem;
   color: #407bff;
   outline: none;
+}
+@media (min-width: 768px) {
+  .nav-bar__toggle {
+    display: none;
+  }
 }
 .nav-bar__list {
   width: 100%;
@@ -581,9 +636,20 @@ footer .social-icons a i:hover {
   gap: 1.6rem;
   max-width: 50rem;
 }
+@media (min-width: 768px) {
+  .about__container {
+    justify-content: flex-end;
+    gap: 3.2rem;
+  }
+}
 .about__container h1 {
   width: 23.7rem;
   align-self: center;
+}
+@media (min-width: 768px) {
+  .about__container h1 {
+    width: 41rem;
+  }
 }
 .about__container h1 span {
   max-width: 16.2rem;
@@ -591,6 +657,7 @@ footer .social-icons a i:hover {
   overflow: hidden;
   white-space: nowrap;
   animation: typing 3s steps(30) 2.2s;
+  vertical-align: bottom;
 }
 .about__container h1 .pip {
   animation: borderP 1s infinite alternate;
@@ -638,6 +705,17 @@ footer .social-icons a i:hover {
   flex-wrap: nowrap;
   gap: 1.6rem;
 }
+@media (min-width: 768px) {
+  .future {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: "mision space" "vision space";
+  }
+}
 .future__container {
   width: 100%;
   height: auto;
@@ -666,6 +744,11 @@ footer .social-icons a i:hover {
   padding-left: 2.5rem;
   color: #dfeaff;
   justify-items: center;
+}
+@media (min-width: 768px) {
+  .future .values {
+    grid-area: space;
+  }
 }
 .future .values p {
   text-align: justify;
@@ -851,21 +934,34 @@ footer .social-icons a i:hover {
   justify-items: center;
   overflow: hidden;
   /*#nodejs:checked ~ .tech__cards #express {
-    transform: translateX(40%) scale(0.8);
+    transform: translateX(90%) scale(0.8);
     opacity: 0.5;
     z-index: 0;
   }
 
   #nodejs:checked ~ .tech__cards #react {
-    transform: translateX(-40%) scale(0.8);
+    transform: translateX(-90%) scale(0.8);
     opacity: 0.5;
     z-index: 0;
   }*/
   /*#express:checked ~ .tech__cards #nodejs {
-    transform: translateX(-40%) scale(0.8);
+    transform: translateX(-90%) scale(0.8);
     opacity: 0.5;
     z-index: 0;
   }*/
+}
+.tech__bg {
+  width: 12rem;
+  height: 20rem;
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dfeaff;
+  z-index: 1;
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
 }
 .tech__container {
   display: flex;
@@ -890,9 +986,134 @@ footer .social-icons a i:hover {
   text-align: center;
 }
 .tech__slider {
-  width: 20rem;
-  height: 24rem;
+  width: 12rem;
+  height: 22rem;
   transform-style: preserve-3d;
+}
+@media (min-width: 768px) {
+  .tech__slider {
+    /*#nodejs:checked ~ .tech__cards #express {
+      transform: translateX(110%) scale(0.8);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    #nodejs:checked ~ .tech__cards #react {
+      transform: translateX(-110%) scale(0.8);
+      opacity: 0.5;
+      z-index: 0;
+    }*/
+    /*#express:checked ~ .tech__cards #nodejs {
+      transform: translateX(-110%) scale(0.8);
+      opacity: 0.5;
+      z-index: 0;
+    }*/
+  }
+  .tech__slider #html:checked ~ .tech__cards #css {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #html:checked ~ .tech__cards #figma {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #css:checked ~ .tech__cards #tailwindcss {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #css:checked ~ .tech__cards #html {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #tailwindcss:checked ~ .tech__cards #sass {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #tailwindcss:checked ~ .tech__cards #css {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #sass:checked ~ .tech__cards #javascript {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #sass:checked ~ .tech__cards #tailwindcss {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #javascript:checked ~ .tech__cards #react {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #javascript:checked ~ .tech__cards #sass {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #react:checked ~ .tech__cards #git-github {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #react:checked ~ .tech__cards #javascript {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #react:checked ~ .tech__cards #git-github {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #git-github:checked ~ .tech__cards #terminal {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #git-github:checked ~ .tech__cards #react {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #terminal:checked ~ .tech__cards #regex {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #terminal:checked ~ .tech__cards #git-github {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #regex:checked ~ .tech__cards #figma {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #regex:checked ~ .tech__cards #terminal {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #figma:checked ~ .tech__cards #html {
+    transform: translateX(110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
+  .tech__slider #figma:checked ~ .tech__cards #regex {
+    transform: translateX(-110%) scale(0.8);
+    opacity: 0.5;
+    z-index: 0;
+  }
 }
 .tech__slider input {
   display: none;
@@ -912,107 +1133,107 @@ footer .social-icons a i:hover {
   z-index: 9;
 }
 .tech #html:checked ~ .tech__cards #css {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #html:checked ~ .tech__cards #figma {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #css:checked ~ .tech__cards #tailwindcss {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #css:checked ~ .tech__cards #html {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #tailwindcss:checked ~ .tech__cards #sass {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #tailwindcss:checked ~ .tech__cards #css {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #sass:checked ~ .tech__cards #javascript {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #sass:checked ~ .tech__cards #tailwindcss {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #javascript:checked ~ .tech__cards #react {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #javascript:checked ~ .tech__cards #sass {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #react:checked ~ .tech__cards #git-github {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #react:checked ~ .tech__cards #javascript {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #react:checked ~ .tech__cards #git-github {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #git-github:checked ~ .tech__cards #terminal {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #git-github:checked ~ .tech__cards #react {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #terminal:checked ~ .tech__cards #regex {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #terminal:checked ~ .tech__cards #git-github {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #regex:checked ~ .tech__cards #figma {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #regex:checked ~ .tech__cards #terminal {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #figma:checked ~ .tech__cards #html {
-  transform: translateX(40%) scale(0.8);
+  transform: translateX(90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
 .tech #figma:checked ~ .tech__cards #regex {
-  transform: translateX(-40%) scale(0.8);
+  transform: translateX(-90%) scale(0.8);
   opacity: 0.5;
   z-index: 0;
 }
@@ -1038,10 +1259,7 @@ footer .social-icons a i:hover {
   transition: all 0.5s ease-in-out 0s;
   grid-template-rows: 75% 25%;
   margin: 0 auto;
-  border-radius: 1rem;
-  box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  background: linear-gradient(to top, #dfeaff, #1e90ff);
 }
 .tech__cards .card i {
   font-size: 8.8rem;
@@ -1051,12 +1269,13 @@ footer .social-icons a i:hover {
   font-size: 2rem;
   font-weight: bold;
   color: #1b1f28;
+  text-align: center;
 }
 
 .projects {
   width: 100%;
-  height: 100vh;
-  padding: 6rem 1rem 1rem;
+  height: auto;
+  padding: 6rem 1rem 4rem 1rem;
   margin: 0;
   background: linear-gradient(to bottom, #dfeaff, #1e90ff, #1b1f28);
 }
@@ -1110,10 +1329,12 @@ footer .social-icons a i:hover {
   content: "";
 }
 .projects__grid .project:hover::after {
+  transition: all 0.5s ease-in-out 0s;
   top: 0;
   opacity: 0.9;
 }
 .projects__grid .project:hover .project__contain {
+  transition: all 0.5s ease-in-out 0s;
   top: 0;
   opacity: 1;
   z-index: 3;
@@ -1146,6 +1367,7 @@ footer .social-icons a i:hover {
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.6rem;
+  transition: all 0.5s ease-in-out 0s;
   margin-block-end: 0.2rem;
   opacity: 0;
 }
@@ -1177,14 +1399,12 @@ footer .social-icons a i:hover {
   color: white;
 }
 .contact__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 1.6rem;
   width: 100%;
   height: 90%;
+  padding: 1rem;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 75% 1fr;
   background: rgba(27, 31, 40, 0.5);
   border-radius: 1rem;
 }
@@ -1203,14 +1423,13 @@ footer .social-icons a i:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 0;
+  gap: 2rem;
   width: 90%;
-  height: 40%;
+  height: auto;
   max-width: 40rem;
   margin: 0 auto;
 }
 .contact__form label {
-  align-self: start;
   font-size: 1.4rem;
 }
 .contact__form input,
@@ -1232,7 +1451,6 @@ footer .social-icons a i:hover {
   background: #0077ea;
 }
 .contact__links {
-  padding-block-start: 4rem;
   width: 100%;
   border-top: 0.1rem solid #dfeaff;
 }
@@ -1279,21 +1497,27 @@ footer .social-icons a i:hover {
   padding: 0;
   margin: 0;
 }
-.projectss__discover {
+.projectss__discover, .projectss #hdilearn {
   width: 60%;
   align-self: flex-end;
   text-align: end;
   font-weight: bold;
   color: #e4e6eb;
 }
-.projectss__discover:hover {
+.projectss__discover:hover, .projectss #hdilearn:hover {
   transform: translate(-0.5rem);
   color: #e4e6eb;
+}
+.projectss #hdilearn {
+  display: block;
+}
+.projectss #hdilearn i {
+  vertical-align: bottom;
 }
 .projectss__info {
   width: 100%;
   height: 100vh;
-  padding: 2rem 1rem;
+  padding: 0 1rem 2rem 1rem;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -1307,7 +1531,7 @@ footer .social-icons a i:hover {
 .projectss__info h2 {
   margin-block-start: 2rem;
   margin-inline-end: 6rem;
-  color: #2e2e2e;
+  color: #e4e6eb;
 }
 .projectss__info ul {
   width: 100%;
@@ -1435,8 +1659,8 @@ footer .social-icons a i:hover {
 .projectss__work-xp {
   width: 100%;
   height: auto;
-  padding: 2rem;
-  margin: 0;
+  padding: 2rem 1rem;
+  margin: 0 0 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -1446,31 +1670,84 @@ footer .social-icons a i:hover {
   background: linear-gradient(3.5deg, #1e90ff, #252a34);
   color: #e4e6eb;
 }
-.projectss__work-xp li {
-  width: 100%;
-  height: 100%;
+.projectss__work-xp a {
+  transition: all 0.5s ease-in-out 0s;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: #e4e6eb;
+  font-size: 2rem;
+}
+.projectss__work-xp a:hover {
+  background: #1b1f28;
+  transform: scale(1.01);
+}
+.projectss__diploma a {
+  padding: 0;
+}
+.projectss__thanks {
+  text-align: justify;
+  position: relative;
+  padding: 1rem 1rem 14rem 1rem;
+}
+.projectss__thanks h2 {
+  text-align: center;
+}
+.projectss__contact {
+  width: 100vw;
+  height: 12rem;
+  padding: 0.8rem;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  left: 0;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.6rem;
-  transition: all 0.5s ease-in-out 0s;
-  color: #2e2e2e;
-  text-align: justify;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: #dfeaff;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to left, #1e90ff, #252a34);
+  font-size: 3.2rem;
 }
-.projectss__work-xp li:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
-  cursor: pointer;
+.projectss__contact a {
+  font-size: 2.4rem;
+  color: #e4e6eb;
 }
-.projectss__work-xp li:hover a {
-  transition: all 0.5s ease-in-out 0s;
-}
-.projectss__work-xp li:hover a:hover {
-  transform: translate(1rem);
+
+@media (min-width: 425px) {
+  .about, .future, .services, .tech, .projects {
+    padding: 2rem;
+  }
+  .about {
+    padding-block-start: 4rem;
+  }
+  .projects {
+    padding-block-end: 4rem;
+  }
+  .projects .project__contain {
+    padding: 2rem;
+  }
+  .projects .project__btns a {
+    font-size: 1.6rem;
+  }
+  .projectss__info {
+    padding: 0 2rem;
+  }
+  .projectss .project__img {
+    width: 30rem;
+    height: 30rem;
+  }
+  .projectss__work-xp {
+    padding: 2rem;
+  }
+  .projectss__thanks {
+    padding: 2rem 2rem 14rem 2rem;
+  }
+  .contact__container {
+    padding-block-start: 4rem;
+  }
+  .contact__container form div {
+    width: 32rem;
+  }
 }/*# sourceMappingURL=main.css.map */
