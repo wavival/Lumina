@@ -5,30 +5,29 @@ $whatsapp-color: #25d366;
 .contact, .thanks {
     @include element(100%, 100vh, 1rem, 0);
     text-align: center;
-    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)),
-    url(map-get(map-get($images, "photos"), "profile")) center;
-    background-size: cover;
     justify-items: center;
     align-content: center;
-    color: white;
+    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "phone")) center;
+    background-size: cover;
+    color: map-get(map-get($colors, "darkModeColors"), "main-text");
 
     @media (min-width: 768px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "profile3")) center;
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "tablet")) center;
         background-size: cover;    
     }
 
     @media (min-width: 1024px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "profile4")) center;
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "laptop")) center;
         background-size: cover;    
     }
 
     @media (min-width: 1200px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.4), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "profile5")) center;
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.4), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "laptop-l")) center;
         background-size: cover;    
     }
 
     @media (min-width: 1300px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "profile5")) center;
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "laptop-l")) center;
         background-size: cover;    
     }
 

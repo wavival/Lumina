@@ -34,7 +34,7 @@ $opacity: 0.4;
     }
 
     @media (min-width: 1300px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "pc")) center;
+        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "laptop-l")) center;
         background-size: cover;    
     }
     

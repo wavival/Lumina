@@ -643,7 +643,7 @@ h1 {
 }
 @media (min-width: 1300px) {
   .home {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-pc.webp") center;
+    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
     background-size: cover;
   }
 }
@@ -1520,33 +1520,33 @@ h1 {
   padding: 1rem;
   margin: 0;
   text-align: center;
-  background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url() center;
-  background-size: cover;
   justify-items: center;
   align-content: center;
-  color: white;
+  background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-phone.webp") center;
+  background-size: cover;
+  color: #e4e6eb;
 }
 @media (min-width: 768px) {
   .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url() center;
+    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-tablet.webp") center;
     background-size: cover;
   }
 }
 @media (min-width: 1024px) {
   .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url() center;
+    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-laptop.webp") center;
     background-size: cover;
   }
 }
 @media (min-width: 1200px) {
   .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.8)), url() center;
+    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
     background-size: cover;
   }
 }
 @media (min-width: 1300px) {
   .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url() center;
+    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
     background-size: cover;
   }
 }
