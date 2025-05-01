@@ -1,4 +1,5 @@
-@import 'functions';
+@import '../components/variables';
+;
 
 .about {
     @include element(100%, 100vh, 4rem 1rem 1rem, 0 0 2rem);
@@ -81,7 +82,7 @@
 
         &--img {
             @include element(28rem, 22rem, 0, 2rem auto);
-            background-image: url(map-get(map-get($images, "photos"), "hero-img"));
+            background-image: url(map-get(map-get($images, "photos"), "hero"));
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -169,13 +170,8 @@
         }
       }
 
-      table {
-        border-collapse: separate;
-
-        td {
-          text-align: justify;
-          padding-inline-end: 1rem;
-        }
+      ul {
+        @include grid(2, 1fr, 2, 2rem, start, center);
       }
     }
 }

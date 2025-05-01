@@ -1,13 +1,11 @@
-@import 'variables';
-@import 'mixins';
-@import 'functions';
-@import 'reset';
-@import 'base';
-@import 'components';
-@import 'animations';
-@import 'home';
-@import 'about';
-@import 'contact';
-@import 'projects';
-
-
+@import './components/variables';
+@import './components/mixins';
+@import './components/components';
+@import './components/functions';
+@import './base/reset';
+@import './base/base';
+@import './base/animations';
+@import './pages/home';
+@import './pages/about';
+@import './pages/contact';
+@import './pages/projects';

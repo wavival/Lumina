@@ -1,9 +1,9 @@
-import { menu } from "./menu.js";
-import { social } from "./social.js";
-import { head } from "./head.js";
-import { loader } from "./loader.js";
-import { insertNavBar } from "./nav.js";
-import { setupModal } from "./modal.js";
+import { menu } from "./modules/menu.js";
+import { social } from "./modules/social.js";
+import { head } from "./modules/head.js";
+import { loader } from "./modules/loader.js";
+import { insertNavBar } from "./modules/nav.js";
+import { setupModal } from "./modules/modal.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     await loader(); 
@@ -51,7 +51,6 @@ function getBackgroundColor(element) {
         h /= 6;
       }
   
-      // Convertir h, s, l a un valor más comprensible
       return { h: h * 360, s: s * 100, l: l * 100 };
     };
   

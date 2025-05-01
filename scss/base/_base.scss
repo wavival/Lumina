@@ -1,6 +1,5 @@
-@import 'variables';
-@import 'mixins';
-@import 'functions';
+@import '../components/variables';
+@import '../components/mixins';
 
 html {
     font-size: 62.5%;
@@ -16,9 +15,11 @@ a {
   @include typography("text");
   @include link-style("lightModeColors", "link", "link-hover");
   text-decoration: none;
+  outline: none !important;
   
   &:hover {
     transform: scale(1.15);
+    outline: none;
   }
 }
 

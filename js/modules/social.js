@@ -6,7 +6,6 @@ export function social() {
                 const footerContainer = document.getElementById("footer-container");
                 footerContainer.innerHTML = html;
 
-                // Agrega una clase de control al footer segun el viewport
                 const updateFooterClass = () => {
                     if (window.innerWidth >= 768) {
                         footerContainer.classList.add("footer-fixed-desktop");
@@ -17,9 +16,9 @@ export function social() {
                     }
                 };
 
-                updateFooterClass(); // Al cargar
+                updateFooterClass();
 
-                window.addEventListener("resize", updateFooterClass); // En redimensionar
+                window.addEventListener("resize", updateFooterClass); 
 
                 resolve();
             })

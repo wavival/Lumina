@@ -1,4 +1,4 @@
-@import 'variables';
+@import '../components/variables';
 
 @function get-text-color($background-color) {
   $luminosity: lightness($background-color);

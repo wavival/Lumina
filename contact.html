@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
+    <title>Lúmina | Contact Valentina</title>
+</head>
 <body>
 
-    <div id="menu-container"></div> 
+    <div id="menu-container" role="navigation" aria-label="Main Menu"></div> 
 
-    <div id="nav-bar"></div>
+    <div id="nav-bar" role="navigation" aria-label="Navigation Bar"></div>
 
     <section id="contact" class="contact">
         <div class="contact__container">
@@ -14,33 +16,44 @@
                 <p>Tell me about your idea — I’d love to hear it.</p>
             </div>
             <form class="contact__form" action="https://formsubmit.co/wavival.dev@luminaw.co" method="POST" id="contactForm">
-                <div class="contact__name">
-                    <label for="name">Type your name</label>
-                    <input type="text" placeholder="Your name" required id="name">
-                </div>
-                <div class="contact__email">
-                    <label for="email">Type your email</label>
-                    <input type="email" placeholder="Your email" required id="email">
-                </div>
-                <div class="contact__text">
-                    <label for="message">What would you like to create?</label>
-                    <textarea placeholder="Your message" required id="message"></textarea>
-                </div>
-                <div class="contact__btn-">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="thanks.html">
-                    <button type="submit" class="primary-btn">Submit</button>
-                </div>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="thanks.html">
+                <fieldset>
+                    <legend>Contact Form</legend>
+                    <div class="contact__name">
+                        <label for="name">Type your name</label>
+                        <input type="text" name="name" placeholder="Your name" required id="name">
+                    </div>
+                    <div class="contact__email">
+                        <label for="email">Type your email</label>
+                        <input type="email" name="email" placeholder="Your email" required id="email">
+                    </div>
+                    <div class="contact__text">
+                        <label for="message">What would you like to create?</label>
+                        <textarea name="message" placeholder="Your message" required id="message"></textarea>
+                    </div>
+                    <div class="contact__btn">
+                        <button type="submit" class="primary-btn" aria-label="Submit Contact Form">Submit</button>
+                    </div>
+                </fieldset>
             </form>
-            <div class="contact__links">
-                <a href="mailto:wavival.dev@luminaw.co"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/wavival" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/wavival" target="_blank"><i class="fab fa-github"></i></a>
+            <div class="contact__links" aria-label="Social Media Links">
+                <a href="https://www.linkedin.com/in/wavival" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://github.com/wavival" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="mailto:wavival.dev@luminaw.co" target="_blank" rel="noopener noreferrer" aria-label="Email Contact">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </a>
             </div>
         </div>    
-        <a href="https://wa.me/+573021011753" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>    
+        <a href="https://wa.me/+573021011753" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Contact">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>    
     </section>
 
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/main.js" defer></script>
 </body>
 </html>

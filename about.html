@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
+<head>
+    <title>Lúmina | About Valentina</title>
+</head>
 <body>
 
-    <div id="menu-container"></div>
+    <div id="menu-container" role="navigation" aria-label="Main Menu"></div>
 
-    <div id="nav-bar"></div>
+    <div id="nav-bar" role="navigation" aria-label="Navigation Bar"></div>
 
-  <main>
+    <main>
         <section id="about" class="about">
             <div class="about__container">
                 <h1>Hi! My name's <span>Valentina</span><span class="pip">|</span></h1>
                 <p>I create innovative, secure, and scalable digital experiences.</p>
                 <p>As a passionate <strong>Fullstack Developer</strong> and <strong>Web Designer</strong>, I created <strong>Lúmina</strong> to build digital experiences that connect, inspire, and empower. <br><br>
                 With expertise in modern technologies like <strong>JavaScript</strong>, <strong>React</strong>, <strong>Tailwind</strong>, <strong>Sass</strong>, and a strong foundation in web design with <strong>Figma</strong>, I craft solutions that are not only functional but also visually compelling.</p>
-                <!--<p>In addition, I'm specializing in <strong>Cybersecurity</strong>, ensuring that each project is not only efficient but also secure and reliable.</p>-->
-                <a href="#services" class="primary-btn">My Services</a>
+                <a href="#services" class="primary-btn" aria-label="Learn more about my services">My Services</a>
             </div>
-            <div class="about__container--img"></div>
+            <div class="about__container--img" role="img" aria-label="Illustration representing Valentina's work"></div>
         </section>
         
         <section id="future" class="future">
             <div class="future__container">
-                <p><i class="fas fa-bullseye"></i><span> My mission >> </span> is to transform ideas into unique digital experiences by combining <strong>creative design</strong> with <strong>high-quality technological development</strong>. <br><br>My mission is to <strong>empower individuals and businesses</strong> through web solutions that inspire, connect, and create positive impact in the digital world.</p>
+                <p><i class="fas fa-bullseye" aria-hidden="true"></i><span> My mission >> </span> is to transform ideas into unique digital experiences by combining <strong>creative design</strong> with <strong>high-quality technological development</strong>. <br><br>My mission is to <strong>empower individuals and businesses</strong> through web solutions that inspire, connect, and create positive impact in the digital world.</p>
             </div>
             <div class="future__container">
-                <p><i class="fas fa-eye"></i><span> My vision >> </span> is to become a leading force in <strong>innovation</strong> and <strong>excellence</strong> in <strong>web design and development</strong>, building a bridge between creativity and technology to drive the <strong>growth and digital success</strong> of emerging brands.</p>
+                <p><i class="fas fa-eye" aria-hidden="true"></i><span> My vision >> </span> is to become a leading force in <strong>innovation</strong> and <strong>excellence</strong> in <strong>web design and development</strong>, building a bridge between creativity and technology to drive the <strong>growth and digital success</strong> of emerging brands.</p>
             </div>
             <div class="future__container values">
-                <p><i class="fas fa-lightbulb"></i><span> What values I am based on?</span>
-                    <table>
-                        <tr>
-                            <td><i class="fas fa-arrow-right"></i> <strong>Integrity</strong></td>
-                            <td><i class="fas fa-arrow-right"></i> <strong>Creativity</strong></td>
-                        </tr>
-                        <tr>
-                            <td><i class="fas fa-arrow-right"></i> <strong>Excellence</strong></td>
-                            <td><i class="fas fa-arrow-right"></i> <strong>Innovation</strong></td>
-                        </tr>
-                    </table>
-                </p>
+                <p><i class="fas fa-lightbulb" aria-hidden="true"></i><span> What values I am based on?</span></p>
+                <ul>
+                    <li><i class="fas fa-arrow-right" aria-hidden="true"></i> <strong>Integrity</strong></li>
+                    <li><i class="fas fa-arrow-right" aria-hidden="true"></i> <strong>Creativity</strong></li>
+                    <li><i class="fas fa-arrow-right" aria-hidden="true"></i> <strong>Excellence</strong></li>
+                    <li><i class="fas fa-arrow-right" aria-hidden="true"></i> <strong>Innovation</strong></li>
+                </ul>
             </div>
         </section>
 
         <section id="services" class="services">
             <div class="services__btns">
-                <button class="services__btn" data-modal="dev">
-                    <i class="fas fa-code"></i>
+                <button class="services__btn" data-modal="dev" aria-label="Learn more about Web Development">
+                    <i class="fas fa-code" aria-hidden="true"></i>
                     <h3>Web Development</h3>
                 </button>
-                <button class="services__btn" data-modal="design">
-                    <i class="fas fa-paint-brush"></i>
+                <button class="services__btn" data-modal="design" aria-label="Learn more about Web Design">
+                    <i class="fas fa-paint-brush" aria-hidden="true"></i>
                     <h3>Web Design</h3>
                 </button>
                 <!--<button class="services__btn" data-modal="cyber">
@@ -60,9 +56,11 @@
                 <h3>My Services</h3>
             </div>
 
-            <section class="modal hidden">
+            <section class="modal hidden" aria-hidden="true">
                 <div class="modal__container">
-                    <i class="fas fa-times modal__close-x"></i>
+                    <button class="modal__close-x" aria-label="Close modal">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
                     <div class="modal__content"></div>
                 </div>
             </section>
@@ -72,7 +70,7 @@
             <div class="tech__container">
                 <h2>My Tools</h2>
                 <p>Every great developer has a toolkit, and these are mine. From crafting responsive layouts with <span>HTML</span>, <span>CSS</span>, and <span>TailwindCSS</span> to building dynamic web applications with <span>JavaScript</span> and <span>React</span>, each tool plays a vital role in my workflow.</p>
-                <p><!--On the backend, I'm learning to leverage <span>Node.js</span> and <span>Express</span> to create scalable and efficient APIs.-->Version control? <span>Git & GitHub</span> keep my projects organized and collaborative. And when it comes to refining UI/UX, <span>Figma</span> helps bring ideas to life.</p>
+                <p>Version control? <span>Git & GitHub</span> keep my projects organized and collaborative. And when it comes to refining UI/UX, <span>Figma</span> helps bring ideas to life.</p>
                 <span>Click on each card to explore them!</span>
             </div>
             <div class="tech__slider">
@@ -146,45 +144,45 @@
             <h2>Featured Projects</h2>
             <div class="projects__grid">
                 <div class="project">
-                    <div class="project__img"></div>
+                    <div class="project__img" role="img" aria-label="Preview of Lunaria Shop project"></div>
                     <div class="project__contain">
                         <h3>E-commerce: Lunaria Shop</h3>
-                        <p>Complete online store solution with secure payment integration, inventory management, and user-friendly interface id="card" for both customers and administrators.</p>
+                        <p>Complete online store solution with secure payment integration, inventory management, and user-friendly interface for both customers and administrators.</p>
                     </div>
                     <div class="project__btns">
-                        <a href="./projects.html" class="btn" target="_blank" target="_blank"><i class="fas fa-eye"></i> Preview</a>
-                        <a href="https://github.com/wavival/Lunaria-Shop" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                        <a href="./projects.html" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Preview Lunaria Shop project"><i class="fas fa-eye" aria-hidden="true"></i> Preview</a>
+                        <a href="https://github.com/wavival/Lunaria-Shop" class="btn" target="_blank" rel="noopener noreferrer" aria-label="View Lunaria Shop on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project__img"></div>
+                    <div class="project__img" role="img" aria-label="Preview of CodeCanvas project"></div>
                     <div class="project__contain">
                         <h3>Blog Platform: CodeCanvas</h3>
                         <p>Personal portfolio to showcase design and development projects. Built with responsive design principles, ensuring compatibility across devices.</p>
                     </div>
                     <div class="project__btns">
-                        <a href="./projects.html" class="btn" target="_blank"><i class="fas fa-eye"></i> Preview</a>
-                        <a href="https://github.com/wavival/CodeCanvas" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                        <a href="./projects.html" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Preview CodeCanvas project"><i class="fas fa-eye" aria-hidden="true"></i> Preview</a>
+                        <a href="https://github.com/wavival/CodeCanvas" class="btn" target="_blank" rel="noopener noreferrer" aria-label="View CodeCanvas on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="project">
-                    <div class="project__img"></div>
+                    <div class="project__img" role="img" aria-label="Preview of Ubuntu project"></div>
                     <div class="project__contain">
                         <h3>Website: Ubuntu</h3>
                         <p>Platform for managing and sharing blog posts, with user authentication and content moderation tools. Perfect for creators who want to share their ideas.</p>
                     </div>
                     <div class="project__btns">
-                        <a href="./projects.html" class="btn" target="_blank"><i class="fas fa-eye"></i> Preview</a>
-                        <a href="https://github.com/wavival/Ubuntu" class="btn" target="_blank"><i class="fab fa-github"></i> Git Hub</a>
+                        <a href="./projects.html" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Preview Ubuntu project"><i class="fas fa-eye" aria-hidden="true"></i> Preview</a>
+                        <a href="https://github.com/wavival/Ubuntu" class="btn" target="_blank" rel="noopener noreferrer" aria-label="View Ubuntu on GitHub"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
                     </div>
                 </div>
             </div>
-            <h3><a href="/projects.html">See all projects</a></h3>
+            <h3><a href="/projects.html" aria-label="See all projects">See all projects</a></h3>
         </section>
     </main>
 
-    <div id="footer-container"></div>
+    <div id="footer-container" role="contentinfo" aria-label="Footer"></div>
     
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/main.js" defer></script>
 </body>
 </html>

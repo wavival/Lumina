@@ -1,4 +1,4 @@
-@import 'functions';
+@import '../components/variables';
 
 header {
     width: 100%;
@@ -39,27 +39,28 @@ header {
         cursor: pointer;
         background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
         border-radius: 0.5rem;
+        outline: none;
 
         &__burger {
             @include position(absolute, 1.4rem, 0.3rem, null, null);
             @include element(2.8rem, 0.3rem);
             @include transition;
-            background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+            background: map-get(map-get($colors, "lightModeColors"), "bg-color");
 
             &::before {
                 @include position(absolute, -0.8rem, 0, null, null);
                 @include element(2.8rem, 0.3rem);
                 @include transition;
                 content: "";
-                background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+                background: map-get(map-get($colors, "lightModeColors"), "bg-color");
             }
 
             &::after {
-                @include position(absolute, 0.8rem, null, 0, null);
+                @include position(absolute, 0.8rem, 0, 0, null);
                 @include element(2rem, 0.3rem);
                 @include transition;
                 content: "";
-                background-color: get-text-color(map-get(map-get($colors, "darkModeColors"), "bg-color"));
+                background: map-get(map-get($colors, "lightModeColors"), "bg-color");
             }
         }   
 

@@ -1,18 +1,21 @@
 <header>
-    <div class="menu-btn"><span class="menu-btn__burger"></span></div>
-    <nav class="header__nav">
+    <button class="menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="menu-btn__burger"></span>
+    </button>
+
+    <nav class="header__nav" role="navigation" aria-label="Main Navigation">
         <ul class="header__nav--list">
             <li class="header__nav--item active">
-                <a href="/index.html" class="header__nav--link">Home</a>
+                <a href="/index.html" class="header__nav--link" aria-label="Go to Home">Home</a>
             </li>
             <li class="header__nav--item">
-                <a href="/about.html" class="header__nav--link">About me</a>
+                <a href="/about.html" class="header__nav--link" aria-label="Learn more About Me">About me</a>
             </li>
             <li class="header__nav--item">
-                <a href="/projects.html" class="header__nav--link">Projects</a>
+                <a href="/projects.html" class="header__nav--link" aria-label="View my Projects">Projects</a>
             </li>
             <li class="header__nav--item">
-                <a href="/contact.html" class="header__nav--link">Get me</a>
+                <a href="/contact.html" class="header__nav--link" aria-label="Get in touch with me">Get me</a>
             </li>
         </ul>
     </nav>

@@ -1,4 +1,5 @@
-@import 'variables';
+@import '../components/variables';
+@import '../components/functions';
 
 .projectss {
     @include element(100%, 100vh, 0, 0);
@@ -87,7 +88,7 @@
             @media (min-width: 1200px) {
                 @include grid(2, 1fr, auto);
                 grid-template-rows: 1;
-                width: 70%;
+                width: 50%;
             }
 
             li:nth-child(1) {
@@ -258,6 +259,7 @@
     }
 
     &__diploma {
+        text-align: center;
 
         @media (min-width: 768px) {
             @include grid(1, 1fr, 2);
@@ -276,6 +278,10 @@
             color: map-get(map-get($colors, "darkModeColors"), "main-text");
             font-size: 2rem;
             text-align: end;
+            grid-column: auto;
+            
+            @media (min-width: 768px) {
+            }
 
             &:hover {
                 background: map-get(map-get($colors, "darkModeColors"), "bg-color");
@@ -285,7 +291,9 @@
     }
 
     &__knowmore { 
-        grid-column: 1/3;
+        @media (min-width: 1024px) {        
+            grid-column: 1 / 3 !important;
+        }
     }
 
     &__thanks {
@@ -334,7 +342,9 @@
     }
 
     .bar {
-        @include element(100%, 10rem, 0, 0);
-        background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+        @media (min-width: 768px) {
+            @include element(100%, 10rem, 0, 0);
+            background-color: map-get(map-get($colors, "darkModeColors"), "bg-color");
+        }
     }
 }
