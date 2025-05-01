@@ -100,6 +100,7 @@ header {
 
     &.open .nav-bar__toggle {
         transform: rotate(180deg);
+        outline: none !important;
     }
 
     &.open {
@@ -121,7 +122,7 @@ header {
         @include position(fixed, 0.1rem, 0, 0, 0.3rem, null);
         font-size: 2.4rem;
         color: map-get(map-get($colors, "lightModeColors"), "details");
-        outline: none;
+        outline: none !important;
 
         @media (min-width: 768px) {
             display: none;

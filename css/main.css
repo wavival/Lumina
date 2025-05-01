@@ -135,6 +135,7 @@ header a:focus {
 }
 .nav-bar.open .nav-bar__toggle {
   transform: rotate(180deg);
+  outline: none !important;
 }
 .nav-bar.open {
   left: 0;
@@ -161,7 +162,7 @@ header a:focus {
   left: 0.3rem;
   font-size: 2.4rem;
   color: #407bff;
-  outline: none;
+  outline: none !important;
 }
 @media (min-width: 768px) {
   .nav-bar__toggle {
@@ -967,10 +968,27 @@ h1 {
   visibility: hidden;
   opacity: 0;
 }
+.services .modal__close-x {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 0;
+  transition: all 0.5s ease-in-out 0s;
+  cursor: pointer;
+}
+.services .modal__close-x i {
+  transition: all 0.5s ease-in-out 0s;
+  color: #407bff;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.services .modal__close-x i:hover {
+  transform: scale(1.1);
+}
 .services .modal__container {
   width: 90%;
   height: auto;
-  padding: 3rem 2rem;
+  padding: 4rem 2rem 2rem;
   margin: 0;
   position: relative;
   transition: all 0.5s ease-in-out 0s;
@@ -990,18 +1008,6 @@ h1 {
   .services .modal__container {
     width: 30%;
   }
-}
-.services .modal__container i {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.8rem;
-  transition: all 0.5s ease-in-out 0s;
-  color: #407bff;
-  cursor: pointer;
-}
-.services .modal__container i:hover {
-  transform: scale(1.1);
 }
 .services .modal__container ul {
   list-style: circle;
@@ -2020,7 +2026,11 @@ h1 {
 }
 .projectss__learning {
   text-align: justify;
-  margin-inline-start: 1rem;
+}
+@media (min-width: 768px) {
+  .projectss__learning {
+    margin-inline-start: 1rem;
+  }
 }
 .projectss__learning h2 {
   text-align: center;

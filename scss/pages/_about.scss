@@ -228,8 +228,25 @@
       visibility: hidden;
       opacity: 0;
 
+      &__close-x {
+        @include position(absolute, 1rem, 1rem, null, null, 0);
+        transition: all 0.5s ease-in-out 0s;
+        cursor: pointer;
+        
+        i {
+          @include transition;
+          color: map-get(map-get($colors, "lightModeColors"), "details");
+          cursor: pointer;
+          font-size: 1.8rem;
+  
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
       &__container {
-        @include element(90%, auto, 3rem 2rem, 0);
+        @include element(90%, auto, 4rem 2rem 2rem, 0);
         @include position(relative);
         @include transition;
         background: map-get(map-get($colors, "lightModeColors"), "bg-color");
@@ -245,18 +262,6 @@
 
         @media (min-width: 1200px) {
           width: 30%;
-        }
-      
-        i {
-        @include position(absolute, 1rem, 1rem, null, null, null);
-        font-size: 1.8rem;
-        @include transition;
-        color: map-get(map-get($colors, "lightModeColors"), "details");
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.1);
-        }
         }
 
         ul {

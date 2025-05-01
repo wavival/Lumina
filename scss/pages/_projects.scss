@@ -246,7 +246,10 @@
 
     &__learning {
         text-align: justify;
-        margin-inline-start: 1rem;
+
+        @media (min-width: 768px) {
+            margin-inline-start: 1rem;
+        }
 
         h2 {
             text-align: center;
