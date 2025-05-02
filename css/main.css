@@ -1816,12 +1816,6 @@ h1 {
     width: 50%;
   }
 }
-@media (min-width: 1200px) {
-  .projectss__info ul li:nth-child(1) {
-    grid-column: 1/3;
-    grid-row: 1/2;
-  }
-}
 .projectss__info ul li {
   width: 100%;
   height: 100%;
@@ -1935,7 +1929,7 @@ h1 {
   height: 28rem;
   padding: 0;
   margin: 0 0 4rem;
-  background: url("https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background: url("/assets/images/projects/ubuntu-icon.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1987,6 +1981,9 @@ h1 {
 }
 .projectss__items .project__links a:hover {
   color: #0077ea;
+}
+.projectss__items #cryptoNest .project__img {
+  background: url("/assets/images/projects/ubuntu-icon.webp");
 }
 .projectss__work-xp {
   width: 100%;
