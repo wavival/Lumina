@@ -169,12 +169,8 @@
 
             &__img {
                 @include element(100%, 28rem, 0, 0 0 4rem);
-                background: url(map-get(map-get($images, "projects"), "ubuntu"));
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
                 border-radius: 0.5rem;
-                box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
+                /*box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");*/
 
                 @media (min-width: 768px) {
                     @include element(30rem, 30rem);
@@ -214,10 +210,35 @@
                 }
             }
         }
+        #ubuntu {
+            .project__img {
+                background: url(map-get(map-get($images, "projects"), "ubuntu")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #codeCanvas {
+            .project__img {
+                background: url(map-get(map-get($images, "projects"), "codecanvas")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #lunariaShop {
+            .project__img {
+                background: url(map-get(map-get($images, "projects"), "lunaria-shop")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
 
         #cryptoNest {
             .project__img {
-                background: url(map-get(map-get($images, "projects"), "ubuntu"));
+                background: url(map-get(map-get($images, "projects"), "cryptonest")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
     }
