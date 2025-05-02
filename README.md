@@ -40,28 +40,32 @@ Te doy la bienvenida a mi portafolio personal, un espacio donde muestro mis proy
 
 - **SCSS**
   - scss/
-    - _about.scss
-    - _animations.scss
-    - _base.scss
-    - _components.scss
-    - _contact.scss
-    - _functions.scss
-    - _home.scss
-    - _mixins.scss
-    - _projects.scss
-    - _reset.scss
-    - _variables.scss
+    - base/
+      - _animations.scss
+      - _base.scss
+      - _reset.scss
+    - components/
+      - _components.scss
+      - _functions.scss
+      - _mixins.scss
+      - _variables.scss
+    - pages/
+      - _about.scss
+      - _contact.scss
+      - _home.scss
+      - _projects.scss
     - main.scss
 
 - **JS**
   - js/
-    - head.js
-    - loader.js
+    - modules/
+      - head.js
+      - loader.js
+      - menu.js
+      - modal.js
+      - nav.js
+      - social.js
     - main.js
-    - menu.js
-    - modal.js
-    - nav.js
-    - social.js
 
                          
 
