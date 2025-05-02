@@ -22,19 +22,47 @@ Te doy la bienvenida a mi portafolio personal, un espacio donde muestro mis proy
 
 ## 📂 Estructura del Proyecto
 
-├── about.html                ├── css/                  ├── js/                  ├── scss/                  ├── assets/
-├── contact.html                └── main.css              └── head.js              └── _about.scss            ├── images/
-├── footer-social.html          └── main.css.map          └── loader.js            └── _animations.scss          ├── photos/ (Fotos de Valentina Ramírez)
-├── head.html                                             └── main.js              └── _base.scss                ├── log/    (Iconos del Logo de Lúmina)
-├── header-menu.html                                      └── menu.js              └── _components.scss
-├── index.html                                            └── modal.js             └── _contact.scss
-├── loader.html                                           └── nav.js               └── _functions.scss
-├── projects.html                                         └── social.js            └── _home.scss
-├── thanks.html                                                                    └── _mixins.scss
-                                                                                   └── _projects.scss
-                                                                                   └── _reset.scss
-                                                                                   └── _variables.scss
-                                                                                   └── main.scss
+- **HTML**
+  - about.html
+  - contact.html
+  - footer-social.html
+  - head.html
+  - header-menu.html
+  - index.html
+  - loader.html
+  - projects.html
+  - thanks.html
+
+- **CSS**
+  - css/
+    - main.css
+    - main.css.map
+
+- **SCSS**
+  - scss/
+    - _about.scss
+    - _animations.scss
+    - _base.scss
+    - _components.scss
+    - _contact.scss
+    - _functions.scss
+    - _home.scss
+    - _mixins.scss
+    - _projects.scss
+    - _reset.scss
+    - _variables.scss
+    - main.scss
+
+- **JS**
+  - js/
+    - head.js
+    - loader.js
+    - main.js
+    - menu.js
+    - modal.js
+    - nav.js
+    - social.js
+
                          
 
 ## ☁️ Despliegue
