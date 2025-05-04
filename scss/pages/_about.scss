@@ -1,11 +1,15 @@
 @import '../components/variables';
-;
 
 .about {
     @include element(100%, 100vh, 4rem 1rem 1rem, 0 0 2rem);
     @include flex(column, start, center);
     background: linear-gradient(3.5deg, map-get(map-get($colors, "lightModeColors"), "link"), map-get(map-get($colors, "darkModeColors"), "cards"));
     color: get-text-color(blue);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
 
     @media (min-width: 1024px) {
       flex-direction: row-reverse;
@@ -18,7 +22,7 @@
     }
 
     &__container {
-        @include element(auto, 60vh, 0, 0 0 2rem 0);
+        @include element(auto, 60vh, 0, 0);
         @include flex(column, space-evenly, start);
         max-width: 50rem;
         text-align: justify;
@@ -26,6 +30,7 @@
         @media (min-width: 768px) {
           justify-content: flex-end;
           gap: 3.2rem;
+          width: min-content;
         }
 
         @media (min-width: 1024px) {
@@ -81,11 +86,27 @@
         }
 
         &--img {
-            @include element(28rem, 22rem, 0, 2rem auto);
-            background-image: url(map-get(map-get($images, "photos"), "hero"));
+            @include element(24rem, 24rem, 0, 0);
+            background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "bg-color"), 0.1), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "about-whoami")) right;
+            background-size: contain; 
             background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
+            border-radius: 50%;
+            border-top-right-radius: 0;
+
+            @media (min-width: 1024px) {
+              width: 28rem;
+              height: 28rem;
+            }
+
+            @media (min-width: 1300px) {
+              width: 32rem;
+              height: 32rem;
+            }
+
+            @media (min-width: 1440px) {
+              width: 36rem;
+              height: 36rem;
+            }
         }
     }
 }

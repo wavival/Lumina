@@ -613,43 +613,65 @@ h1 {
   overflow: hidden;
 }
 
+.gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-115deg, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.2));
+}
+
 .home {
   position: relative;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: 1fr 1fr;
+  gap: 0;
+  justify-items: center;
+  align-items: center;
   height: 100%;
-  padding-top: 57vh;
   overflow: hidden;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-phone.webp") center;
-  background-size: cover;
-  color: #e4e6eb;
+  padding-block-end: 4rem;
+  color: #2e2e2e;
 }
 @media (min-width: 768px) {
   .home {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-tablet.webp") center;
-    background-size: cover;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block-end: 0;
   }
 }
 @media (min-width: 1024px) {
   .home {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-laptop.webp") center;
-    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
   }
 }
-@media (min-width: 1200px) {
-  .home {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
-    background-size: cover;
+.home__animation {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .home__animation {
+    width: initial;
   }
 }
-@media (min-width: 1300px) {
-  .home {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
-    background-size: cover;
+@media (min-width: 1024px) {
+  .home__bg img {
+    height: auto;
   }
 }
 .home h2 {
   font-size: 1.6rem;
+  margin-block-end: 2rem;
 }
 @media (min-width: 768px) {
   .home h2 {
@@ -657,22 +679,23 @@ h1 {
   }
 }
 .home__name {
-  font-size: 5rem;
+  font-size: 2.4rem;
   font-weight: 400;
   padding-bottom: 2rem;
-  margin-top: 1rem;
-  line-height: 5rem;
-  border-bottom: 0.2rem solid #e4e6eb;
-  text-shadow: 0.1rem 0.1rem 0.1rem #407bff;
+  margin: 1rem auto;
+  line-height: 4rem;
+  border-bottom: 0.2rem solid #2e2e2e;
 }
 .home__name--last {
-  color: #1e90ff;
-  font-weight: 700;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.7rem;
+  font-size: 5rem;
+  color: #407bff;
+  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: 1rem;
 }
 .home__job {
   margin-block-start: 1rem;
+  margin-block-end: 0 !important;
 }
 
 .about {
@@ -688,6 +711,12 @@ h1 {
   gap: 1.6rem;
   background: linear-gradient(3.5deg, #1e90ff, #252a34);
   color: #e4e6eb;
+}
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 @media (min-width: 1024px) {
   .about {
@@ -710,7 +739,7 @@ h1 {
   width: auto;
   height: 60vh;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -724,6 +753,7 @@ h1 {
   .about__container {
     justify-content: flex-end;
     gap: 3.2rem;
+    width: min-content;
   }
 }
 @media (min-width: 1024px) {
@@ -777,14 +807,33 @@ h1 {
   }
 }
 .about__container--img {
-  width: 28rem;
-  height: 22rem;
+  width: 24rem;
+  height: 24rem;
   padding: 0;
-  margin: 2rem auto;
-  background-image: url("/assets/images/photos/hero-img.webp");
-  background-repeat: no-repeat;
-  background-position: center;
+  margin: 0;
+  background: linear-gradient(to left, rgba(223, 234, 255, 0.1), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/about-whoami.png") right;
   background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border-top-right-radius: 0;
+}
+@media (min-width: 1024px) {
+  .about__container--img {
+    width: 28rem;
+    height: 28rem;
+  }
+}
+@media (min-width: 1300px) {
+  .about__container--img {
+    width: 32rem;
+    height: 32rem;
+  }
+}
+@media (min-width: 1440px) {
+  .about__container--img {
+    width: 36rem;
+    height: 36rem;
+  }
 }
 
 .future {
@@ -1560,33 +1609,10 @@ h1 {
   text-align: center;
   justify-items: center;
   align-content: center;
-  background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-phone.webp") center;
-  background-size: cover;
+  background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/log/lumina-logo-light.webp") center;
+  background-size: contain;
+  background-repeat: no-repeat;
   color: #e4e6eb;
-}
-@media (min-width: 768px) {
-  .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-tablet.webp") center;
-    background-size: cover;
-  }
-}
-@media (min-width: 1024px) {
-  .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.4)), url("/assets/images/photos/bg-laptop.webp") center;
-    background-size: cover;
-  }
-}
-@media (min-width: 1200px) {
-  .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.4), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
-    background-size: cover;
-  }
-}
-@media (min-width: 1300px) {
-  .contact, .thanks {
-    background: linear-gradient(to left, rgba(64, 123, 255, 0.6), rgba(27, 31, 40, 0.8)), url("/assets/images/photos/bg-laptop-l.webp") center;
-    background-size: cover;
-  }
 }
 @media (min-width: 768px) {
   .contact__content, .thanks__content {
@@ -1667,7 +1693,7 @@ h1 {
   margin-block-start: 0.5rem;
   margin-block-end: 1rem;
   border-radius: 0.5rem;
-  background: rgba(223, 234, 255, 0.7);
+  background: rgba(223, 234, 255, 0.97);
 }
 .contact__form fieldset button, .thanks__form fieldset button {
   font-weight: bold;

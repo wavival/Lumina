@@ -7,29 +7,10 @@ $whatsapp-color: #25d366;
     text-align: center;
     justify-items: center;
     align-content: center;
-    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "phone")) center;
-    background-size: cover;
+    background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "logos"), "logo-light")) center;
+    background-size: contain;
+    background-repeat: no-repeat;
     color: map-get(map-get($colors, "darkModeColors"), "main-text");
-
-    @media (min-width: 768px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "tablet")) center;
-        background-size: cover;    
-    }
-
-    @media (min-width: 1024px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), $opacity), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), $opacity)), url(map-get(map-get($images, "photos"), "laptop")) center;
-        background-size: cover;    
-    }
-
-    @media (min-width: 1200px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.4), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "laptop-l")) center;
-        background-size: cover;    
-    }
-
-    @media (min-width: 1300px) {
-        background: linear-gradient(to left, rgba(map-get(map-get($colors, "lightModeColors"), "details"), 0.6), rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.8)), url(map-get(map-get($images, "photos"), "laptop-l")) center;
-        background-size: cover;    
-    }
 
     &__content {
         
@@ -79,44 +60,44 @@ $whatsapp-color: #25d366;
         max-width: 40rem;
         margin: 0 auto;
 
-    fieldset {
-        place-items: center;
-        padding: 4rem 1rem;
-        width: 100%;
-        max-width: 36rem;
-        border-radius: 2rem;
-        border-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
-
-        div {
-            width: 90%;
-            align-self: center;
-        }
-
-        label {
-            font-size: 1.4rem;
-        }
-
-        input,
-        textarea {
-            @include transition;
+        fieldset {
+            place-items: center;
+            padding: 4rem 1rem;
             width: 100%;
-            padding: 1rem;
-            margin-block-start: 0.5rem;
-            margin-block-end: 1rem;
-            border-radius: 0.5rem;
-            background: rgba(map-get(map-get($colors, "lightModeColors"), "bg-color"), 0.7);
-        }
+            max-width: 36rem;
+            border-radius: 2rem;
+            border-color: map-get(map-get($colors, "lightModeColors"), "bg-color");
 
-        button {
-            font-weight: bold;
-            width: 8rem;
+            div {
+                width: 90%;
+                align-self: center;
+            }
 
-            &:hover {
-                transform: scale(1.1);
-                background: map-get(map-get($colors, "lightModeColors"), "link-hover");
+            label {
+                font-size: 1.4rem;
+            }
+
+            input,
+            textarea {
+                @include transition;
+                width: 100%;
+                padding: 1rem;
+                margin-block-start: 0.5rem;
+                margin-block-end: 1rem;
+                border-radius: 0.5rem;
+                background: rgba(map-get(map-get($colors, "lightModeColors"), "bg-color"), 0.97);
+            }
+
+            button {
+                font-weight: bold;
+                width: 8rem;
+
+                &:hover {
+                    transform: scale(1.1);
+                    background: map-get(map-get($colors, "lightModeColors"), "link-hover");
+                }
             }
         }
-    }
     }
 
     &__links {
