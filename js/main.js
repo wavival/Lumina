@@ -4,15 +4,31 @@ import { head } from "./modules/head.js";
 import { loader } from "./modules/loader.js";
 import { insertNavBar } from "./modules/nav.js";
 import { setupModal } from "./modules/modal.js";
+import { renderDetailedProjects, renderSimpleProjects} from './modules/projects.js';
 
 document.addEventListener("DOMContentLoaded", async () => {
     await loader(); 
     await head();
-    await menu();
-    await social();
-    await setupModal();
+    await menu(); 
 
-    const menuItems = [
+    if (document.querySelector('.projects__grid')) {
+      renderSimpleProjects();
+    }
+
+    if (document.querySelector('#footer-container')) {
+      social();    
+    }
+  
+    if (document.querySelector('.projectss__items')) {
+      renderDetailedProjects();
+    }
+
+    if (document.querySelector('.modal__close-x')) {
+      setupModal();    
+    }
+  
+    if (document.querySelector('#nav-bar')) {
+      const menuItems = [
         { id: "about", icon: "fas fa-user", text: "" },
         { id: "future", icon: "fas fa-bullseye", text: "" },
         { id: "services", icon: "fas fa-cogs", text: "" },
@@ -21,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ];
     
     insertNavBar(menuItems, "nav-bar");
-});
+    }
 
 function getBackgroundColor(element) {
     const bgColor = window.getComputedStyle(element).backgroundColor;
@@ -85,4 +101,4 @@ function getBackgroundColor(element) {
   
   document.addEventListener('DOMContentLoaded', adjustNavbarTextColor);
   
- 
+});

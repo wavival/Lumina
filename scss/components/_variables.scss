@@ -53,13 +53,13 @@ $typography: (
 );
 
 $images: (
-  "logos": (
-    "logo-light": "/assets/images/log/lumina-logo-light.webp",
-    "logo-dark": "/assets/images/log/lumina-logo-dark.webp",
-  ),
   "icons": (
     "icon-light": "/assets/images/log/lumina-logo-light.ico",
     "icon-dark": "/assets/images/log/lumina-logo-dark.ico",
+  ),
+  "logos": (
+    "logo-light": "/assets/images/log/lumina-logo-light.webp",
+    "logo-dark": "/assets/images/log/lumina-logo-dark.webp",
   ),
   "photos": (
     "phone": "/assets/images/photos/bg-phone.webp",
@@ -69,11 +69,16 @@ $images: (
     "hero": "/assets/images/photos/hero-img.webp",
   ),
   "projects": (
-    "ubuntu": "/assets/images/photos/ubuntu-logo.svg",
+    "codecanvas": "/assets/images/photos/project-code-canvas-logo.png",
+    "cryptonest": "/assets/images/photos/project-crypto-nest-logo.svg",
+    "cryptonest-home": "/assets/images/photos/project-crypto-nest-home.png",
+    "google-clon": "/assets/images/photos/project-google-clon-logo.svg",
+    "google-clon-home": "/assets/images/photos/project-google-clon-home.png",
+    "lunaria-shop": "/assets/images/photos/project-lunaria-shop-logo.svg",
+    "managask": "/assets/images/photos/project-managask-logo.png",
+    "managask-home": "/assets/images/photos/project-managask-home.png",
     "r&r": "",
-    "codecanvas": "/assets/images/photos/codecanvas-logo.png",
-    "lunaria-shop": "/assets/images/photos/lunaria-shop-logo.svg",
-    "cryptonest": "/assets/images/photos/crypto-nest-logo.svg",
-    "bg": "",
+    "ubuntu": "/assets/images/photos/project-ubuntu-logo.svg",
+    "bg": "/assets/images/photos/bg-services.webp",
   )
 )

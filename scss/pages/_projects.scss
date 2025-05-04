@@ -76,13 +76,16 @@
         }
 
         ul {
-            @include element(100%, auto, 0);
-            @include flex(column, space-evenly, center);
+            @include element(100%, 50%, 0);
+            @include grid(1, 1fr, auto);
             padding: 0;
             margin: 0;
+            overflow-y: scroll;
 
             @media (min-width: 768px) {
-                @include flex(row, space-evenly, center, nowrap);
+                @include grid(2, 1fr, auto);
+                height: auto;
+                overflow-y: visible;
             }
 
             @media (min-width: 1200px) {
@@ -133,7 +136,7 @@
         }
 
         @media (min-width: 1024px) {
-            padding: 4rem;
+            padding: 8rem 4rem 4rem;
         }
 
         @media (min-width: 1400px) {
@@ -144,7 +147,7 @@
         .project {
             @include element(100%, max-content, 1rem, 1rem);
             @include flex(column, space-evenly, center);
-            position: relative;
+            @include position(relative);
             border-radius: 0.5rem;
             box-shadow: 0 0.2rem 0.5rem map-get(map-get($colors, "lightModeColors"), "shadow");
             text-align: justify;
@@ -153,6 +156,7 @@
                 @include element(90%, auto, 2rem, 1.6rem);
                 @include grid(2, 1fr, auto);
                 place-content: center;
+                overflow: hidden;
             }
 
             h2 {
@@ -209,7 +213,35 @@
                     }
                 }
             }
+
+            .building, .deployed {
+                @include element(auto, 4rem, 1rem, 0);
+                @include position(absolute, null, null, 6rem, 0);
+                background-color: #ff9800;
+                text-align: center;
+                border-top-right-radius: 5rem;
+                border-bottom-right-radius: 5rem;
+
+                @media (min-width: 768px) {
+                    width: 30rem;
+                    border-radius: 0;
+                    top: 3rem;
+                    left: -12%;
+                    transform: rotate(-35deg);
+                }
+
+                p {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: white
+                }
+            }
+
+            .deployed {
+                background-color: #4caf50;
+            }
         }
+
         #ubuntu {
             .project__img {
                 background: url(map-get(map-get($images, "projects"), "ubuntu")) center;
@@ -237,6 +269,22 @@
         #cryptoNest {
             .project__img {
                 background: url(map-get(map-get($images, "projects"), "cryptonest")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #managAsk {
+            .project__img {
+                background: url(map-get(map-get($images, "projects"), "managask")) center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        #googleClon {
+            .project__img {
+                background: url(map-get(map-get($images, "projects"), "google-clon")) center;
                 background-size: contain;
                 background-repeat: no-repeat;
             }

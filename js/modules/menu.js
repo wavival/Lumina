@@ -13,7 +13,6 @@ export function menu() {
 
                 let showMenu = false;
 
-                // Función para mostrar u ocultar menú según tamaño
                 const updateMenuForViewport = () => {
                     const isDesktop = window.innerWidth >= 768;
                     if (isDesktop) {
@@ -78,7 +77,6 @@ function highlightActiveLink() {
     const navLinks = document.querySelectorAll('.header__nav--link');
     let currentPath = window.location.pathname;
 
-    // Normalizar la ruta para evitar errores con "/" en home
     if (currentPath === "/" || currentPath === "/index.html") {
         currentPath = "/index.html"; 
     }

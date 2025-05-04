@@ -136,8 +136,15 @@
     }
 
     &__container:nth-child(2) {
-      grid-row: 2 / 3;
-      grid-column: 2 / 3;
+
+      @media (min-width: 768px) {
+        grid-area: vision;
+      }
+
+      @media (min-width: 1300px) {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+      }
     }
 
     .values {
@@ -633,19 +640,18 @@
 
     @media (min-width: 1024px) {
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
+      grid-template-rows: 1fr;
     }
 
     @media (min-width: 1200px) {
       padding: 0 8rem;
     }
 
-    .project {
+  .project {
       @include element(90%, 20rem);
       @include position(relative);
       cursor: pointer;
       overflow: hidden;
-      border-bottom: 0.5rem solid map-get(map-get($colors, "lightModeColors"), "bg-color");
       border-radius: 0.4rem; 
 
       @media (min-width: 1300px) {
@@ -706,10 +712,6 @@
 
       &__img {
         @include element(100%, 100%);
-        background-image: url(map-get(map-get($images, "projects"), "bg"));
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
       }
 
       &__btns {
@@ -733,7 +735,56 @@
         }
       }
     }
+
+  #ubuntu {
+      .project__img {
+          background: url(map-get(map-get($images, "projects"), "ubuntu")) center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
   }
+
+  #codeCanvas {
+      .project__img {
+          background: url(map-get(map-get($images, "projects"), "codecanvas")) center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+  }
+
+  #lunariaShop {
+      .project__img {
+          background: url(map-get(map-get($images, "projects"), "lunaria-shop")) center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+  }
+
+  #cryptoNest {
+      .project__img {
+          background: url(map-get(map-get($images, "projects"), "cryptonest-home")) center;
+          background-size: contain;
+          background-repeat: no-repeat;
+      }
+  }
+
+  #managAsk {
+    .project__img {
+        background: url(map-get(map-get($images, "projects"), "managask-home")) center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+  }
+
+  #googleClon {
+
+    .project__img {
+        background: url(map-get(map-get($images, "projects"), "google-clon-home")) center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+  }
+}
 
   &>h3 {
     align-self: center;

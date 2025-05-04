@@ -28,8 +28,8 @@ export function setupModal() {
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const key = button.dataset.modal; // Obtener el valor de data-modal
-            modalContent.innerHTML = contentMap[key] || '<p>No content available</p>'; // Actualizar el contenido
+            const key = button.dataset.modal; 
+            modalContent.innerHTML = contentMap[key] || '<p>No content available</p>';
             modal.classList.remove('hidden');
             modal.classList.add('visible');
         });
