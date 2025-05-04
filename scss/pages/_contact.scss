@@ -44,6 +44,7 @@ $whatsapp-color: #25d366;
         grid-template-rows: 1fr 75% 1fr;
         background: rgba(map-get(map-get($colors, "darkModeColors"), "bg-color"), 0.5);
         border-radius: 1rem;
+        overflow-y: scroll;
 
         @media (min-width: 768px) {
             width: 80%;
@@ -58,7 +59,6 @@ $whatsapp-color: #25d366;
 
         @media (min-width: 1200px) {
             width: 50%;
-            overflow-y: scroll;
         }
 
         h2 {
