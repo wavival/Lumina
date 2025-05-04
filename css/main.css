@@ -759,6 +759,7 @@ h1 {
 @media (min-width: 1024px) {
   .about__container {
     padding-inline-end: 8rem;
+    justify-content: center;
   }
 }
 @media (min-width: 1300px) {
@@ -1467,7 +1468,7 @@ h1 {
 @media (min-width: 1300px) {
   .projects__grid .project {
     width: 90%;
-    height: 30rem;
+    height: 20rem;
   }
 }
 .projects__grid .project__contain {
@@ -1826,7 +1827,7 @@ h1 {
 }
 @media (min-width: 1024px) {
   .projectss__info {
-    padding: 0 8rem;
+    padding: 4rem 8rem 0;
   }
 }
 .projectss__info h2 {
@@ -1849,7 +1850,7 @@ h1 {
   gap: 2rem;
   justify-items: center;
   align-items: center;
-  padding: 0;
+  padding: 2rem;
   margin: 0;
   overflow-y: scroll;
 }
@@ -1865,6 +1866,12 @@ h1 {
     overflow-y: visible;
   }
 }
+@media (min-width: 1024px) {
+  .projectss__info ul {
+    height: 30%;
+    overflow-y: scroll;
+  }
+}
 @media (min-width: 1200px) {
   .projectss__info ul {
     display: grid;
@@ -1874,7 +1881,7 @@ h1 {
     justify-items: center;
     align-items: center;
     grid-template-rows: 1;
-    width: 50%;
+    width: 65%;
   }
 }
 .projectss__info ul li {

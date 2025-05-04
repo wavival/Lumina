@@ -35,6 +35,7 @@
 
         @media (min-width: 1024px) {
           padding-inline-end: 8rem;
+          justify-content: center;
         }
 
         @media (min-width: 1300px) {
@@ -677,7 +678,7 @@
 
       @media (min-width: 1300px) {
         width: 90%;
-        height: 30rem;
+        height: 20rem;
       }
 
       &__contain {

@@ -62,7 +62,7 @@
         background-color: map-get(map-get($colors, "lightModeColors"), "link-hover");
 
         @media (min-width: 1024px) {
-            padding: 0 8rem;
+            padding: 4rem 8rem 0;
         }
 
         h2 {
@@ -78,7 +78,7 @@
         ul {
             @include element(100%, 50%, 0);
             @include grid(1, 1fr, auto);
-            padding: 0;
+            padding: 2rem;
             margin: 0;
             overflow-y: scroll;
 
@@ -88,10 +88,15 @@
                 overflow-y: visible;
             }
 
+            @media (min-width: 1024px) {
+                height: 30%;
+                overflow-y: scroll;
+            }
+
             @media (min-width: 1200px) {
                 @include grid(2, 1fr, auto);
                 grid-template-rows: 1;
-                width: 50%;
+                width: 65%;
             }
 
             li {
