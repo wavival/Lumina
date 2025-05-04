@@ -1468,7 +1468,7 @@ h1 {
 @media (min-width: 1300px) {
   .projects__grid .project {
     width: 90%;
-    height: 20rem;
+    height: 26rem;
   }
 }
 .projects__grid .project__contain {

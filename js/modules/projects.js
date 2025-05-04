@@ -10,7 +10,7 @@ const simpleProjects = [
       id: "cryptoNest",
       title: "CryptoNest",
       description: "CryptoNest is a modern landing page that tracks trending cryptocurrencies, providing key stats and insights for anyone interested in the evolving crypto space.",
-      previewLink: "https://luminaw.co/projects#cryptoNest",
+      previewLink: "https://wavival.github.io/CryptoNest/",
       githubLink: "https://github.com/wavival/CryptoNest",
       ariaLabel: "Preview of CryptoNest project"
     },
@@ -18,7 +18,7 @@ const simpleProjects = [
       id: "managAsk",
       title: "ManagAsk",
       description: "ManagAsk is a basic task manager designed to help users keep track of their to-dos, stay organized, and get things done without the extra clutter.",
-      previewLink: "https://luminaw.co/projects#managAsk",
+      previewLink: "https://wavival.github.io/ManagAsk/",
       githubLink: "https://github.com/wavival/ManagAsk",
       ariaLabel: "Preview of ManagAsk project"
     },
@@ -26,7 +26,7 @@ const simpleProjects = [
       id: "googleClon",
       title: "Google Clon",
       description: "Google Clon is a simple clone of Google's homepage, mimicking its clean layout and basic search functionality for practice and learning.",
-      previewLink: "https://luminaw.co/projects#googleClon",
+      previewLink: "https://wavival.github.io/Google-Clon/",
       githubLink: "https://github.com/wavival/Google-Clon",
       ariaLabel: "Preview of Google clon project"
     }
