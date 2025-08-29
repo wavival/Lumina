@@ -1,0 +1,87 @@
+/* styles/tokens.css
+Solo tokens, sin utilidades*/
+
+@layer base {
+  :root {
+    /* ========== BRANDING ========== */
+    --brand-light: #dfeaff;
+    --brand-dark:  #1b1f28;
+    --brand-blue:  #407bff;
+
+    /* ========== UI (LIGHT) ========== */
+    --ui-card:   #ffffff;
+    --ui-text:   #2e2e2e;
+    --ui-shadow: #0000001a; /* 10% */
+    --ui-link:   #1e90ff;
+    --ui-hover:  #359bff;
+    --ui-border: #dddddd;
+
+    /* ========== STATES ========== */
+    --state-success:  #4caf50;
+    --state-error:    #f44336;
+    --state-warning:  #ff9800;
+    --state-disabled: #9e9e9e;
+    --state-info:     #2196f3;
+
+    /* ========== TYPOGRAPHY ========== */
+    /* Families (según el sistema) */
+    --font-display: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    --font-sans:    "Raleway", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+    /* Headings (Poppins) */
+    --h1-size:   48px;  --h1-line: 120%; --h1-letter: 0.01em; --h1-weight: 700;
+    --h2-size:   36px;  --h2-line: 120%; --h2-letter: 0.02em; --h2-weight: 700;
+    --h3-size:   28px;  --h3-line: 130%;                    --h3-weight: 600;
+    --h4-size:   20px;  --h4-line: 130%;                    --h4-weight: 600;
+    --h5-size:   18px;  --h5-line: 140%;                    --h5-weight: 500;
+
+    /* Body (Raleway) */
+    --body-lg-size: 18px; --body-lg-line: 150%;
+    --body-md-size: 16px; --body-md-line: 150%;
+    --body-sm-size: 14px; --body-sm-line: 150%;
+    --body-xs-size: 12px; --body-xs-line: 150%;
+
+    /* Buttons (Poppins — texto siempre UPPERCASE) */
+    --btn-lg-size: 16px; --btn-lg-weight: 600;
+    --btn-sm-size: 14px; --btn-sm-weight: 600;
+    --btn-text-transform: uppercase;
+
+    /* ========== ICON SIZES ========== */
+    --icon-sm: 16px;
+    --icon-md: 24px;
+    --icon-lg: 32px;
+    --icon-xl: 48px;
+
+    /* ========== SPACING SCALE ========== */
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-6:  24px;
+    --space-8:  32px;
+    --space-10: 40px;
+    --space-16: 64px;
+    --space-30: 120px; /* espaciado para desktop */
+
+    /* ========== RADIUS & SHADOWS ========== */
+    --radius-2xl: 20px;
+    --shadow-card: 0 8px 24px #0000001a;
+    --shadow-card-dark: 0 8px 24px #00000066;
+
+    /* ========== BREAKPOINTS (referencia) ========== */
+    /* Se usan en Tailwind como screens, aquí quedan documentados */
+    --bp-xs: 375px;  /* mobile */
+    --bp-md: 744px;  /* tablet */
+    --bp-xl: 1440px; /* desktop */
+  }
+
+  /* ========== UI (DARK) OVERRIDES ========== */
+  .dark {
+    --ui-card:   #252a34;
+    --ui-text:   #e4e6eb;
+    --ui-shadow: #00000066; /* 40% */
+    --ui-link:   #4a90e2;
+    --ui-hover:  #5c9be5;
+    --ui-border: #444444;
+  }
+}

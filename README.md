@@ -1,93 +1,43 @@
-# 🌐 Portafolio Personal - [luminaw.co](https://luminaw.co)
+# Astro Starter Kit: Minimal
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e98bb3f9-a048-4e91-a74b-26a1166ed6bc/deploy-status)](https://app.netlify.com/sites/luminaw/deploys)
+```sh
+npm create astro@latest -- --template minimal
+```
 
-Te doy la bienvenida a mi portafolio personal, un espacio donde muestro mis proyectos, habilidades y experiencia como desarrolladora web.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-## 🚀 Tecnologías Utilizadas
+## 🚀 Project Structure
 
-- **HTML5** – para una estructura semántica y accesible.  
-- **CSS3** – para un diseño visual atractivo y adaptable.  
-- **SASS** – para una escritura de estilos modular y eficiente.  
-- **JavaScript** – para interactividad dinámica en la interfaz.
-  
+Inside of your Astro project, you'll see the following folders and files:
 
-## 🧩 Características del Sitio
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-- Diseño responsive | Mobile First.
-- Menú de navegación animado (Incluye otras animaciones a lo largo del proyecto).
-- Secciones separadas para proyectos, contacto y sobre mí.
-- Preparando para integración futura con backend y base de datos.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## 📂 Estructura del Proyecto
+Any static assets, like images, can be placed in the `public/` directory.
 
-- **HTML**
-  - about.html
-  - contact.html
-  - footer-social.html
-  - head.html
-  - header-menu.html
-  - index.html
-  - loader.html
-  - projects.html
-  - thanks.html
+## 🧞 Commands
 
-- **CSS**
-  - css/
-    - main.css
-    - main.css.map
+All commands are run from the root of the project, from a terminal:
 
-- **SCSS**
-  - scss/
-    - base/
-      - _animations.scss
-      - _base.scss
-      - _reset.scss
-    - components/
-      - _components.scss
-      - _functions.scss
-      - _mixins.scss
-      - _variables.scss
-    - pages/
-      - _about.scss
-      - _contact.scss
-      - _home.scss
-      - _projects.scss
-    - main.scss
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-- **JS**
-  - js/
-    - modules/
-      - head.js
-      - loader.js
-      - menu.js
-      - modal.js
-      - nav.js
-      - social.js
-    - main.js
+## 👀 Want to learn more?
 
-                         
-
-## ☁️ Despliegue
-
-Este sitio está desplegado en **Netlify**:  
-🔗 [https://luminaw.co](https://luminaw.co)
-
-Para hacer deploys automáticos, solo actualizo el código en GitHub y Netlify se encarga del resto.
-
-
-## ✉️ Contacto
-
-¿Te gustaría trabajar conmigo o tienes alguna idea en mente?  
-Puedes contactarme directamente desde el [formulario de contacto](https://luminaw.co/contact.html) en el sitio o escribirme a **wavival.dev@luminaw.co**.
-
-
-## 📌 Notas
-
-Este proyecto está en constante mejora. Próximamente incluiré una base de datos y backend para gestionar los mensajes del formulario de contacto.
-
-
-## 📜 Licencia
-
-Este proyecto es de código abierto y está licenciado bajo los términos de la licencia MIT.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
