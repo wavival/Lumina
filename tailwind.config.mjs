@@ -1,111 +1,86 @@
-// tailwind.config.mjs
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{astro,html,js,ts,jsx,tsx,md,mdx}"],
+  content: ["./src/**/*.{astro,html,js,ts,jsx,tsx,vue,svelte}"],
   darkMode: "class",
-
-  /* Breakpoints + container según tus devices */
   theme: {
-    screens: {
-      xs: "375px",  // Mobile
-      md: "744px",  // Tablet
-      xl: "1440px", // Desktop
-    },
-    container: {
-      center: true,
-      padding: {
-        default: "16px",
-        md: "32px",    
-        xl: "120px",    
-      },
-    },
-
     extend: {
+      fontFamily: {
+        display: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+        body: ["Raleway", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
       colors: {
-        branding: {
-          light: "#dfeaff",
-          dark:  "#1b1f28",
-          blue:  "#407bff",
+        bg: {
+          page: "var(--bg-page)",
+          card: "var(--bg-card)",
         },
-
-        ui: {
-          light: {
-            card:   "#ffffff",
-            text:   "#2e2e2e",
-            shadow: "#0000001a",
-            link:   "#1e90ff",
-            hover:  "#359bff",
-            border: "#dddddd",
-          },
-
-          dark: {
-            card:   "#252a34",
-            text:   "#e4e6eb",
-            shadow: "#00000066",
-            link:   "#4a90e2",
-            hover:  "#5c9be5",
-            border: "#444444",
-          },
+        text: {
+          primary: "var(--text-primary)",
+          button: "var(--text-button)",
         },
-
+        accent: {
+          primary: "var(--accent-primary)",
+          link: "var(--accent-link)",
+          hover: "var(--accent-hover)",
+        },
+        border: {
+          base: "var(--border-base)",
+        },
+        brand: {
+          light: "var(--brand-light)",
+          dark: "var(--brand-dark)",
+          blue: "var(--brand-blue)",
+        },
         status: {
-          success:  "#4caf50",
-          error:    "#f44336",
-          warning:  "#ff9800",
-          disabled: "#9e9e9e",
-          info:     "#2196f3",
+          success: "var(--status-success)",
+          error: "var(--status-error)",
+          warning: "var(--status-warning)",
+          disabled: "var(--status-disabled)",
+          info: "var(--status-info)",
         },
       },
-
-      fontFamily: {
-        display: ["Poppins", "system-ui", "sans-serif"], // Headings + Buttons
-        sans:    ["Raleway", "system-ui", "sans-serif"], // Body
+      spacing: {
+        4: "4px",
+        8: "8px",
+        12: "12px",
+        16: "16px",
+        24: "24px",
+        32: "32px",
+        40: "40px",
+        64: "64px",
+        120: "120px",
+        // acceso opcional vía variables
+        "space-4": "var(--space-4)",
+        "space-8": "var(--space-8)",
+        "space-12": "var(--space-12)",
+        "space-16": "var(--space-16)",
+        "space-24": "var(--space-24)",
+        "space-32": "var(--space-32)",
+        "space-40": "var(--space-40)",
+        "space-64": "var(--space-64)",
+        "space-120": "var(--space-120)",
+      },
+      borderRadius: {
+        sm: "var(--radius-sm)",
+        md: "var(--radius-md)",
+        lg: "var(--radius-lg)",
       },
       fontSize: {
-        // Headings (Poppins)
-        h1: ["48px", { lineHeight: "120%", letterSpacing: "0.01em", fontWeight: "700" }],
-        h2: ["36px", { lineHeight: "120%", letterSpacing: "0.02em", fontWeight: "700" }],
-        h3: ["28px", { lineHeight: "130%", fontWeight: "600" }],
-        h4: ["20px", { lineHeight: "130%", fontWeight: "600" }],
-        h5: ["18px", { lineHeight: "140%", fontWeight: "500" }],
-
-        // Body (Raleway)
-        "body-lg": ["18px", { lineHeight: "150%", fontWeight: "400" }],
-        "body-md": ["16px", { lineHeight: "150%", fontWeight: "400" }],
-        "body-sm": ["14px", { lineHeight: "150%", fontWeight: "400" }],
-        "body-xs": ["12px", { lineHeight: "150%", fontWeight: "400" }],
-
-        // Buttons (Poppins, texto siempre UPPERCASE en clase utilitaria)
-        "btn-lg": ["16px", { fontWeight: "600" }],
-        "btn-sm": ["14px", { fontWeight: "600" }],
+        "heading-1": ["var(--heading-1)", { lineHeight: "120%" }],
+        "heading-2": ["var(--heading-2)", { lineHeight: "120%" }],
+        "heading-3": ["var(--heading-3)", { lineHeight: "130%" }],
+        "heading-4": ["var(--heading-4)", { lineHeight: "130%" }],
+        "heading-5": ["var(--heading-5)", { lineHeight: "140%" }],
+        "body-xl": ["var(--body-xl)", { lineHeight: "150%" }],
+        "body-lg": ["var(--body-lg)", { lineHeight: "150%" }],
+        "body-md": ["var(--body-md)", { lineHeight: "150%" }],
+        "body-sm": ["var(--body-sm)", { lineHeight: "150%" }],
+        "button-lg": ["var(--button-lg)"],
+        "button-sm": ["var(--button-sm)"],
       },
-
-      spacing: {
-        1:  "4px",
-        2:  "8px",
-        3:  "12px",
-        4:  "16px",
-        6:  "24px",
-        8:  "32px",
-        10: "40px",
-        16: "64px",
-        30: "120px", // desktop margin
-      },
-
       boxShadow: {
-        card:      "0 8px 24px #0000001a",
-        "card-dark":"0 8px 24px #00000066",
-      },
-
-      lumina: {
-        layout: {
-          mobile:  { columns: 4,  gutter: "16px", margin: "16px",  width: "375px",  height: "812px"  },
-          tablet:  { columns: 8,  gutter: "24px", margin: "32px",  width: "744px",  height: "1133px" },
-          desktop: { columns: 12, gutter: "24px", margin: "120px", width: "1440px", height: "1024px" },
-        },
-        icons: { sm: "16px", md: "24px", lg: "32px", xl: "48px" },
+        elevation: "0 1px 3px 0 var(--shadow-base)",
       },
     },
   },
-
   plugins: [],
 };

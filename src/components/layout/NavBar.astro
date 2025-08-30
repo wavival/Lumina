@@ -10,8 +10,8 @@ const links = [
 const pathname = Astro.url.pathname;
 const isActive = (href: string) => pathname.startsWith(href);
 ---
-<header class="sticky top-0 z-50 backdrop-blur-md backdrop-saturate-150 bg-[var(--nav-glass)]">
-  <Container as="div" class="h-16 flex items-center justify-between mx-0 max-w-full">
+<header class="sticky top-0 z-50 backdrop-blur-md backdrop-saturate-150 bg-[var(--nav-glass)] dark:bg-[var(--nav-glass)]">
+  <Container as="div" class="h-16 flex items-center justify-between mx-0 max-w-full px-4 md:px-8 lg:px-16">
 
     <!-- Logo -->
     <a href="/" class="flex items-center gap-3" aria-label="Inicio">
@@ -24,13 +24,15 @@ const isActive = (href: string) => pathname.startsWith(href);
       <ul role="list" class="flex items-center gap-8">
         {links.map((l) => (
           <li>
-            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]"> {l.label} </a>
+            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link uppercase"> {l.label} </a>
           </li>
         ))}
       </ul>
-      <Button href="/more/contact" variant="primary" size="sm" class="px-4 py-[22px] bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-base font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
-        <Icon src="/icons/ui/send-email-white.svg" size="md" />Contactar
+      <Button variant="primary" size="lg">
+        <Icon src="/icons/ui/send-email-white.svg" size="md" />
+        Descargar CV
       </Button>
+
     </nav>
 
     <!-- Acciones desktop -->
@@ -57,7 +59,7 @@ const isActive = (href: string) => pathname.startsWith(href);
       <ul role="list" class="flex flex-col items-end gap-2">
         {links.map((l) => (
           <li>
-            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link inline-flex items-center h-10 font-bold uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]"> {l.label} </a>
+            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link"> {l.label} </a>
           </li>
         ))}
       </ul>
@@ -73,7 +75,7 @@ const isActive = (href: string) => pathname.startsWith(href);
           </button>
       </div>
 
-      <Button href="/more/contact" variant="primary" size="sm" class="px-4 py-[22px] bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-base font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
+      <Button href="/more/contact" variant="primary" size="sm" class="btn-primary">
         <Icon src="/icons/ui/send-email-white.svg" size="md" />Contactar
       </Button>
     </div>

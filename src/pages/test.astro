@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+---
+<html lang="es">
+  <body class="p-8">
+    <!-- PRUEBA 1: Tailwind puro -->
+    <div class="bg-red-500 text-black p-8 rounded-lg mb-8">
+      TAILWIND OK si esto se ve ROJO
+    </div>
+
+    <!-- PRUEBA 2: Tokens + Tailwind -->
+    <div class="bg-accent-link text-text-button p-24 rounded-md mb-8">
+      TOKENS OK si esto se ve AZUL con texto blanco
+    </div>
+
+    <!-- PRUEBA 3: Variables directas (clase arbitraria) -->
+    <div class="p-[var(--space-16)] rounded-[var(--radius-md)] text-[var(--text-primary)] bg-[var(--bg-card)] border border-[var(--border-base)]">
+      VARS OK si esto se ve como card
+    </div>
+
+    <div class="bg-accent-link text-text-button p-24 rounded-md mb-24">
+  Ahora sí debe verse AZUL con texto BLANCO
+</div>
+
+<!-- También prueba por variable arbitraria: -->
+<div class="bg-[var(--accent-link)] text-[var(--text-button)] p-24 rounded-md">
+  Arbitrario por var() (debe verse igual)
+</div>
+
+  </body>
+</html>
+

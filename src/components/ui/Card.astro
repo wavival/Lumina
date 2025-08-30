@@ -8,6 +8,6 @@ const { as = "article", class: extra = "" } = Astro.props;
 const Tag = as as any;
 ---
 
-<Tag class={`rounded-2xl border border-[var(--ui-border)] bg-[var(--ui-card)] shadow-card ${extra}`}>
+<Tag class={`card ${extra}`}>
   <slot />
 </Tag>

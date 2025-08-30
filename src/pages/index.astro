@@ -11,53 +11,61 @@ import Card from "../components/ui/Card.astro";
 import Badge from "../components/ui/Badge.astro";
 import Chip from "../components/ui/Chip.astro";
 import Icon from "../components/ui/Icon.astro";
+import "../../styles/global.css";
+
+const labItems = [
+  {
+    title: "Ubuntu",
+    slug: "ubuntu",
+    cover: "/images/lab/ubuntu.webp",
+    alt: "Manos sosteniendo mezcla orgánica",
+    links: {
+      site: "/lab/ubuntu",
+      github: "https://github.com/tuuser/ubuntu",
+      behance: "https://behance.net/..."
+    }
+  },
+  {
+    title: "CodeCanvas",
+    slug: "codecanvas",
+    cover: "/images/lab/codecanvas.webp",
+    alt: "Mesa con café, cuaderno y celular",
+    links: {
+      github: "https://github.com/tuuser/codecanvas"
+    }
+  },
+  {
+    title: "Lunaria",
+    slug: "lunaria",
+    cover: "/images/lab/lunaria.webp",
+    alt: "Composición tipográfica con hojas secas",
+    links: {
+      behance: "https://behance.net/..."
+    }
+  }
+];
 ---
 
 <BaseLayout title="Lúmina Portfolio">
-  <Hero variant="solid" align="left" eyebrow="Frontend & UX/UI"
-  title={`web <span class="text-[var(--brand-blue)]">dev</span> & <span class="text-[var(--brand-blue)]">designer</span>`}
-  description="Amo cada vez que el código y el diseño se entienden."
-  primary={{ label: "DESCARGAR CV", href: "/cv.pdf" }}>
+  <!-- Heading -->
+<h1 class="heading-2">Título</h1>
+<p class="text-body-lg">Párrafo con tus tokens</p>
 
-  <Icon
-    slot="primary-icon"
-    src="/icons/ui/download-cv-white.svg"
-    size="md"
-    class="transition-transform group-hover:translate-y-0.5"
-  />
+<!-- Botón primario (icono + texto) -->
+<button class="btn btn-lg btn-primary">
+  <svg class="w-24 h-24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  Descargar CV
+</button>
 
-  <a slot="actions" href="https://linkedin.com/in/tuperfil" target="_blank" rel="noopener" aria-label="LinkedIn"
-    class="inline-flex items-center justify-center rounded-xl p-2 text-[var(--text-muted)] hover:text-[var(--text-on-brand)] hover:bg-[var(--surface-900)]/50 backdrop-blur transition">
-    <Icon src="/icons/social/linkedin.svg" size="md" />
-  </a>
+<!-- Botón secundario (solo texto) -->
+<a href="/repos" class="btn btn-sm btn-secondary">Ver repositorio</a>
 
-  <a
-    slot="actions"
-    href="https://github.com/tuusuario"
-    target="_blank"
-    rel="noopener"
-    aria-label="GitHub"
-    class="inline-flex items-center justify-center rounded-xl p-2
-           text-[var(--text-muted)] hover:text-[var(--text-on-brand)]
-           hover:bg-[var(--surface-900)]/50 backdrop-blur transition"
-  >
-    <Icon src="/icons/social/github.svg" size="md" />
-  </a>
+<!-- Disabled -->
+<button class="btn btn-lg btn-primary" disabled>Procesando…</button>
 
-  <a
-    slot="actions"
-    href="https://behance.net/tuusuario"
-    target="_blank"
-    rel="noopener"
-    aria-label="Behance"
-    class="inline-flex items-center justify-center rounded-xl p-2
-           text-[var(--text-muted)] hover:text-[var(--text-on-brand)]
-           hover:bg-[var(--surface-900)]/50 backdrop-blur transition"
-  >
-    <Icon src="/icons/social/behance.svg" size="md" />
-  </a>
-</Hero>
-  <LabPreview />
-  <AboutPreview />
-  <CtaContact />
+<div class="bg-accent-link text-text-button p-24 rounded-md">
+  Debes ver fondo azul y texto blanco
+</div>
+
+
 </BaseLayout>

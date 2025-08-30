@@ -49,58 +49,49 @@ const wrapAlign =
     : "text-left items-center md:items-start justify-center md:justify-start";
 
 const overlayMap: Record<number, string> = {
-  0:  "bg-[var(--surface-950)]/0",
-  20: "bg-[var(--surface-950)]/20",
-  30: "bg-[var(--surface-950)]/30",
-  40: "bg-[var(--surface-950)]/40",
-  50: "bg-[var(--surface-950)]/50",
-  60: "bg-[var(--surface-950)]/60",
-  70: "bg-[var(--surface-950)]/70",
-  80: "bg-[var(--surface-950)]/80",
+  0:  "bg-[var(--brand-blue)]/0",
+  20: "bg-[var(--brand-blue)]/20",
+  30: "bg-[var(--brand-blue)]/30",
+  40: "bg-[var(--brand-blue)]/40",
+  50: "bg-[var(--brand-blue)]/50",
+  60: "bg-[var(--brand-blue)]/60",
+  70: "bg-[var(--brand-blue)]/70",
+  80: "bg-[var(--brand-blue)]/80",
 };
 
 const overlayClass = overlayMap[overlayStrength] ?? overlayMap[40];
 ---
 
-<section
-  id={id}
-  data-variant={variant}
-  data-align={align}
-  class={`relative w-full isolate min-h-[60svh] md:min-h-[75svh] lg:min-h-[90svh] py-12 md:py-20 lg:py-28 ${cls}`}
->
+<section id={id} data-variant={variant} data-align={align} class={`section relative w-full isolate min-h-[60svh] md:min-h-[75svh] lg:min-h-[90svh] ${cls}`}>
   {variant === "image" && bgImage && (
     <div aria-hidden="true" class="absolute inset-0 -z-10 overflow-hidden">
       <img src={bgImage} alt="" class="h-full w-full object-cover" loading="eager" />
       <div class={`absolute inset-0 ${overlayClass}`}></div>
-      <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[var(--surface-950)]/40 to-transparent"></div>
-      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[var(--surface-950)]/40 to-transparent"></div>
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[var(--brand-dark)]/40 to-transparent"></div>
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[var(--brand-light)]/40 to-transparent"></div>
     </div>
   )}
 
   {variant === "gradient" && (
     <div aria-hidden="true" class="absolute inset-0 -z-10">
-      <div class="h-full w-full bg-gradient-to-br from-[var(--brand-700)] via-[var(--brand-600)] to-[var(--brand-400)]" />
+      <div class="h-full w-full bg-gradient-to-br from-[var(--brand-blue)] via-[var(--brand-light)] to-[var(--brand-dark)]" />
     </div>
   )}
 
   {variant === "solid" && (
-    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-[var(--surface-950)]" />
+    <div aria-hidden="true" class="absolute inset-0 -z-10 bg-card dark:bg-[var(--brand-dark)]" />
   )}
 
-  <div class={`container px-6 md:px-8 max-w-7xl h-full grid ${wrapAlign}`}>
-    <div class={`flex flex-col ${align === "center" ? "mx-auto" : ""} max-w-2xl md:max-w-3xl`}>
-
+  <div class={`container-prose px-6 md:px-8 h-full grid md:justify-center ${wrapAlign}`}>
+    <div class={`flex flex-col ${align === "center" ? "mx-auto" : ""} max-w-[512px] md:max-w-2xl md:w-dvw`}>
       <!-- Grupo de textos -->
-      <div class="flex flex-col gap-2 mb-14">
-        <p class="text-sm font-normal text-[var(--state-disabled)]">{eyebrow}</p>
+      <div class="flex flex-col gap-0 mb-14">
+        <p class="body-sm text-disabled">{eyebrow}</p>
 
-        <h1
-          class="font-black leading-tight text-balance text-[var(--ui-text)] text-4xl md:text-5xl lg:text-6xl"
-          set:html={title}
-        />
+        <h1 class="heading-1 text-[var(--ui-text)]" set:html={title} />
 
         {description && (
-          <p class="text-pretty text-base md:text-lg text-[var(--ui-text)]">
+          <p class="body-md text-[var(--ui-text)]">
             {description}
           </p>
         )}
@@ -110,14 +101,9 @@ const overlayClass = overlayMap[overlayStrength] ?? overlayMap[40];
       {(showPrimary || Astro.slots.has("actions")) && (
         <div class={`flex flex-wrap items-ri gap-3 self-end ${align === "center" ? "mx-auto" : ""}`}>
           {showPrimary && primary && (
-            <Button
-              href={primary.href}
-              variant="primary"
-              size="sm"
-              class="px-4 py-[24px] bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-base font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]"
-            >
+            <Button href={primary.href} variant="primary" size="sm" class="btn-primary">
               <slot name="primary-icon" />
-              {primary.label}muted
+              {primary.label}
             </Button>
           )}
 
@@ -126,7 +112,6 @@ const overlayClass = overlayMap[overlayStrength] ?? overlayMap[40];
           </div>
         </div>
       )}
-
     </div>
   </div>
 </section>

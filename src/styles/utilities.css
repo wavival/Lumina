@@ -1,0 +1,33 @@
+@layer utilities {
+  .heading-1 { @apply font-display font-bold; font-size: var(--heading-1); line-height: 120%; }
+  .heading-2 { @apply font-display font-bold; font-size: var(--heading-2); line-height: 120%; }
+  .heading-3 { @apply font-display font-semibold; font-size: var(--heading-3); line-height: 130%; }
+  .heading-4 { @apply font-display font-semibold; font-size: var(--heading-4); line-height: 130%; }
+  .heading-5 { @apply font-display font-medium;   font-size: var(--heading-5); line-height: 140%; }
+
+  .text-body-xl { @apply font-body; font-size: var(--body-xl); line-height: 150%; }
+  .text-body-lg { @apply font-body; font-size: var(--body-lg); line-height: 150%; }
+  .text-body-md { @apply font-body; font-size: var(--body-md); line-height: 150%; }
+  .text-body-sm { @apply font-body; font-size: var(--body-sm); line-height: 150%; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-8
+           rounded-md font-display font-semibold uppercase
+           whitespace-nowrap transition-colors;
+  }
+
+  .btn-sm { font-size: var(--button-sm); @apply px-16 py-8; }
+  .btn-lg { font-size: var(--button-lg); @apply px-24 py-12; }
+
+  .btn-primary {
+    @apply bg-accent-link text-text-button
+           hover:bg-accent-hover
+           disabled:bg-status-disabled disabled:text-text-button;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-accent-link
+           hover:text-accent-hover
+           disabled:text-status-disabled;
+  }
+}
