@@ -1,65 +1,71 @@
 ---
+/* src/sections/LabSection.astro */
+import Link from "../ui/Link.astro";
 import ProjectCard from "../projects/ProjectCard.astro";
-import Button from "../ui/Button.astro";
 
-interface Links { site?: string; github?: string; behance?: string }
-interface Item  { title: string; slug: string; cover: string; alt?: string; links?: Links }
+interface Project {
+  slug: string;
+  title: string;
+  cover: string;
+  summary?: string;
+  href?: string;
+  // ...cualquier otro campo que use tu ProjectCard
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  projects: Project[];
+  moreHref?: string;     // enlace "Ver más"
+}
 
 const {
   title = "Laboratorio",
   subtitle = "Creativo y Producción",
-  items = [] as Item[],
-  ctaHref = "/lab",
-  ctaLabel = "VER MÁS",
-} = Astro.props as {
-  title?: string;
-  subtitle?: string;
-  items?: Item[];
-  ctaHref?: string;
-  ctaLabel?: string;
-};
+  projects = [],
+  moreHref = "/projects",
+} = Astro.props as Props;
 ---
 
-<section
-  aria-labelledby="lab-title"
-  class="section bg-card tx-base"
-  itemscope
-  itemtype="https://schema.org/CollectionPage"
->
-  <div class="container-prose">
-    <header class="mb-6">
-      <h2 id="lab-title" class="heading-2 text-[var(--ui-text)]">{title}</h2>
-      <p class="body-sm text-[var(--brand-blue)] -mt-1">{subtitle}</p>
-    </header>
+<section class="px-6 md:px-8 py-8">
+  <!-- Encabezado -->
+  <header class="mb-6">
+    <h2 class="text-[28px] font-bold text-[var(--text-primary)]">{title}</h2>
+    <p class="text-body-xl font-bold text-[var(--accent-primary)]">{subtitle}</p>
+  </header>
 
-    <ul
-      role="list"
-      class="grid grid-cols-1 gap-4 place-items-stretch"
-    >
-      {items.map((it: Item) => (
-        <li role="listitem" class="card flex flex-col items-center">
-          <ProjectCard
-            size="small"
-            title={it.title}
-            cover={it.cover}
-            href={`/lab/${it.slug}`}
-            links={it.links}
-            alt={it.alt ?? `${it.title} — portada`}
-          />
-        </li>
-      ))}
-    </ul>
-
-    <footer class="mt-6 flex justify-center">
-      <Button
-        href={ctaHref}
-        variant="secondary"
-        size="sm"
-        class="btn-text-sm"
-        aria-label="Ver más proyectos del laboratorio"
+  <!-- Lista / Slider / Grid -->
+  <ul
+    role="list"
+    class="
+      flex flex-col gap-6
+      md:flex-row md:overflow-x-auto md:snap-x md:snap-mandatory md:pb-2
+      lg:grid lg:grid-cols-3 lg:gap-8 lg:overflow-visible
+    "
+    aria-label="Proyectos del laboratorio"
+  >
+    {projects.map((p) => (
+      <li
+        class="
+          snap-start
+          md:min-w-[320px] md:max-w-[420px]
+          lg:min-w-0
+        "
       >
-        {ctaLabel}
-      </Button>
-    </footer>
+        <ProjectCard
+          title={p.title}
+          cover={p.cover}
+          href={p.href ?? `/projects/${p.slug}`}
+          summary={p.summary}
+        />
+      </li>
+    ))}
+  </ul>
+
+  <!-- CTA Ver más -->
+  <div class="mt-6 flex justify-center">
+    <Link href={moreHref} class="uppercase">
+      Ver más
+    </Link>
   </div>
 </section>

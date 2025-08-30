@@ -5,8 +5,8 @@
   --brand-blue:  #407bff;
 
   /* Background (Light) */
-  --bg-page: #dfeaff;   /* Light page */
-  --bg-card: #ffffff;   /* Light card */
+  --bg-page: #dfeaff;   
+  --bg-card: #ffffff;   
 
   /* Text (Light) */
   --text-primary: #2e2e2e;
@@ -22,8 +22,8 @@
   --shadow-base: #999999e6; /* 90% */
 
   /* Blur overlays (Light) */
-  --bg-blur:  rgba(30,144,255,0.48);  /* 1E90FF @ 48% */
-  --nav-blur: rgba(64,123,255,0.24);  /* 407BFF @ 24% */
+  --bg-blur:  rgba(30,144,255,0.08);  /* 1E90FF @ 0.8% */
+  --nav-blur: rgba(64,123,255,0.001);  /* 407BFF @ 0.1% */
 
   /* Status */
   --status-success: #4caf50;
@@ -71,13 +71,13 @@
   --text-primary: #e4e6eb;
   --text-button:  #ffffff;
 
-  --accent-primary: #407bff; /* se mantiene */
+  --accent-primary: #407bff; 
   --accent-link:    #4a90e2;
   --accent-hover:   #5c9be5;
 
   --border-base: #444444;
   --shadow-base: #e5e5e5e6; /* 90% */
 
-  --bg-blur:  rgba(30,144,255,0.48);
-  --nav-blur: rgba(64,123,255,0.24);
+  --bg-blur:  rgba(30,144,255,0.08);
+  --nav-blur: rgba(64,123,255,0.001);
 }

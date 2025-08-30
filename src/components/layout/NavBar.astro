@@ -2,6 +2,7 @@
 import Container from "../ui/Container.astro";
 import Button from "../ui/Button.astro";
 import Icon from "../ui/Icon.astro";
+import Link from "../ui/Link.astro";
 
 const links = [
   { href: "/projects", label: "Proyectos" },
@@ -10,29 +11,29 @@ const links = [
 const pathname = Astro.url.pathname;
 const isActive = (href: string) => pathname.startsWith(href);
 ---
-<header class="sticky top-0 z-50 backdrop-blur-md backdrop-saturate-150 bg-[var(--nav-glass)] dark:bg-[var(--nav-glass)]">
-  <Container as="div" class="h-16 flex items-center justify-between mx-0 max-w-full px-4 md:px-8 lg:px-16">
+
+<header class="fixed w-full top-0 z-50 backdrop-blur-lg backdrop-saturate-150 bg-[var(--nav-blur)] dark:bg-[var(--nav-blur)]">
+  <Container as="div" class="h-auto flex items-center justify-between mx-0 max-w-full p-12 md:px-16 lg:px-32">
 
     <!-- Logo -->
-    <a href="/" class="flex items-center gap-3" aria-label="Inicio">
-      <img src="/brand/lumina-logo-light.svg" alt="Lúmina" class="h-8 dark:hidden" />
-      <img src="/brand/lumina-logo-dark.svg"  alt="Lúmina" class="h-8 hidden dark:block" />
+    <a href="/" aria-label="Inicio" class="flex items-center gap-3">
+      <img src="/brand/lumina-logo-light.svg" alt="Lúmina" class="h-32 dark:hidden" />
+      <img src="/brand/lumina-logo-dark.svg"  alt="Lúmina" class="h-32 hidden dark:block" />
     </a>
 
+
     <!-- NAV PRINCIPAL (desktop/tablet) -->
-    <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-      <ul role="list" class="flex items-center gap-8">
+    <nav class="hidden md:flex items-center gap-32" aria-label="Navegación principal">
+      <ul role="list" class="flex items-center gap-32">
         {links.map((l) => (
           <li>
-            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link uppercase"> {l.label} </a>
+            <Link href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link uppercase">
+              {l.label}
+            </Link>
           </li>
         ))}
       </ul>
-      <Button variant="primary" size="lg">
-        <Icon src="/icons/ui/send-email-white.svg" size="md" />
-        Descargar CV
-      </Button>
-
+      <Button href="mailto:wavival.dev@luminaw.co" target="_blank" icon="ui/send-email-white" text="Contáctame" />
     </nav>
 
     <!-- Acciones desktop -->
@@ -54,16 +55,21 @@ const isActive = (href: string) => pathname.startsWith(href);
   </Container>
 
   <!-- Menú mobile (panel) -->
-  <nav id="mobile-menu" aria-label="Menú móvil" class="md:hidden hidden absolute right-4 top-16 w-auto h-72 rounded-2xl bg-[var(--nav-glass)] text-[var(--ui-text)] px-4 pt-6 pb-4 overflow-hidden">
-    <div class="h-full flex flex-col justify-between items-end">
-      <ul role="list" class="flex flex-col items-end gap-2">
-        {links.map((l) => (
+  <nav id="mobile-menu" aria-label="Menú móvil" class="md:hidden hidden absolute right-16 top-42 w-auto h-auto rounded-2xl bg-[var(--bg-blur)] p-5 overflow-hidden backdrop-blur-lg">
+    <div class="h-full flex flex-col justify-between items-end gap-32">
+      <ul role="list" class="flex flex-col items-end gap-12">
+       {links.map((l) => (
           <li>
-            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link"> {l.label} </a>
+            <Link
+              href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
+              class="nav-link uppercase"
+            >
+              {l.label}
+            </Link>
           </li>
         ))}
       </ul>
-
       <div>
             <button type="button" class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--ui-link)]" aria-label="Cambiar idioma" id="lang-toggle-mobile">
             <Icon src="/icons/ui/switch-language.svg" size="md" />
@@ -75,9 +81,12 @@ const isActive = (href: string) => pathname.startsWith(href);
           </button>
       </div>
 
-      <Button href="/more/contact" variant="primary" size="sm" class="btn-primary">
-        <Icon src="/icons/ui/send-email-white.svg" size="md" />Contactar
-      </Button>
+      <Button
+        href="mailto:contacto@lumina.dev"
+        target="_blank"
+        icon="ui/send-email-white"
+        text="Contáctame"
+      />
     </div>
   </nav>
 

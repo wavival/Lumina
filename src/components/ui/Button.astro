@@ -1,72 +1,23 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 
-interface Props {
-  href?: string;
-  target?: "_blank" | "_self";
-  rel?: string;
-  download?: boolean | string;
-  variant?: "primary" | "secondary" | "disabled";
-  size?: "sm" | "md" | "lg";
-  full?: boolean;
-  class?: string;
-  type?: "button" | "submit" | "reset";
-  icon?: string; // Nombre del ícono opcional
-}
+interface Props { href?: string; target?: "_blank" | "_self"; rel?: string; download?: boolean | string; class?: string; type?: "button" | "submit" | "reset"; icon: string; text: string; }
 
-const {
-  href,
-  target,
-  rel,
-  download,
-  variant = "primary",
-  size = "lg",
-  full = false,
-  class: extra = "",
-  type = "button",
-  icon,
-} = Astro.props;
+const { href, target, rel, download, class: extra = "", type = "button", icon, text, } = Astro.props;
 
-const sizeCls =
-  size === "sm"
-    ? "padding: var(--spacing-8) var(--spacing-4); font-size: var(--text-sm);"
-    : size === "md"
-    ? "padding: var(--spacing-12) var(--spacing-8); font-size: var(--text-md);"
-    : "padding: var(--spacing-16) var(--spacing-12); font-size: var(--text-lg);";
+const base = "inline-flex justify-center items-center gap-2 px-3 py-3 rounded-md font-display font-semibold uppercase whitespace-nowrap transition-colors duration-200 bg-[var(--accent-link)] text-[var(--text-button)] hover:bg-[var(--accent-hover)] disabled:bg-[var(--status-disabled)] disabled:cursor-not-allowed";
 
-const base =
-  "display: inline-flex; justify-content: center; align-items: center; gap: var(--spacing-8); border-radius: var(--md); font-family: var(--font-display); font-weight: var(--font-semibold); text-transform: uppercase; white-space: nowrap; transition: background-color 0.2s ease-in-out;";
-
-const variantCls =
-  variant === "primary"
-    ? "background: var(--accent-link); color: var(--text-button); &:hover { background: var(--accent-hover); } &:disabled { background: var(--status-disabled); color: var(--text-button); }"
-    : variant === "secondary"
-    ? "background: transparent; color: var(--accent-link); &:hover { color: var(--accent-hover); } &:disabled { color: var(--status-disabled); }"
-    : "background: var(--status-disabled); color: var(--text-button); pointer-events: none;";
-
-const widthCls = full ? "width: 100%;" : "";
-
-const classes = `${base} ${sizeCls} ${variantCls} ${widthCls} ${extra}`;
-
-// Generar la URL del ícono (ajusta esta lógica si es necesario)
 const iconSrc = `/icons/${icon}.svg`;
 ---
 
 {href ? (
-  <a
-    href={variant === "disabled" ? undefined : href}
-    aria-disabled={variant === "disabled" ? "true" : undefined}
-    target={target}
-    rel={rel}
-    download={download}
-    class={classes}
-  >
-    {icon && <Icon src={iconSrc} size={size} />}
-    <slot />
+  <a href={href} target={target} rel={rel} download={download} class={`${base} ${extra}`}>
+    <Icon src={iconSrc} size="md" />
+    {text}
   </a>
 ) : (
-  <button type={type} class={classes} disabled={variant === "disabled"}>
-    {icon && <Icon src={iconSrc} size={size} />}
-    <slot />
+  <button type={type} class={`${base} ${extra}`}>
+    <Icon src={iconSrc} size="md" />
+    {text}
   </button>
 )}

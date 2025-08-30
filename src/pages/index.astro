@@ -11,61 +11,35 @@ import Card from "../components/ui/Card.astro";
 import Badge from "../components/ui/Badge.astro";
 import Chip from "../components/ui/Chip.astro";
 import Icon from "../components/ui/Icon.astro";
-import "../../styles/global.css";
+import "../styles/global.css";
 
-const labItems = [
+const labProjects = [
   {
     title: "Ubuntu",
     slug: "ubuntu",
-    cover: "/images/lab/ubuntu.webp",
-    alt: "Manos sosteniendo mezcla orgánica",
+    cover: "/images/projects/ubuntu /icon.svg",
+    alt: "Icono de la marca Ubuntu",
     links: {
-      site: "/lab/ubuntu",
-      github: "https://github.com/tuuser/ubuntu",
-      behance: "https://behance.net/..."
+      site: "#",
+      github: "https://github.com/wavival/Ubuntu",
+      behance: "https://behance.net/Ubuntu"
     }
   },
   {
-    title: "CodeCanvas",
-    slug: "codecanvas",
-    cover: "/images/lab/codecanvas.webp",
-    alt: "Mesa con café, cuaderno y celular",
+    title: "CryptoNest",
+    slug: "cryptonest",
+    cover: "/images/projects/cryptonest/icon.svg",
+    alt: "Icono de CryptoNest",
     links: {
-      github: "https://github.com/tuuser/codecanvas"
-    }
-  },
-  {
-    title: "Lunaria",
-    slug: "lunaria",
-    cover: "/images/lab/lunaria.webp",
-    alt: "Composición tipográfica con hojas secas",
-    links: {
-      behance: "https://behance.net/..."
+      github: "https://github.com/wavival/cryptonest"
     }
   }
 ];
 ---
 
 <BaseLayout title="Lúmina Portfolio">
-  <!-- Heading -->
-<h1 class="heading-2">Título</h1>
-<p class="text-body-lg">Párrafo con tus tokens</p>
 
-<!-- Botón primario (icono + texto) -->
-<button class="btn btn-lg btn-primary">
-  <svg class="w-24 h-24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-  Descargar CV
-</button>
+  <Hero eyebrow="Bienvenido a mi portfolio" title="Soy un diseñador y desarrollador" description="Explora mis proyectos y descubre mi trabajo." primary={{ label: "Ver Proyectos", href: "/projects" }} secondary={{ label: "Contáctame", href: "/contact" }} />
 
-<!-- Botón secundario (solo texto) -->
-<a href="/repos" class="btn btn-sm btn-secondary">Ver repositorio</a>
-
-<!-- Disabled -->
-<button class="btn btn-lg btn-primary" disabled>Procesando…</button>
-
-<div class="bg-accent-link text-text-button p-24 rounded-md">
-  Debes ver fondo azul y texto blanco
-</div>
-
-
+ <LabPreview projects={labProjects} />
 </BaseLayout>
