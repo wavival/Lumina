@@ -1,0 +1,15 @@
+---
+interface Props {
+  src?: string;                    
+  alt?: string;
+  size?: "sm" | "md" | "lg" | "xl"; 
+  class?: string;
+}
+
+const { src, alt = "", size = "md", class: extra = "" } = Astro.props;
+const style = `width: var(--icon-${size}, 24px); height: var(--icon-${size}, 24px);`;
+---
+
+{src
+  ? <img src={src} alt={alt} class={`inline-flex shrink-0 ${extra}`} style={style} />
+  : <span class={`inline-flex shrink-0 ${extra}`} style={style}><slot /></span>}

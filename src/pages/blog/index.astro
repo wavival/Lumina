@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const recientes = posts.slice(0, 3);
+---
+<BlogLayout pageTitle="Blog — Lúmina" pageDescription="Notas, tutoriales y aprendizajes.">
+  <section id="inicio" class="mb-8">
+    <div class="rounded-2xl bg-bg-card/90 backdrop-blur-sm p-6 md:p-8">
+      <h1 class="text-3xl md:text-4xl font-semibold font-['Poppins'] leading-tight">Bienvenida(o) al Blog</h1>
+      <p class="mt-2 opacity-80 font-['Raleway']">Artículos sobre Astro, rendimiento, UI y más.</p>
+    </div>
+  </section>
+
+  <section id="recientes" class="mb-10">
+    <h2 class="text-xl font-semibold font-['Poppins'] mb-4">Recientes</h2>
+    <ul class="grid gap-4 sm:grid-cols-2">
+      {recientes.map((p) => (
+        <li class="rounded-xl bg-bg-card/90 backdrop-blur-sm p-4">
+          <a href={`/blog/${p.slug}`} class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">
+            {p.data.title}
+          </a>
+          <p class="text-xs opacity-70 font-['Raleway']">{p.data.date.toLocaleDateString('es-CO')}</p>
+          {p.data.excerpt && <p class="text-sm mt-1 font-['Raleway'] opacity-90">{p.data.excerpt}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section id="posts">
+    <h2 class="text-xl font-semibold font-['Poppins'] mb-4">Todos los posts</h2>
+    <ul class="space-y-4">
+      {posts.map((p) => (
+        <li class="rounded-xl bg-bg-card/90 backdrop-blur-sm p-4">
+          <a href={`/blog/${p.slug}`} class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">
+            {p.data.title}
+          </a>
+          <p class="text-xs opacity-70 font-['Raleway']">{p.data.date.toLocaleDateString('es-CO')}</p>
+          {p.data.excerpt && <p class="text-sm mt-1 font-['Raleway'] opacity-90">{p.data.excerpt}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+</BlogLayout>

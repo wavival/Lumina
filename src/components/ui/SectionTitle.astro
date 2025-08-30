@@ -1,0 +1,15 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  align?: "left" | "center" | "right";
+  class?: string;
+}
+const { eyebrow, title, align = "left", class: extra = "" } = Astro.props;
+const alignCls = align === "center" ? "text-center" : align === "right" ? "text-right" : "text-left";
+---
+
+<header class={`mb-8 ${alignCls} ${extra}`}>
+  {eyebrow && <p class="text-sm text-[color:var(--ui-link,#64748b)]">{eyebrow}</p>}
+  <h2 class="heading-2">{title}</h2>
+</header>

@@ -1,0 +1,124 @@
+---
+import Container from "../ui/Container.astro";
+import Button from "../ui/Button.astro";
+import Icon from "../ui/Icon.astro";
+
+const links = [
+  { href: "/projects", label: "Proyectos" },
+  { href: "/more/about", label: "Sobre mí"  },
+];
+const pathname = Astro.url.pathname;
+const isActive = (href: string) => pathname.startsWith(href);
+---
+<header class="sticky top-0 z-50 backdrop-blur-md backdrop-saturate-150 bg-[var(--nav-glass)]">
+  <Container as="div" class="h-16 flex items-center justify-between mx-0 max-w-full">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3" aria-label="Inicio">
+      <img src="/brand/lumina-logo-light.svg" alt="Lúmina" class="h-8 dark:hidden" />
+      <img src="/brand/lumina-logo-dark.svg"  alt="Lúmina" class="h-8 hidden dark:block" />
+    </a>
+
+    <!-- NAV PRINCIPAL (desktop/tablet) -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+      <ul role="list" class="flex items-center gap-8">
+        {links.map((l) => (
+          <li>
+            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]"> {l.label} </a>
+          </li>
+        ))}
+      </ul>
+      <Button href="/more/contact" variant="primary" size="sm" class="px-4 py-[22px] bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-base font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
+        <Icon src="/icons/ui/send-email-white.svg" size="md" />Contactar
+      </Button>
+    </nav>
+
+    <!-- Acciones desktop -->
+    <div class="hidden md:flex items-center gap-3">
+      <button class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar idioma">
+        <Icon src="/icons/ui/switch-language.svg" size="md" />
+      </button>
+      <button
+          id="theme-toggle" aria-pressed="false" class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar tema">
+          <Icon src="/icons/ui/sun.svg"  size="md" class="dark:hidden" />
+          <Icon src="/icons/ui/moon.svg" size="md" class="hidden dark:inline-flex" />
+        </button>
+    </div>
+
+    <!-- Botón mobile -->
+    <button class="md:hidden p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+      <Icon src="/icons/ui/open-menu.svg" />
+    </button>
+  </Container>
+
+  <!-- Menú mobile (panel) -->
+  <nav id="mobile-menu" aria-label="Menú móvil" class="md:hidden hidden absolute right-4 top-16 w-auto h-72 rounded-2xl bg-[var(--nav-glass)] text-[var(--ui-text)] px-4 pt-6 pb-4 overflow-hidden">
+    <div class="h-full flex flex-col justify-between items-end">
+      <ul role="list" class="flex flex-col items-end gap-2">
+        {links.map((l) => (
+          <li>
+            <a href={l.href} aria-current={isActive(l.href) ? "page" : undefined} class="nav-link inline-flex items-center h-10 font-bold uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]"> {l.label} </a>
+          </li>
+        ))}
+      </ul>
+
+      <div>
+            <button type="button" class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--ui-link)]" aria-label="Cambiar idioma" id="lang-toggle-mobile">
+            <Icon src="/icons/ui/switch-language.svg" size="md" />
+          </button>
+          <button id="theme-toggle-mobile" aria-pressed="false"
+                  class="p-2 pr-0 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar tema">
+            <Icon src="/icons/ui/sun.svg"  size="md" class="dark:hidden" />
+            <Icon src="/icons/ui/moon.svg" size="md" class="hidden dark:inline-flex" />
+          </button>
+      </div>
+
+      <Button href="/more/contact" variant="primary" size="sm" class="px-4 py-[22px] bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-base font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
+        <Icon src="/icons/ui/send-email-white.svg" size="md" />Contactar
+      </Button>
+    </div>
+  </nav>
+
+  <script is:raw>
+    (function () {
+      // --- Menú móvil ---
+      const btn  = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          const open = !menu.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      }
+
+      // --- Tema (desktop + mobile) ---
+      const ids = ['theme-toggle', 'theme-toggle-mobile'];
+      const toggles = ids
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+
+      const KEY = 'theme';
+      const root = document.documentElement;
+
+      function apply(theme) {
+        const isDark = theme === 'dark';
+        root.classList.toggle('dark', isDark);
+        toggles.forEach(b => b.setAttribute('aria-pressed', isDark ? 'true' : 'false'));
+      }
+
+      // Estado inicial: preferencia guardada o sistema
+      const saved = localStorage.getItem(KEY);
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+      function toggleTheme() {
+        const nowDark = !root.classList.contains('dark');
+        localStorage.setItem(KEY, nowDark ? 'dark' : 'light');
+        apply(nowDark ? 'dark' : 'light');
+      }
+
+      toggles.forEach(b => b.addEventListener('click', toggleTheme));
+    })();
+  </script>
+
+</header>

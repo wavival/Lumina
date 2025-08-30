@@ -1,0 +1,35 @@
+---
+interface Props {
+  href?: string;
+  target?: "_blank" | "_self";
+  rel?: string;
+  download?: boolean | string;
+  variant?: "primary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
+  full?: boolean;
+  class?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+const {
+  href, target, rel, download,
+  variant = "primary",
+  size = "md",
+  full = false,
+  class: extra = "",
+  type = "button",
+} = Astro.props;
+
+const sizeCls = { sm: "h-9 px-3 text-sm", md: "h-10 px-4", lg: "h-12 px-6 text-lg" }[size];
+const base = "btn";
+const variantCls =
+  variant === "primary" ? "btn-primary" :
+  variant === "outline" ? "bg-transparent border border-[var(--ui-border)] text-[var(--ui-text)] hover:bg-[var(--ui-hover)]" :
+  "bg-transparent hover:bg-[var(--ui-hover)]";
+const widthCls = full ? "w-full" : "";
+const classes = `${base} ${variantCls} ${sizeCls} ${widthCls} ${extra}`;
+---
+
+{href
+  ? <a href={href} target={target} rel={rel} download={download} class={classes}><slot /></a>
+  : <button type={type} class={classes}><slot /></button>}

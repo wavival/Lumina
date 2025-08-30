@@ -1,23 +1,34 @@
 ---
-/* IMPORTA aquí tus estilos de src/styles */
-import "../../styles/global.css";     // dentro está @import de tokens y utilities
-const { title = "Lúmina — Portafolio", description = "Valentina Ramírez" } = Astro.props;
+import "../../styles/global.css";     
+import NavBar from "../components/layout/NavBar.astro";
+import Footer from "../components/layout/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title = "Lúmina", description = "Portafolio de Valentina Ramírez" } = Astro.props;
 ---
 
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-
-    <script is:inline>
-      const t = localStorage.getItem("theme");
-      const prefers = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (t === "dark" || (!t && prefers)) document.documentElement.classList.add("dark");
-    </script>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/brand/lumina-logo-light.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body class="antialiased">
-    <slot />
+
+  <body class="min-h-dvh bg-[var(--ui-card)] text-[var(--ui-text)] antialiased">
+    <NavBar />
+    <main><slot /></main>
+    <Footer />
+    <script type="module">
+      import "../scripts/theme-toggle.ts";
+      import "../scripts/nav-menu.ts";
+    </script>
   </body>
 </html>

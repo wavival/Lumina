@@ -13,23 +13,20 @@ export default {
     container: {
       center: true,
       padding: {
-        default: "16px", // Mobile margin
-        md: "32px",      // Tablet margin
-        xl: "120px",     // Desktop margin
+        default: "16px",
+        md: "32px",    
+        xl: "120px",    
       },
     },
 
     extend: {
-      /* ===== Colores ===== */
       colors: {
-        // Branding
         branding: {
           light: "#dfeaff",
           dark:  "#1b1f28",
           blue:  "#407bff",
         },
 
-        // UI (Light)
         ui: {
           light: {
             card:   "#ffffff",
@@ -40,7 +37,6 @@ export default {
             border: "#dddddd",
           },
 
-          // UI (Dark)
           dark: {
             card:   "#252a34",
             text:   "#e4e6eb",
@@ -51,7 +47,6 @@ export default {
           },
         },
 
-        // Estados
         status: {
           success:  "#4caf50",
           error:    "#f44336",
@@ -61,7 +56,6 @@ export default {
         },
       },
 
-      /* ===== Tipografías ===== */
       fontFamily: {
         display: ["Poppins", "system-ui", "sans-serif"], // Headings + Buttons
         sans:    ["Raleway", "system-ui", "sans-serif"], // Body
@@ -70,9 +64,9 @@ export default {
         // Headings (Poppins)
         h1: ["48px", { lineHeight: "120%", letterSpacing: "0.01em", fontWeight: "700" }],
         h2: ["36px", { lineHeight: "120%", letterSpacing: "0.02em", fontWeight: "700" }],
-        h3: ["28px", { lineHeight: "130%",                       fontWeight: "600" }],
-        h4: ["20px", { lineHeight: "130%",                       fontWeight: "600" }],
-        h5: ["18px", { lineHeight: "140%",                       fontWeight: "500" }],
+        h3: ["28px", { lineHeight: "130%", fontWeight: "600" }],
+        h4: ["20px", { lineHeight: "130%", fontWeight: "600" }],
+        h5: ["18px", { lineHeight: "140%", fontWeight: "500" }],
 
         // Body (Raleway)
         "body-lg": ["18px", { lineHeight: "150%", fontWeight: "400" }],
@@ -85,7 +79,6 @@ export default {
         "btn-sm": ["14px", { fontWeight: "600" }],
       },
 
-      /* ===== Espaciados ===== */
       spacing: {
         1:  "4px",
         2:  "8px",
@@ -98,7 +91,6 @@ export default {
         30: "120px", // desktop margin
       },
 
-      /* ===== Sombras ===== */
       boxShadow: {
         card:      "0 8px 24px #0000001a",
         "card-dark":"0 8px 24px #00000066",

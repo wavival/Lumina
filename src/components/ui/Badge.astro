@@ -1,0 +1,9 @@
+---
+interface Props { class?: string }
+const { class: extra = "" } = Astro.props;
+---
+
+<span class={`inline-flex items-center h-7 rounded-full border border-[var(--ui-border)]
+  bg-[color:var(--ui-hover,#f3f4f6)] px-3 text-xs font-medium ${extra}`}>
+  <slot />
+</span>

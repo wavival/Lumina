@@ -1,0 +1,48 @@
+---
+interface Props {
+  pageTitle?: string;
+  pageDescription?: string;
+}
+const { pageTitle = 'Lúmina · Blog', pageDescription } = Astro.props;
+const blogHome = '/blog';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{pageTitle}</title>
+    {pageDescription && <meta name="description" content={pageDescription} />}
+  </head>
+  <body class="min-h-screen text-text-primary bg-[var(--app-bg,transparent)]">
+    <!-- Topbar propio del Blog -->
+    <header class="sticky top-0 z-40 bg-bg-card/80 backdrop-blur-sm">
+      <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+        <a href={blogHome} class="font-semibold font-['Poppins'] uppercase">
+          Lúmina Blog
+        </a>
+        <nav class="hidden md:flex items-center gap-8" aria-label="Navegación Blog">
+          <a href="/"    class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">Inicio</a>
+          <a href={`${blogHome}#posts`}     class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">Posts</a>
+          <a href={`${blogHome}#recientes`} class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">Recientes</a>
+        </nav>
+        <a href="/"
+           class="px-4 py-2 bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2 text-sm font-semibold font-['Poppins'] uppercase leading-none hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
+          Lúmina
+        </a>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-8">
+      <slot />
+    </main>
+
+    <!-- Footer minimal del Blog -->
+    <footer class="mt-8 border-t-0">
+      <div class="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between">
+        <a href="/" class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">Lúmina</a>
+        <a href="/blog" class="nav-link font-bold inline-flex items-center h-10 uppercase text-[var(--ui-link)] hover:text-[var(--ui-hover)]">Blog</a>
+      </div>
+    </footer>
+  </body>
+</html>

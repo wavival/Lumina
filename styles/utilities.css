@@ -1,28 +1,46 @@
-/* styles/utilities.css
-Utilities (consumen tokens existentes)
-*/
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* =============== TIPOGRAFÍA =============== */
 @layer utilities {
-  /* Headings (Poppins) */
-  .heading-1 { @apply font-display text-h1; }
-  .heading-2 { @apply font-display text-h2; }
-  .heading-3 { @apply font-display text-h3; }
-  .heading-4 { @apply font-display text-h4; }
-  .heading-5 { @apply font-display text-h5; }
+  /* Mapear tokens a utilidades reales */
+  .text-h1 { font-size: var(--h1-size); line-height: var(--h1-line); letter-spacing: var(--h1-letter); }
+  .text-h2 { font-size: var(--h2-size); line-height: var(--h2-line); letter-spacing: var(--h2-letter); }
+  .text-h3 { font-size: var(--h3-size); line-height: var(--h3-line); }
+  .text-h4 { font-size: var(--h4-size); line-height: var(--h4-line); }
+  .text-h5 { font-size: var(--h5-size); line-height: var(--h5-line); }
 
-  /* Body (Raleway) */
-  .body-lg { @apply font-sans text-body-lg; }
-  .body-md { @apply font-sans text-body-md; }
-  .body-sm { @apply font-sans text-body-sm; }
-  .body-xs { @apply font-sans text-body-xs; }
+  .text-body-lg { font-size: var(--body-lg-size); line-height: var(--body-lg-line); }
+  .text-body-md { font-size: var(--body-md-size); line-height: var(--body-md-line); }
+  .text-body-sm { font-size: var(--body-sm-size); line-height: var(--body-sm-line); }
+  .text-body-xs { font-size: var(--body-xs-size); line-height: var(--body-xs-line); }
 
-  /* Botón: texto siempre UPPERCASE (Poppins) */
-  .btn-text-lg { @apply font-display text-btn-lg uppercase; }
-  .btn-text-sm { @apply font-display text-btn-sm uppercase; }
+  .text-btn-lg { font-size: var(--btn-lg-size); font-weight: var(--btn-lg-weight); text-transform: var(--btn-text-transform); }
+  .text-btn-sm { font-size: var(--btn-sm-size); font-weight: var(--btn-sm-weight); text-transform: var(--btn-text-transform); }
+
+  /* Familias desde tokens (para no depender del config) */
+  .font-display { font-family: var(--font-display); }
+  .font-raleway { font-family: var(--font-sans); }
+}
+
+/* Headings (Poppins) */
+@layer components {
+  .heading-1 { @apply font-display text-h1; font-weight: var(--h1-weight); }
+  .heading-2 { @apply font-display text-h2; font-weight: var(--h2-weight); }
+  .heading-3 { @apply font-display text-h3; font-weight: var(--h3-weight); }
+  .heading-4 { @apply font-display text-h4; font-weight: var(--h4-weight); }
+  .heading-5 { @apply font-display text-h5; font-weight: var(--h5-weight); }
+}
+
+/* Body (Raleway) */
+@layer utilities {
+  .body-lg { @apply font-raleway text-body-lg; }
+  .body-md { @apply font-raleway text-body-md; }
+  .body-sm { @apply font-raleway text-body-sm; }
+  .body-xs { @apply font-raleway text-body-xs; }
+}
+
+/* Botón: texto UPPERCASE (Poppins) */
+@layer utilities {
+  .btn-text-lg { @apply font-display text-btn-lg; }
+  .btn-text-sm { @apply font-display text-btn-sm; }
 }
 
 /* =============== BOTONES (componentes) =============== */
@@ -91,6 +109,18 @@ Utilities (consumen tokens existentes)
     text-underline-offset: 2px;
   }
   .link:hover { color: var(--ui-hover); text-decoration: none; }
+
+    a.nav-link {
+    @apply text-base uppercase tracking-wide inline-flex items-center h-10;
+    color: var(--ui-link) !important;   /* azul */
+    font-weight: 700 !important;        /* bold real */
+    text-decoration: none;
+  }
+  a.nav-link:hover { color: var(--ui-hover) !important; }
+  a.nav-link[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 }
 
 /* =============== FORMULARIOS =============== */
@@ -138,7 +168,6 @@ Utilities (consumen tokens existentes)
 }
 
 /* =============== CONTENEDOR + GRID PRÁCTICO =============== */
-/* Usa el container de Tailwind (con paddings 16/32/120 ya definidos en tailwind.config) */
 @layer components {
   .section { @apply py-8 md:py-12; }     /* secciones verticales estándar */
   .container-prose { @apply container mx-auto; max-width: 72ch; }

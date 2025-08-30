@@ -1,14 +1,63 @@
 ---
-import Layout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
-import "../../styles/global.css";
-import Header from "../components/Header.astro";
-import Navbar from "../components/NavBar.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";             
+import LabPreview from "../components/home/LabPreview.astro";      
+import AboutPreview from "../components/home/AboutPreview.astro";   
+import CtaContact from "../components/home/CtaContact.astro";   
+import Container from "../components/ui/Container.astro";        
+import SectionTitle from "../components/ui/SectionTitle.astro";
+import Button from "../components/ui/Button.astro";
+import Card from "../components/ui/Card.astro";
+import Badge from "../components/ui/Badge.astro";
+import Chip from "../components/ui/Chip.astro";
+import Icon from "../components/ui/Icon.astro";
 ---
 
-<Layout>
-  <Hero />
-  <Header />
-  <Navbar />
-</Layout>
+<BaseLayout title="Lúmina Portfolio">
+  <Hero variant="solid" align="left" eyebrow="Frontend & UX/UI"
+  title={`web <span class="text-[var(--brand-blue)]">dev</span> & <span class="text-[var(--brand-blue)]">designer</span>`}
+  description="Amo cada vez que el código y el diseño se entienden."
+  primary={{ label: "DESCARGAR CV", href: "/cv.pdf" }}>
+
+  <Icon
+    slot="primary-icon"
+    src="/icons/ui/download-cv-white.svg"
+    size="md"
+    class="transition-transform group-hover:translate-y-0.5"
+  />
+
+  <a slot="actions" href="https://linkedin.com/in/tuperfil" target="_blank" rel="noopener" aria-label="LinkedIn"
+    class="inline-flex items-center justify-center rounded-xl p-2 text-[var(--text-muted)] hover:text-[var(--text-on-brand)] hover:bg-[var(--surface-900)]/50 backdrop-blur transition">
+    <Icon src="/icons/social/linkedin.svg" size="md" />
+  </a>
+
+  <a
+    slot="actions"
+    href="https://github.com/tuusuario"
+    target="_blank"
+    rel="noopener"
+    aria-label="GitHub"
+    class="inline-flex items-center justify-center rounded-xl p-2
+           text-[var(--text-muted)] hover:text-[var(--text-on-brand)]
+           hover:bg-[var(--surface-900)]/50 backdrop-blur transition"
+  >
+    <Icon src="/icons/social/github.svg" size="md" />
+  </a>
+
+  <a
+    slot="actions"
+    href="https://behance.net/tuusuario"
+    target="_blank"
+    rel="noopener"
+    aria-label="Behance"
+    class="inline-flex items-center justify-center rounded-xl p-2
+           text-[var(--text-muted)] hover:text-[var(--text-on-brand)]
+           hover:bg-[var(--surface-900)]/50 backdrop-blur transition"
+  >
+    <Icon src="/icons/social/behance.svg" size="md" />
+  </a>
+</Hero>
+  <LabPreview />
+  <AboutPreview />
+  <CtaContact />
+</BaseLayout>

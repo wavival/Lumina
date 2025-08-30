@@ -1,0 +1,16 @@
+---
+interface Props {
+  href?: string;
+  selected?: boolean;
+  class?: string;
+}
+
+const { href, selected = false, class: extra = "" } = Astro.props;
+const base = `inline-flex items-center h-8 rounded-full px-3 text-sm transition
+  border border-[var(--ui-border)]
+  ${selected ? "bg-[var(--ui-hover)]" : "bg-transparent hover:bg-[var(--ui-hover)]"}`;
+---
+
+{href
+  ? <a href={href} class={`${base} ${extra}`}><slot /></a>
+  : <button type="button" class={`${base} ${extra}`}><slot /></button>}

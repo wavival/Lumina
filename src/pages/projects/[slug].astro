@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("projects", ({ data }) => data.published !== false);
+  return entries.map((entry) => ({
+    params: { slug: entry.slug },   // slug = 'ubuntu'
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+---
+
+<BaseLayout title={`${data.title} — Lúmina`}>
+  <!-- Reutiliza exactamente las mismas secciones del MVP, pero con `data` -->
+  <!-- ... (Hero, Summary/Note, Laberinto, Stack, Valor, Galería, CTA) ... -->
+</BaseLayout>
