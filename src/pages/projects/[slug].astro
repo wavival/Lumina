@@ -3,18 +3,39 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("projects", ({ data }) => data.published !== false);
+  const entries = await getCollection("projects");
   return entries.map((entry) => ({
-    params: { slug: entry.slug },   // slug = 'ubuntu'
+    params: { slug: entry.slug },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
+const { Content } = await entry.render();
 const data = entry.data;
+
+const cover = data.summary?.cover;
+const note  = data.summary?.note;
 ---
 
 <BaseLayout title={`${data.title} — Lúmina`}>
-  <!-- Reutiliza exactamente las mismas secciones del MVP, pero con `data` -->
-  <!-- ... (Hero, Summary/Note, Laberinto, Stack, Valor, Galería, CTA) ... -->
+  <main class="px-6 md:px-8 py-10 max-w-6xl mx-auto space-y-10">
+    <header class="space-y-2">
+      <h1 class="heading-1 text-[var(--text-primary)]">{data.title}</h1>
+      {data.subtitle && (
+        <p class="text-body-xl font-bold text-[var(--accent-primary)]">{data.subtitle}</p>
+      )}
+    </header>
+
+    {cover && (
+      <figure class="w-full overflow-hidden rounded-2xl bg-[var(--bg-card)] shadow-md shadow-[var(--shadow-base)]">
+        <img src={cover} alt={data.title} loading="lazy" decoding="async" class="w-full h-auto object-cover" />
+        {note && <figcaption class="p-3 text-sm text-[var(--text-muted)]">{note}</figcaption>}
+      </figure>
+    )}
+
+    <article class="prose prose-invert max-w-none">
+      <Content />
+    </article>
+  </main>
 </BaseLayout>

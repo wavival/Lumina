@@ -2,17 +2,9 @@
 import Link from "../ui/Link.astro";
 import Icon from "../ui/Icon.astro";
 
-interface Links { site?: string; github?: string; behance?: string }
+interface Links { github?: string; behance?: string }
 
-const {
-  size = "small",
-  title,
-  cover,
-  href,
-  links = {},
-  alt = `${title} — portada`,
-} = Astro.props as {
-  size?: "small" | "large";
+const { title, cover, href, links = {}, alt = `${title} — portada` } = Astro.props as {
   title: string;
   cover: string;
   href: string;
@@ -20,132 +12,70 @@ const {
   alt?: string;
 };
 
-const isSmall = size === "small";
 const moreLabel = `Saber más sobre ${title}`;
 ---
 
 <article
-  data-size={size}
   itemscope
   itemtype="https://schema.org/CreativeWork"
   aria-labelledby={`lab-${title}-heading`}
-  class:list={[
-    "inline-flex flex-col justify-start items-start overflow-hidden bg-[var(--bg-card)] shadow-ui",
-    isSmall ? "w-80 h-96 p-3 gap-4 rounded-2xl" : "w-[475px] h-[554px] p-4 gap-4 rounded-2xl",
-  ]}
+  class="inline-flex flex-col justify-start items-start overflow-hidden bg-[var(--bg-card)] shadow-md shadow-[var(--shadow-base)] w-[340px] h-96 p-3 gap-4 rounded-md lg:w-[300px] lg:h-[22rem]"
 >
   <meta itemprop="name" content={title} />
 
   <figure class="self-stretch flex-1 overflow-hidden rounded-2xl">
-    <Link
-      href={href}
-      aria-label={moreLabel}
-      class="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-link)]"
-    >
-      <img
-        src={cover}
-        alt={alt}
-        itemprop="image"
-        loading="lazy"
-        decoding="async"
-        width="800" height="600"
-        class="w-full h-full object-cover"
-      />
-    </Link>
+    <img
+      src={cover}
+      alt={alt}
+      itemprop="image"
+      loading="lazy"
+      decoding="async"
+      width="800"
+      height="600"
+      class="w-full h-full object-contain"
+    />
     <figcaption class="sr-only">{title}</figcaption>
   </figure>
 
-  <footer class="self-stretch inline-flex justify-between items-center">
-    <h3 id={`lab-${title}-heading`} class="heading-3 truncate">
-      <Link
-        href={href}
-        class="rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-link)]"
-      >
-        {title}
-      </Link>
+  <footer class="self-stretch inline-flex justify-between items-center h-auto">
+    <h3 id={`lab-${title}-heading`} class="heading-3 text-[24px] font-semibold truncate text-[var(--text-primary)]">
+      {title}
     </h3>
 
     <nav aria-label={`Enlaces de ${title}`}>
-      <ul role="list" class="flex justify-center items-center gap-1.5">
-        {isSmall ? (
-          <>
-            <li role="listitem">
-              <Link
-                href={href}
-                aria-label={moreLabel}
-                class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-[var(--accent-link)]/10"
-              >
-                <Icon src="/icons/ui/read-more.svg" size="md" class="text-[var(--accent-link)]" />
-                <Icon src="/icons/social/github.svg" size="md" class="text-[var(--accent-link)]" />
-                <Icon src="/icons/social/behance.svg" size="md" class="text-[var(--accent-link)]" />
-              </Link>
-            </li>
+      <ul role="list" class="flex justify-center items-center gap-0">
+        <li role="listitem">
+          <Link href={href} aria-label={moreLabel} class="w-[48px] h-[48px] flex items-center justify-center">
+            <Icon src="/icons/ui/read-more.svg" size="md" class="text-[var(--accent-link)]" />
+          </Link>
+        </li>
 
-            {links.github && (
-              <li role="listitem">
-                <Link
-                  href={links.github}
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label={`GitHub de ${title}`}
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-[var(--accent-link)]/10"
-                >
-                  <Icon src="/icons/brands/github.svg" size="md" class="text-[var(--accent-link)]" />
-                </Link>
-              </li>
-            )}
+        {links.github && (
+          <li role="listitem">
+            <Link
+              href={links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`GitHub de ${title}`}
+              class="w-[48px] h-[48px] flex items-center justify-center"
+            >
+              <Icon src="/icons/social/github.svg" size="md" class="text-[var(--accent-link)]" />
+            </Link>
+          </li>
+        )}
 
-            {links.behance && (
-              <li role="listitem">
-                <Link
-                  href={links.behance}
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label={`Behance de ${title}`}
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-[var(--accent-link)]/10"
-                >
-                  <Icon src="/icons/brands/behance.svg" size="md" class="text-[var(--accent-link)]" />
-                </Link>
-              </li>
-            )}
-          </>
-        ) : (
-          <>
-            <!-- Large: texto “SABER MÁS” como Link + iconos -->
-            <li role="listitem" class="mr-1.5">
-              <Link
-                href={href}
-                aria-label={moreLabel}
-                class="font-display font-semibold uppercase text-[var(--button-sm)] leading-none px-4 py-2 rounded-md hover:bg-[var(--accent-link)]/10"
-              >
-                Saber más
-              </Link>
-            </li>
-
-            {links.github && (
-              <li role="listitem">
-                <Link
-                  href={links.github}
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label={`GitHub de ${title}`}
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-[var(--accent-link)]/10"
-                >
-                  <Icon src="/icons/brands/github.svg" size="md" class="text-[var(--accent-link)]" />
-                </Link>
-              </li>
-            )}
-
-            {links.behance && (
-              <li role="listitem">
-                <Link
-                  href={links.behance}
-                  target="_blank" rel="noopener noreferrer"
-                  aria-label={`Behance de ${title}`}
-                  class="inline-flex items-center justify-center w-10 h-10 rounded-xl hover:bg-[var(--accent-link)]/10"
-                >
-                  <Icon src="/icons/brands/behance.svg" size="md" class="text-[var(--accent-link)]" />
-                </Link>
-              </li>
-            )}
-          </>
+        {links.behance && (
+          <li role="listitem">
+            <Link
+              href={links.behance}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Behance de ${title}`}
+              class="w-[48px] h-[48px] flex items-center justify-center"
+            >
+              <Icon src="/icons/social/behance.svg" size="md" class="text-[var(--accent-link)]" />
+            </Link>
+          </li>
         )}
       </ul>
     </nav>
