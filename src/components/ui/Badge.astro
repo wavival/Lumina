@@ -1,8 +1,0 @@
----
-interface Props { class?: string }
-const { class: extra = "" } = Astro.props;
----
-
-<span class={`inline-flex items-center h-7 rounded-full border border-ui bg-card px-3 body-xs font-medium ${extra}`}>
-  <slot />
-</span>

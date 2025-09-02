@@ -4,13 +4,6 @@ import Hero from "../components/home/Hero.astro";
 import LabPreview from "../components/home/LabPreview.astro";      
 import AboutPreview from "../components/home/AboutPreview.astro";   
 import CtaContact from "../components/home/CtaContact.astro";   
-import Container from "../components/ui/Container.astro";        
-import SectionTitle from "../components/ui/SectionTitle.astro";
-import Button from "../components/ui/Button.astro";
-import Card from "../components/ui/Card.astro";
-import Badge from "../components/ui/Badge.astro";
-import Chip from "../components/ui/Chip.astro";
-import Icon from "../components/ui/Icon.astro";
 import "../styles/global.css";
 
 const labProjects = [
@@ -40,7 +33,10 @@ const labProjects = [
 
 <BaseLayout title="Lúmina Portfolio">
 
-  <Hero eyebrow="Bienvenido a mi portfolio" title="Soy un diseñador y desarrollador" description="Explora mis proyectos y descubre mi trabajo." primary={{ label: "Ver Proyectos", href: "/projects" }} secondary={{ label: "Contáctame", href: "/contact" }} />
+  <Hero eyebrow="Bienvenido a mi portfolio" title="Soy una diseñadora y desarrolladora" description="Explora mis proyectos y descubre mi trabajo." primary={{ label: "Ver Proyectos", href: "/projects" }} secondary={{ label: "Contáctame", href: "/contact" }} />
 
  <LabPreview projects={labProjects} />
+
+ <AboutPreview/>
+ 
 </BaseLayout>

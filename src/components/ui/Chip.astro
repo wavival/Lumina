@@ -6,9 +6,7 @@ interface Props {
 }
 
 const { href, selected = false, class: extra = "" } = Astro.props;
-const base = `chip ${selected ? "bg-[var(--ui-hover)]" : "hover:bg-[var(--ui-hover)]"}`;
+const base = `chip text-[var(--brand-blue)] bg-[var(--bg-blur)] rounded-2xl text-center px-2`;
 ---
 
-{href
-  ? <a href={href} class={`${base} ${extra}`}><slot /></a>
-  : <button type="button" class={`${base} ${extra}`}><slot /></button>}
+{href ? <a href={href} class={`${base} ${extra}`}><slot /></a> : <button type="button" class={`${base} ${extra}`}><slot /></button>}

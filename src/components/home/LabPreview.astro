@@ -9,10 +9,10 @@ interface Props { title?: string; subtitle?: string; projects: Project[]; moreHr
 const { title = "Laboratorio", subtitle = "Creativo y Producción", projects = [], moreHref = "/projects", } = Astro.props as Props;
 ---
 
-<section class="px-[32px] py-9 flex flex-col lg:px-0 lg:w-[1024px] justify-self-center">
+<section class="py-9 px-[32px] flex flex-col w-full lg:px-0 lg:w-[1024px] justify-self-center">
   <header class="mb-6">
     <h2 class="text-[28px] font-bold text-[var(--text-primary)]">{title}</h2>
-    <p class="text-body-xl font-bold text-[var(--accent-primary)]">{subtitle}</p>
+    <p class="text-body-xl font-bold text-[var(--brand-blue)]">{subtitle}</p>
   </header>
 
   <ul role="list" class="flex flex-col gap-6 md:flex-row md:overflow-x-auto md:snap-x md:snap-mandatory md:pb-2 lg:grid lg:grid-cols-3 lg:gap-auto lg:overflow-visible self-center mb-7 lg:w-full" aria-label="Proyectos del laboratorio">
