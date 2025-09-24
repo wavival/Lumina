@@ -2,9 +2,9 @@
 import Link from "../ui/Link.astro";
 import ProjectCard from "../projects/ProjectCard.astro";
 
-interface Project { slug: string; title: string; cover: string; summary?: string; href?: string; links?: { site?: string; github?: string; behance?: string }; }
+interface Project { slug: string; title: string; cover: string; summary?: string; href?: string; links?: { site?: string; github?: string; behance?: string; }; }
 
-interface Props { title?: string; subtitle?: string; projects: Project[]; moreHref?: string; }
+interface Props { title?: string; subtitle?: string; projects: Project[]; moreHref?: string; id: string;}
 
 const { title = "Laboratorio", subtitle = "Creativo y Producción", projects = [], moreHref = "/projects", } = Astro.props as Props;
 ---
