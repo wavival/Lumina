@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="es" class="scroll-smooth bg-[var(--bg-page)] dark:bg-[var(--bg-page)"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>En construcción — Lúmina</title><meta name="description" content="Portafolio de Valentina Ramírez"><link rel="icon" href="/brand/lumina-logo-light.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@0,100..900;1,100..900&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet"><style>@tailwind base;@tailwind components;@tailwind utilities;:root{--brand-light: #cfeaff;--brand-dark: #1b1f28;--brand-blue: #407bff;--bg-page: #dfeaff;--bg-card: #ffffff;--text-primary: #2e2e2e;--text-button: #ffffff;--accent-link: #1e90ff;--accent-hover: #359bff;--border-base: #dddddd;--shadow-base: #999999e6;--bg-blur: rgba(30,144,255,.08);--nav-blur: rgba(64,123,255,.001);--status-success: #4caf50;--status-error: #f44336;--status-warning: #ff9800;--status-disabled:#9e9e9e;--status-info: #2196f3;--heading-1: 48px;--heading-2: 36px;--heading-3: 28px;--heading-4: 20px;--heading-5: 18px;--body-xl: 18px;--body-lg: 16px;--body-md: 14px;--body-sm: 12px;--button-lg: 16px;--button-sm: 14px;--space-4: 4px;--space-8: 8px;--space-12: 12px;--space-16: 16px;--space-24: 24px;--space-32: 32px;--space-40: 40px;--space-64: 64px;--space-120:120px;--radius-sm: 4px;--radius-md: 8px;--radius-lg: 16px}.dark{--bg-page: #1b1f28;--bg-card: #252a34;--text-primary: #e4e6eb;--text-button: #ffffff;--accent-primary: #407bff;--accent-link: #4a90e2;--accent-hover: #5c9be5;--border-base: #444444;--shadow-base: #e5e5e5e6;--bg-blur: rgba(30,144,255,.08);--nav-blur: rgba(64,123,255,.001)}
+</style></head> <body class="min-h-dvh bg-[var(--bg-page)] dark:bg-[var(--bg-page) text-[var(--ui-text)] antialiased"> <header class="fixed w-full top-0 z-50 backdrop-blur-lg backdrop-saturate-150 bg-[var(--nav-blur)] dark:bg-[var(--nav-blur)]"> <div class="container-prose h-auto flex items-center justify-between mx-0 max-w-full p-12 md:px-16 lg:px-32">  <a href="/" aria-label="Inicio" class="flex items-center gap-3"> <img src="/brand/lumina-logo-light.svg" alt="Lúmina" class="h-32 dark:hidden"> <img src="/brand/lumina-logo-dark.svg" alt="Lúmina" class="h-32 hidden dark:block"> </a> <nav class="hidden md:flex items-center gap-32" aria-label="Navegación principal"> <ul role="list" class="flex items-center gap-32"> <li><a href="/projects" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link uppercase"> Proyectos </a></li><li><a href="/more/about" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link uppercase" aria-current="page"> Sobre mí </a></li> </ul> <a href="mailto:wavival.dev@luminaw.co" target="_blank" class="inline-flex justify-center items-center gap-2 px-3 py-3 rounded-md font-display font-semibold uppercase whitespace-nowrap transition-colors duration-200 bg-[var(--accent-link)] text-[var(--text-button)] hover:bg-[var(--accent-hover)] disabled:bg-[var(--status-disabled)] disabled:cursor-not-allowed "><img src="/icons/ui/send-email-white.svg" alt class="inline-flex shrink-0 icon-md ">Contáctame</a> </nav> <div class="hidden md:flex items-center gap-3"> <button class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar idioma"> <img src="/icons/ui/switch-language.svg" alt class="inline-flex shrink-0 icon-md "> </button> <button id="theme-toggle" aria-pressed="false" class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar tema"> <img src="/icons/ui/sun.svg" alt class="inline-flex shrink-0 icon-md dark:hidden"> <img src="/icons/ui/moon.svg" alt class="inline-flex shrink-0 icon-md hidden dark:inline-flex"> </button> </div> <button class="md:hidden p-2 rounded-lg hover:bg-[var(--ui-hover)]/10" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú"> <img src="/icons/ui/open-menu.svg" alt class="inline-flex shrink-0 icon-md "> </button>  </div> <nav id="mobile-menu" aria-label="Menú móvil" aria-hidden="true" class="md:hidden absolute right-16 top-42 w-auto h-auto rounded-2xl bg-[var(--bg-blur)] p-5 overflow-hidden backdrop-blur-lg shadow-[var(--shadow-base)] opacity-0 translate-y-2 scale-95 invisible pointer-events-none transition-all duration-300 ease-out will-change-transform will-change-opacity motion-reduce:transition-none"> <div class="h-full flex flex-col justify-between items-end gap-32"> <ul role="list" class="flex flex-col items-end gap-12"> <li> <a href="/projects" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link uppercase"> Proyectos </a> </li><li> <a href="/more/about" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link uppercase" aria-current="page"> Sobre mí </a> </li> </ul> <div class="flex items-center gap-4"> <button type="button" class="p-2 rounded-lg hover:bg-[var(--ui-hover)]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--ui-link)]" aria-label="Cambiar idioma" id="lang-toggle-mobile"> <img src="/icons/ui/switch-language.svg" alt class="inline-flex shrink-0 icon-md "> </button> <button id="theme-toggle-mobile" aria-pressed="false" class="p-2 pr-0 rounded-lg hover:bg-[var(--ui-hover)]/10" aria-label="Cambiar tema"> <img src="/icons/ui/sun.svg" alt class="inline-flex shrink-0 icon-md dark:hidden"> <img src="/icons/ui/moon.svg" alt class="inline-flex shrink-0 icon-md hidden dark:inline-flex"> </button> </div> <a href="mailto:contacto@lumina.dev" target="_blank" class="inline-flex justify-center items-center gap-2 px-3 py-3 rounded-md font-display font-semibold uppercase whitespace-nowrap transition-colors duration-200 bg-[var(--accent-link)] text-[var(--text-button)] hover:bg-[var(--accent-hover)] disabled:bg-[var(--status-disabled)] disabled:cursor-not-allowed "><img src="/icons/ui/send-email-white.svg" alt class="inline-flex shrink-0 icon-md ">Contáctame</a> </div> </nav> <script>
+    (function () {
+      // ===== Menú móvil con animación suave =====
+      const btn  = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      function openMenu() {
+        menu.classList.remove('opacity-0','translate-y-2','scale-95','invisible','pointer-events-none');
+        menu.classList.add('opacity-100','translate-y-0','scale-100','visible','pointer-events-auto');
+        btn.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeMenu() {
+        menu.classList.remove('opacity-100','translate-y-0','scale-100','visible','pointer-events-auto');
+        menu.classList.add('opacity-0','translate-y-2','scale-95','invisible','pointer-events-none');
+        btn.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+
+      if (btn && menu) {
+        let open = false;
+
+        btn.addEventListener('click', () => {
+          open ? closeMenu() : openMenu();
+          open = !open;
+        });
+
+        // Cerrar con Escape
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && open) {
+            closeMenu();
+            open = false;
+          }
+        });
+      }
+
+      // ===== Tema (igual que tenías) =====
+      const ids = ['theme-toggle', 'theme-toggle-mobile'];
+      const toggles = ids.map(id => document.getElementById(id)).filter(Boolean);
+
+      const KEY = 'theme';
+      const root = document.documentElement;
+
+      function apply(theme) {
+        const isDark = theme === 'dark';
+        root.classList.toggle('dark', isDark);
+        toggles.forEach(b => b && b.setAttribute('aria-pressed', isDark ? 'true' : 'false'));
+      }
+
+      const saved = localStorage.getItem(KEY);
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+      function toggleTheme() {
+        const nowDark = !root.classList.contains('dark');
+        localStorage.setItem(KEY, nowDark ? 'dark' : 'light');
+        apply(nowDark ? 'dark' : 'light');
+      }
+
+      toggles.forEach(b => b && b.addEventListener('click', toggleTheme));
+    })();
+  </script> </header> <main> <main class="h-screen grid place-items-center px-6 text-center bg-[var(--bg-page)] m-0 p-56 gap-6"> <div class="space-y-8"> <h1 class="text-[32px] font-bold text-[var(--brand-blue)]">Estamos construyendo algo especial para ti.</h1> <p class="text-[20px] text-[var(--text-primary)] opacity-90">Vuelve pronto y sé parte de la experiencia.</p> </div> <img src="/icons/illustrations/highlights/target.svg" alt class="inline-flex shrink-0 icon-lg "> <a href="/" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none inline-flex items-center justify-center rounded-md text-[var(--accent-link)] hover:bg-[var(--accent-link)]/10" rel="noopener"> Ir al inicio </a> </main> </main> <footer class="w-full bg-bg-card/90 backdrop-blur backdrop-saturate-150 bg-[var(--bg-blur)] dark:bg-[var(--bg-blur)] md:px-16 lg:px-24"> <div class="container-prose w-full px-[16px] py-5 opacity-90 inline-flex flex-col justify-center items-center gap-6 md:flex-row md:justify-between md:items-center md:gap-0 md:opacity-100"> <nav aria-label="Footer" class="inline-flex justify-center items-center gap-32"> <a href="/legal/privacy" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link"> Privacidad </a> <a href="/legal/conditions" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link"> Condiciones </a> <a href="/blog/" class="text-[var(--accent-link)] hover:text-[var(--accent-hover)] text-center font-display font-semibold uppercase leading-none nav-link"> Blog </a> </nav> <div class="inline-flex justify-center items-center gap-16 md:justify-end"> <a href="/" aria-label="Inicio" class="flex items-center gap-3"> <img src="/brand/lumina-logo-light.svg" alt="Lúmina" class="h-32 dark:hidden"> <img src="/brand/lumina-logo-dark.svg" alt="Lúmina" class="h-32 hidden dark:block"> </a> <div class="text-body-xs text-[var(--text-primary)]">© Lúmina 2025</div> </div> </div> </footer> <script type="module">
+      import "../scripts/theme-toggle.ts";
+      import "../scripts/nav-menu.ts";
+    </script> </body> </html>
