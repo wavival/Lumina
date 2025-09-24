@@ -2,6 +2,7 @@
 import Chip from "../ui/Chip.astro";
 import Link from "../ui/Link.astro";
 import MiniCard from "../ui/MiniCard.astro";
+import Slider from "../ui/Slider.astro";
 
 const { title = "Más allá de", subtitle = "Código e Interfaces" } = Astro.props;
 ---
@@ -32,24 +33,7 @@ const { title = "Más allá de", subtitle = "Código e Interfaces" } = Astro.pro
         <Chip>Behance</Chip>
     </div> 
 
-    <section aria-label="Slider de mini tarjetas">
-      <div class="flex gap-4 p-2 overflow-x-auto scroll-smooth snap-x snap-mandatory
-                  overscroll-x-contain [touch-action:pan-x]
-                  [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-        <div class="snap-start shrink-0 w-72">
-          <MiniCard text="Estudio todos los días como si fuera un trabajo real" icon="/icons/illustrations/highlights/coding.svg" />
-        </div>
-        <div class="snap-start shrink-0 w-72">
-          <MiniCard text="Estudio todos los días como si fuera un trabajo real" icon="/icons/illustrations/highlights/coding.svg" />
-        </div>
-        <div class="snap-start shrink-0 w-72">
-          <MiniCard text="Estudio todos los días como si fuera un trabajo real" icon="/icons/illustrations/highlights/coding.svg" />
-        </div>
-        <div class="snap-start shrink-0 w-72">
-          <MiniCard text="Estudio todos los días como si fuera un trabajo real" icon="/icons/illustrations/highlights/coding.svg" />
-        </div>
-      </div>
-    </section>
+     <Slider />
 
     <Link href="/about" class="nav-link">Conocer más</Link>
   </div>

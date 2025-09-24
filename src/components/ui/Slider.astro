@@ -1,0 +1,21 @@
+---
+import MiniCard from "./MiniCard.astro";
+---
+
+<section aria-label="Slider de mini tarjetas">
+  <div class="flex gap-4 px-3 py-2 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth shrink-0 [scrollbar-width:thin] [scrollbar-color:var(--brand-blue)_transparent] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)]/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)]/70 active:[&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)] [&::-webkit-scrollbar-corner]:bg-transparent" style="scrollbar-gutter: stable;" role="list">
+
+    <div class="shrink-0 w-[95vw] sm:w-full snap-start" role="listitem">
+      <MiniCard text="Estudio todos los días como si fuera un trabajo real" icon="/icons/illustrations/highlights/coding.svg" />
+    </div>
+    <div class="shrink-0 w-[95vw] sm:w-full snap-start" role="listitem">
+      <MiniCard text="Refuerzo fundamentos antes de correr por frameworks" icon="/icons/illustrations/highlights/coding.svg" />
+    </div>
+    <div class="shrink-0 w-[95vw] sm:w-full snap-start" role="listitem">
+      <MiniCard text="Hago proyectos reales y los documento" icon="/icons/illustrations/highlights/coding.svg" />
+    </div>
+    <div class="shrink-0 w-[95vw] sm:w-full snap-start" role="listitem">
+      <MiniCard text="Itero: diseño → código → feedback" icon="/icons/illustrations/highlights/coding.svg" />
+    </div>
+  </div>
+</section>
