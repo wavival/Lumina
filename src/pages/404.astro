@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+export const prerender = true; 
+---
+---
+<BaseLayout title="Página no encontrada — Lúmina">
+  <main class="min-h-[70vh] grid place-items-center px-6 text-center">
+    <div class="space-y-4">
+      <h1 class="text-5xl font-bold">404</h1>
+      <p class="opacity-80">No encontramos esa página.</p>
+
+      <a href="/"
+        class="px-4 py-3 bg-[var(--ui-link)] text-white rounded-lg inline-flex items-center gap-2
+                text-base font-semibold font-['Poppins'] uppercase leading-none
+                hover:bg-[var(--ui-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--ui-hover)]">
+        Volver al inicio
+      </a>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import MiniCard from "./MiniCard.astro";
+---
+
+<section aria-label="Slider de mini tarjetas">
+  <div class="flex gap-5 py-2 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth shrink-0 [scrollbar-width:thin] [scrollbar-color:var(--brand-blue)_transparent] [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)]/50 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)]/70 active:[&::-webkit-scrollbar-thumb]:bg-[var(--brand-blue)] [&::-webkit-scrollbar-corner]:bg-transparent" style="scrollbar-gutter: stable;" role="list">
+
+    <div class="shrink-0 w-[320px] snap-start" role="listitem">
+      <MiniCard text="Estudio todos los días como si fuera un trabajo real." icon="/icons/illustrations/highlights/coding.svg" />
+    </div>
+    <div class="shrink-0 w-[320px] snap-start" role="listitem">
+      <MiniCard text="Soy autodidacta y llevo mi formación como si fuera un bootcamp." icon="/icons/illustrations/highlights/target.svg" />
+    </div>
+    <div class="shrink-0 w-[320px] snap-start" role="listitem">
+      <MiniCard text="Rindo más por la mañana después de mi rutina personal." icon="/icons/illustrations/highlights/sunrise.svg" />
+    </div>
+    <div class="shrink-0 w-[320px] snap-start" role="listitem">
+      <MiniCard text="Me gusta probar lo que aprendo con proyectos reales, no solo teoría." icon="/icons/illustrations/highlights/user-research.svg" />
+    </div>
+  </div>
+</section>
